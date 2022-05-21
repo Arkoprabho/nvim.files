@@ -1,5 +1,6 @@
 :set number
 :set autoread
+:set ignorecase
 :set encoding=utf-8
 :set signcolumn=auto:1
 :set clipboard=unnamedplus
@@ -73,4 +74,9 @@ inoremap {;<CR> {<CR>};<ESC>O
 
 map <F2> :mksession! .vim_session <cr> " Quick write session with F2
 map <F3> :source .vim_session <cr>     " And load session with F3
-
+" For diff "
+if &diff
+    map <leader>1 :diffget LOCAL<CR>
+    map <leader>2 :diffget BASE<CR>
+    map <leader>3 :diffget REMOTE<CR>
+endif
