@@ -1,18 +1,20 @@
-:set number
-:set autoread
-:set ignorecase
-:set encoding=utf-8
-:set signcolumn=auto:1
-:set clipboard=unnamedplus
-:set noshowmode
-:set relativenumber
-:set autoindent
-:set tabstop=4
-:set shiftwidth=4
-:set smarttab
-:set softtabstop=4
-:set mouse=a
-:set completeopt-=preview " For No Previews
+set number
+set splitbelow
+set splitright
+set autoread
+set ignorecase
+set encoding=utf-8
+set signcolumn=auto:1
+set clipboard=unnamedplus
+set noshowmode
+set relativenumber
+set autoindent
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set softtabstop=4
+set mouse=a
+set completeopt-=preview " For No Previews
 
 call plug#begin()
 
