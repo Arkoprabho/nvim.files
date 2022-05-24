@@ -1,31 +1,25 @@
 {
-	"coc.preferences.formatOnSaveFiletypes": [
-		"hcl",
-		"terraform",
-		"json",
-		"yaml",
-		"javascript",
-		"javascriptreact",
-		"typescript",
-		"typescriptreact"
-	],
-	"coc.preferences.formatOnType": true,
-	"tsserver.formatOnType": true,
-	"languageserver": {
-		"terraform": {
-			"command": "terraform-lsp",
-			"filetypes": [
-				"terraform",
-				"tf",
-				"hcl"
-			],
-			"rootPatterns": [
-				"*.tf",
-				"terragrunt.hcl"
-			],
-			"initializationOptions": {},
-			"settings": {},
-			"trace.server": "verbose"
-		}
-	}
+  "coc.preferences.formatOnSaveFiletypes": [
+    "hcl",
+    "terraform",
+    "json",
+    "yaml",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "coc.preferences.formatOnType": true,
+  "html.enable": true,
+  "tsserver.formatOnType": true,
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-lsp",
+      "filetypes": ["terraform", "tf", "hcl"],
+      "rootPatterns": ["*.tf", "terragrunt.hcl"],
+      "initializationOptions": {},
+      "settings": {},
+      "trace.server": "verbose"
+    }
+  }
 }
