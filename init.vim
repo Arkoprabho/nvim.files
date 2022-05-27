@@ -1,4 +1,5 @@
 set number
+set splitbelow splitright
 set wildmode=longest,list,full
 set splitbelow
 set splitright
