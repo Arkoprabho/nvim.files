@@ -15,7 +15,7 @@ Plug 'puremourning/vimspector'
 Plug 'tpope/vim-fugitive' " For git
 "Plug 'airblade/vim-gitgutter' " Git gutter
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-
+Plug 'Asheq/close-buffers.vim' " For buffer management
 " Themes
 Plug 'projekt0n/github-nvim-theme'
 Plug 'EdenEast/nightfox.nvim', { 'tag': 'v1.0.0' }
