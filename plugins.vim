@@ -13,7 +13,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'puremourning/vimspector'
 Plug 'tpope/vim-fugitive' " For git
-Plug 'airblade/vim-gitgutter' " Git gutter
+"Plug 'airblade/vim-gitgutter' " Git gutter
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " Themes
