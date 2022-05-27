@@ -1,4 +1,5 @@
 set number
+set wildmode=longest,list,full
 set splitbelow
 set splitright
 set autoread
@@ -21,7 +22,8 @@ call plug#begin()
 source $HOME/.config/nvim/plugins.vim
 
 call plug#end()
-
+" Disables automatic commenting on new line:
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 colorscheme nightfox
 let g:rainbow_active = 1
 let g:pymode_python = 'python'
