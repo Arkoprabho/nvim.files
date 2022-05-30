@@ -26,7 +26,7 @@ call plug#end()
 " Disables automatic commenting on new line:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Themeing"
-let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
+let g:catppuccin_flavour = "dusk" " latte, frappe, macchiato, mocha
 colorscheme catppuccin
 let g:rainbow_active = 1
 let g:pymode_python = 'python'
