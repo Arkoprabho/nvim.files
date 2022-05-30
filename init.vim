@@ -85,3 +85,9 @@ if &diff
     map <leader>2 :diffget BASE<CR>
     map <leader>3 :diffget REMOTE<CR>
 endif
+
+"Automatically delete all trailing whitespace on save"
+autocmd BufWritePre * :%s/\s\+$//e
+
+"Snippets for languages"
+source $HOME/.config/nvim/snippets.vim
