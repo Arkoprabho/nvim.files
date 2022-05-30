@@ -16,7 +16,7 @@ Plug 'tpope/vim-fugitive' " For git
 "Plug 'airblade/vim-gitgutter' " Git gutter
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'Asheq/close-buffers.vim' " For buffer management
-
+Plug 'dkprice/vim-easygrep' " For better finding things.
 " Themes
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 " Plug 'projekt0n/github-nvim-theme'
