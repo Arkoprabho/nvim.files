@@ -1,4 +1,4 @@
-nnoremap <leader>vv :NERDTreeToggle<CR>
+nnoremap <leader>ntt :NERDTreeToggle<CR>
 nmap <leader>r :NERDTreeFind<CR>
 
 let g:NERDTreeDirArrowExpandable = '+'
