@@ -20,7 +20,6 @@ map <Leader>th <C-w>t<C-w>H
 map <Leader>tk <C-w>t<C-w>K
 
 nnoremap <silent> <C-f> :Files<CR>
-nnoremap <leader>ca :w <bar> %bd <bar> e# <bar> bd# <CR>
 
 function! ClearRegisters()
     let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="*+'
@@ -30,6 +29,6 @@ function! ClearRegisters()
         let i=i+1
     endwhile
 endfunction
- 
+
 command! ClearRegisters call ClearRegisters()
 
