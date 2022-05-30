@@ -25,10 +25,14 @@ source $HOME/.config/nvim/plugins.vim
 call plug#end()
 " Disables automatic commenting on new line:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-colorscheme nightfox
+" Themeing"
+let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
+colorscheme catppuccin
 let g:rainbow_active = 1
 let g:pymode_python = 'python'
 let g:lightline = {
+	  \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
       \ 'colorscheme': 'darcula',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
