@@ -1,4 +1,5 @@
 set number
+set termguicolors
 set splitbelow splitright
 set wildmode=longest,list,full
 set splitbelow
@@ -95,3 +96,4 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 "Snippets for languages"
 source $HOME/.config/nvim/snippets.vim
+
