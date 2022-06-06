@@ -97,3 +97,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 "Snippets for languages"
 source $HOME/.config/nvim/snippets.vim
 
+
+tnoremap <Esc> <C-\><C-n>
+
