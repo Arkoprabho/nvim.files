@@ -12,6 +12,7 @@ Plug 'frazrepo/vim-rainbow' " For rainbow brackets
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'puremourning/vimspector'
+Plug 'akinsho/toggleterm.nvim', {'tag' : 'v1.0.0'}
 Plug 'lewis6991/gitsigns.nvim' " Git gutter and blame data
 Plug 'tpope/vim-fugitive' " For git
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
