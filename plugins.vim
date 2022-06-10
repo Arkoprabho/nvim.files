@@ -1,3 +1,4 @@
+Plug 'hashivim/vim-terraform' " For terraform
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround' " Surrounding ysw)
 Plug 'ap/vim-css-color' " CSS Color Preview
