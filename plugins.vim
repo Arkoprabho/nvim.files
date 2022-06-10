@@ -21,4 +21,5 @@ Plug 'dkprice/vim-easygrep' " For better finding things.
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 " Plug 'projekt0n/github-nvim-theme'
 " Plug 'EdenEast/nightfox.nvim', { 'tag': 'v1.0.0' }
-
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter-context'
