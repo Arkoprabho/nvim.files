@@ -12,8 +12,8 @@ Plug 'frazrepo/vim-rainbow' " For rainbow brackets
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'puremourning/vimspector'
+Plug 'lewis6991/gitsigns.nvim' " Git gutter and blame data
 Plug 'tpope/vim-fugitive' " For git
-"Plug 'airblade/vim-gitgutter' " Git gutter
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'Asheq/close-buffers.vim' " For buffer management
 Plug 'dkprice/vim-easygrep' " For better finding things.
