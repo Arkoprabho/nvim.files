@@ -11,6 +11,7 @@ set signcolumn=auto:1
 set clipboard=unnamedplus
 set noshowmode
 set relativenumber
+set hidden
 set autoindent
 set tabstop=4
 set shiftwidth=4
