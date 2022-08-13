@@ -46,7 +46,6 @@ let g:lightline = {
 	  \	  'filename': 'LightlineFilename'
       \ },
       \ }
-let g:terraform_fmt_on_save = 1
 let g:vimspector_sign_priority = {
   \    'vimspectorBP':         999,
   \    'vimspectorBPCond':     2,
@@ -98,4 +97,13 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 "Snippets for languages"
 source $HOME/.config/nvim/snippets.vim
+
+" Terraform related configs
+let g:terraform_fmt_on_save = 1
+let g:hcl_align = 1
+let g:hcl_fold_sections = 1
+let g:terraform_fold_sections = 1
+" Run terragrunt hclfmt on save of terragrunt.hcl files
+autocmd BufWritePost terragrunt.hcl  !terragrunt hclfmt pwd
+autocmd FileType terraform,hcl nnoremap <buffer> <leader>c I#<esc>
 
