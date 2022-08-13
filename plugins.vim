@@ -1,4 +1,3 @@
-Plug 'hashivim/vim-terraform' " For terraform
 Plug 'udalov/kotlin-vim'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround' " Surrounding ysw)
