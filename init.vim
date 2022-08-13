@@ -107,3 +107,19 @@ let g:terraform_fold_sections = 1
 autocmd BufWritePost terragrunt.hcl  !terragrunt hclfmt pwd
 autocmd FileType terraform,hcl nnoremap <buffer> <leader>c I#<esc>
 
+" Neovide related settings
+if exists("g:neovide")
+	set guifont=JetBrains\ Mono:h15
+	"let g:neovide_refresh_rate=60
+	"let g:neovide_transparency=0.95
+	let g:neovide_remember_window_size = v:true
+	let g:neovide_cursor_animation_length=0.07
+	let g:neovide_cursor_trail_length=0.8
+	let g:neovide_profiler = v:false
+	let g:neovide_cursor_antialiasing=v:true
+	let g:neovide_input_macos_alt_is_meta=v:true
+	let g:neovide_input_use_logo=v:true
+	"let g:neovide_fullscreen=v:true
+	"let g:neovide_floating_blur_amount_x = 9.0
+	"let g:neovide_floating_blur_amount_y = 9.0
+endi
