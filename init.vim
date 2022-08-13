@@ -19,6 +19,7 @@ set smarttab
 set softtabstop=4
 set mouse=a
 set completeopt-=preview " For No Previews
+set foldmethod=syntax
 
 call plug#begin()
 
