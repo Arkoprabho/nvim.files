@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/Users/arko/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/gruvbox-community/gruvbox"
   },
+  nerdtree = {
+    loaded = true,
+    path = "/Users/arko/.local/share/nvim/site/pack/packer/start/nerdtree",
+    url = "https://github.com/preservim/nerdtree"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/arko/.local/share/nvim/site/pack/packer/start/packer.nvim",
