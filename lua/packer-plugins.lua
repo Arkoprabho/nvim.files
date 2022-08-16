@@ -5,4 +5,6 @@ return require('packer').startup(function()
 	-- colorscheme
     use { "catppuccin/nvim", as = "catppuccin" }
 
+    -- File Explorer
+    use 'kyazdani42/nvim-tree.lua'
 end)

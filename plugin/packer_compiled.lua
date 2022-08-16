@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/Users/arko/.local/share/nvim/site/pack/packer/start/catppuccin",
     url = "https://github.com/catppuccin/nvim"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/Users/arko/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/arko/.local/share/nvim/site/pack/packer/start/packer.nvim",
