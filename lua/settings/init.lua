@@ -1,6 +1,7 @@
 local set = vim.opt
-
 set.expandtab = true
+set.number = true
+set.mouse = 'a'
 set.smarttab = true
 set.shiftwidth = 4
 set.tabstop = 4
