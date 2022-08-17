@@ -75,3 +75,8 @@ map("i", "{", "{}<left>", opts)
 map("i", "{<CR>", "{<CR>}<ESC>O", opts)
 map("i", "{;<CR>", "{<CR>};<ESC>O", opts)
 
+
+-- Clipboard mappings
+-- Telescope
+map('n', '<A-P>', ':Telescope neoclip<CR>', opts)
+map('i', '<A-P>', '<ESC>:Telescope neoclip<CR>', opts)
