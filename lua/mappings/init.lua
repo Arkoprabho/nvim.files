@@ -62,8 +62,8 @@ map("n", "<leader>bl", "<Cmd>BufferOrderByLanguage<CR>", opts)
 map("n", "<leader>bw", "<Cmd>BufferOrderByWindowNumber<CR>", opts)
 
 -- Save sessions
-map("", "<F2>", ":mksession! .vim_session<CR>", opts)
-map("", "<F3>", ":source .vim_session<CR>", opts)
+map("", "<F2>", ":SaveSession<CR>", opts)
+map("", "<F3>", ":Telescope session-lens search_session<CR>", opts)
 
 -- Pair mappings (like bracket inverted comma etc)
 map("i", '"', '""<left>', opts)

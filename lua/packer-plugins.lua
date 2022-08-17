@@ -5,6 +5,13 @@ return require("packer").startup(function()
 	-- Colorscheme
 	use({ "catppuccin/nvim", as = "catppuccin" })
 
+	-- Projecet and session management
+	use("rmagatti/auto-session")
+	use({
+		"rmagatti/session-lens",
+		requires = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" },
+	})
+
 	-- File Explorer
 	use({
 		"kyazdani42/nvim-tree.lua",
