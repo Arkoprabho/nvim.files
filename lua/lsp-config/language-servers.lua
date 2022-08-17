@@ -48,8 +48,14 @@ for _, lsp in ipairs(servers) do
 end
 
 lspconfig["sumneko_lua"].setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
 	settings = {
 		Lua = {
+			format = {
+				enable = false,
+			},
 			runtime = {
 				-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
 				version = "LuaJIT",
