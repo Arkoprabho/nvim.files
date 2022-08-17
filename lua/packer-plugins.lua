@@ -22,6 +22,7 @@ return require('packer').startup(function()
     -- Bar
     use 'romgrk/barbar.nvim'
     -- Development plugins
+    use 'mg979/vim-visual-multi'
     use {
         'nvim-treesitter/nvim-treesitter',
         run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
