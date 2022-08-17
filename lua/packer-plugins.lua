@@ -44,4 +44,5 @@ return require('packer').startup(function()
             {'kkharji/sqlite.lua', module = 'sqlite'}
         },
     }
+    use 'jose-elias-alvarez/null-ls.nvim'
 end)
