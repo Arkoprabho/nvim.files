@@ -9,7 +9,10 @@ capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
+	if client.name == "sumneko_lua" then
+		client.resolved_capabilities.document_formatting = false -- 0.7 and earlier
+	end
 	-- Enable completion triggered by <c-x><c-o>
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
