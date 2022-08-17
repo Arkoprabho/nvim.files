@@ -82,3 +82,11 @@ map("i", "<A-P>", "<ESC>:Telescope neoclip<CR>", opts)
 -- Git
 map("n", "<leader>gpp", ":G push<CR>", opts)
 map("n", "<leader>gll", ":G pull<CR>", opts)
+
+-- Comments
+map("n", "<leader>|", "<CMD>lua require('Comment.api').toggle.blockwise.current()<CR>", opts)
+map("n", "<leader>\\", "<CMD>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
+
+-- # VISUAL mode
+map("x", "<leader>\\", "<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
+map("x", "<leader>|", '<ESC><CMD>lua require("Comment.api").toggle.blockwise(vim.fn.visualmode())<CR>', opts)

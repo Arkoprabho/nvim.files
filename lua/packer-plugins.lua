@@ -31,6 +31,7 @@ return require("packer").startup(function()
 	use("romgrk/barbar.nvim")
 	-- Development plugins
 	use("mg979/vim-visual-multi")
+	use("numToStr/Comment.nvim")
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = function()
