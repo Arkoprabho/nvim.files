@@ -51,4 +51,7 @@ return require("packer").startup(function()
 
 	-- Terminal
 	use("akinsho/toggleterm.nvim")
+
+	-- Git
+	use("lewis6991/gitsigns.nvim")
 end)
