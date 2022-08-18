@@ -181,6 +181,11 @@ _G.packer_plugins = {
     path = "/Users/arko/.local/share/nvim/site/pack/packer/opt/sqlite.lua",
     url = "https://github.com/kkharji/sqlite.lua"
   },
+  ["telescope-bookmarks.nvim"] = {
+    loaded = true,
+    path = "/Users/arko/.local/share/nvim/site/pack/packer/start/telescope-bookmarks.nvim",
+    url = "https://github.com/dhruvmanila/telescope-bookmarks.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/arko/.local/share/nvim/site/pack/packer/start/telescope.nvim",

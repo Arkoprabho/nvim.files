@@ -1,2 +1,6 @@
-require("telescope").load_extension("neoclip")
-require("telescope").load_extension("session-lens")
+local telescope = require("telescope")
+
+telescope.load_extension("neoclip")
+telescope.load_extension("session-lens")
+
+telescope.load_extension("bookmarks")

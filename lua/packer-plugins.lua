@@ -11,6 +11,8 @@ return require("packer").startup(function()
 		"rmagatti/session-lens",
 		requires = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" },
 	})
+	-- Bookmarks
+	use("dhruvmanila/telescope-bookmarks.nvim")
 
 	-- Notification
 	use("rcarriga/nvim-notify")

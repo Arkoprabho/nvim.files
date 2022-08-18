@@ -91,3 +91,6 @@ map("n", "<leader>\\", "<CMD>lua require('Comment.api').toggle.linewise.current(
 -- # VISUAL mode
 map("x", "<leader>\\", "<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
 map("x", "<leader>|", '<ESC><CMD>lua require("Comment.api").toggle.blockwise(vim.fn.visualmode())<CR>', opts)
+
+-- Bookmars
+map("n", "<leader>b", "<CMD>Telescope bookmarks<CR>", opts)
