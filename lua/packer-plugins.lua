@@ -35,6 +35,15 @@ return require("packer").startup(function()
 	-- Bar
 	use("romgrk/barbar.nvim")
 	-- Development plugins
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		setup = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	})
+
 	use("mg979/vim-visual-multi")
 	use("numToStr/Comment.nvim")
 	use({
