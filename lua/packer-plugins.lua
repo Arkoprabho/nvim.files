@@ -12,6 +12,9 @@ return require("packer").startup(function()
 		requires = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" },
 	})
 
+	-- Notification
+	use("rcarriga/nvim-notify")
+
 	-- File Explorer
 	use({
 		"kyazdani42/nvim-tree.lua",

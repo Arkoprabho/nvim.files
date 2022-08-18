@@ -24,3 +24,5 @@ set.cursorline = true
 
 set.hidden = true
 set.clipboard = "unnamedplus"
+
+vim.notify = require("notify")
