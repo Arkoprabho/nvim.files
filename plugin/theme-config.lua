@@ -18,3 +18,7 @@ require("catppuccin").setup({
 })
 
 vim.cmd([[colorscheme catppuccin ]])
+
+-- local everblush = require("everblush")
+--
+-- everblush.setup({ nvim_tree = { contrast = true } })

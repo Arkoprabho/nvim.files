@@ -4,6 +4,7 @@ return require("packer").startup(function()
 
 	-- Colorscheme
 	use({ "catppuccin/nvim", as = "catppuccin" })
+	-- use({ "Everblush/everblush.nvim", as = "everblush" })
 
 	-- Projecet and session management
 	use("rmagatti/auto-session")
