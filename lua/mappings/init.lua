@@ -83,6 +83,8 @@ map("i", "<A-P>", "<ESC>:Telescope neoclip<CR>", opts)
 -- Git
 map("n", "<leader>gpp", ":G push<CR>", opts)
 map("n", "<leader>gll", ":G pull<CR>", opts)
+map("n", "<leader>gst", "<CMD>Telescope git_status<CR>", opts)
+map("n", "<leader>gsta", "<CMD>Telescope git_stash<CR>", opts)
 
 -- Comments
 map("n", "<leader>|", "<CMD>lua require('Comment.api').toggle.blockwise.current()<CR>", opts)
