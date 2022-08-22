@@ -62,6 +62,7 @@ return require("packer").startup(function()
 	use("tpope/vim-surround")
 
 	--- LSP Config
+	use("folke/trouble.nvim")
 	use("neovim/nvim-lspconfig")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/nvim-cmp") -- Autocompletion plugin
