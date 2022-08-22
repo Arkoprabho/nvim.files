@@ -15,6 +15,10 @@ return require("packer").startup(function()
 	-- Bookmarks
 	use("dhruvmanila/telescope-bookmarks.nvim")
 
+	use({
+		"folke/which-key.nvim",
+	})
+
 	-- Notification
 	use("rcarriga/nvim-notify")
 
