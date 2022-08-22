@@ -98,3 +98,6 @@ map("x", "<leader>|", '<ESC><CMD>lua require("Comment.api").toggle.blockwise(vim
 
 -- Bookmars
 map("n", "<leader>b", "<CMD>Telescope bookmarks<CR>", opts)
+
+-- Misc
+map("n", "<leader>T", "<CMD>Telescope<CR>", opts)
