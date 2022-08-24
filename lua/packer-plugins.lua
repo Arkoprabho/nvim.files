@@ -58,7 +58,7 @@ return require("packer").startup(function()
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
 	})
-	use("tpope/vim-fugitive")
+	use("tpope/vim-fugitive") -- Deprecated
 	use("tpope/vim-surround")
 
 	--- LSP Config
