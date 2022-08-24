@@ -1,5 +1,6 @@
 local set = vim.opt
 set.foldmethod = "expr"
+set.ignorecase = true
 set.foldexpr = "nvim_treesitter#foldexpr()"
 set.expandtab = true
 set.number = true
