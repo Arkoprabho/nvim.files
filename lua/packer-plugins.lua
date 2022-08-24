@@ -83,6 +83,7 @@ return require("packer").startup(function()
 	use("akinsho/toggleterm.nvim")
 
 	-- Git
+	use("kdheepak/lazygit.nvim")
 	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 	use("lewis6991/gitsigns.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
