@@ -8,7 +8,6 @@ return require("packer").startup(function()
 
 	-- Projecet and session management
 	use("rmagatti/auto-session")
-	use("ahmedkhalf/project.nvim")
 	use({
 		"rmagatti/session-lens",
 		requires = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" },

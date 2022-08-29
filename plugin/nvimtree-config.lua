@@ -1,4 +1,4 @@
-local tree_cb = require("nvim-tree.config").nvim_tree_callback
+local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 require("nvim-tree").setup({
 	sync_root_with_cwd = true,
 	respect_buf_cwd = true,
