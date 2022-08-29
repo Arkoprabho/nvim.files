@@ -100,4 +100,5 @@ return require("packer").startup(function()
 		end,
 	})
 	use("nvim-treesitter/nvim-treesitter-context")
+	use("justinmk/vim-sneak")
 end)
