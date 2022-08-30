@@ -1,4 +1,5 @@
 local set = vim.opt
+set.guifont = "JetBrains Mono:h15"
 set.foldmethod = "expr"
 set.ignorecase = true
 set.foldexpr = "nvim_treesitter#foldexpr()"
