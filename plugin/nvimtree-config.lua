@@ -8,6 +8,7 @@ require("nvim-tree").setup({
 	},
 	sort_by = "case_sensitive",
 	view = {
+		side = "right",
 		adaptive_size = true,
 		mappings = {
 			list = {
@@ -19,6 +20,7 @@ require("nvim-tree").setup({
 		},
 	},
 	renderer = {
+		highlight_git = true,
 		group_empty = true,
 		indent_markers = {
 			enable = true,
