@@ -6,13 +6,6 @@ return require("packer").startup(function()
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	-- use({ "Everblush/everblush.nvim", as = "everblush" })
 
-	-- Projecet and session management
-	use("rmagatti/auto-session")
-	use("ahmedkhalf/project.nvim")
-	use({
-		"rmagatti/session-lens",
-		requires = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" },
-	})
 	-- Bookmarks
 	use("dhruvmanila/telescope-bookmarks.nvim")
 
