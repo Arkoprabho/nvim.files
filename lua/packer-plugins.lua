@@ -47,6 +47,7 @@ return require("packer").startup(function()
 	use("numToStr/Comment.nvim")
 	use({
 		"nvim-treesitter/nvim-treesitter",
+		commit = "3e09c81b4c33bf14907b8a59025904d14c234b1e",
 		run = function()
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
