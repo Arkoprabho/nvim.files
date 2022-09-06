@@ -79,7 +79,11 @@ return require("packer").startup(function()
 	-- Git
 	use("f-person/git-blame.nvim")
 	use("kdheepak/lazygit.nvim")
-	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
+	use({
+		"sindrets/diffview.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		commit = "7e631e5da655dab31d1be10ba01a288f515ce6cc",
+	})
 	use("lewis6991/gitsigns.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 
