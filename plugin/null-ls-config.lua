@@ -24,9 +24,10 @@ null_ls.setup({
 	end,
 	sources = {
 		formatting.stylua,
+		formatting.gofmt,
 		formatting.trim_whitespace,
 		formatting.terraform_fmt,
-		diagnostics.eslint,
+		diagnostics.golangci_lint,
 		completion.spell,
 	},
 })
