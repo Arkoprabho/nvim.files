@@ -1,4 +1,5 @@
 local tree_cb = require("nvim-tree.config").nvim_tree_callback
+local icons = require("settings.icons")
 require("nvim-tree").setup({
 	sync_root_with_cwd = true,
 	respect_buf_cwd = true,
@@ -28,6 +29,20 @@ require("nvim-tree").setup({
 				corner = "└ ",
 				edge = "│ ",
 				none = "  ",
+			},
+		},
+		icons = {
+			glyphs = {
+				folder = {
+					arrow_closed = "",
+					arrow_open = "",
+					default = "",
+					open = "",
+					empty = "",
+					empty_open = "",
+					symlink = "",
+					symlink_open = "",
+				},
 			},
 		},
 	},
