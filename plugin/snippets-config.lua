@@ -8,6 +8,7 @@ end
 if not lua_snip_status_ok then
 	return
 end
+require("luasnip.loaders.from_vscode").load()
 
 local snippet = lua_snip.s
 local text_node = lua_snip.text_node
@@ -40,12 +41,13 @@ local function copy(args)
 	return args[1]
 end
 
-lua_snip.add_snippets("all", {
-	snippet("example_snippet", { text_node("Something") }),
-})
+lua_snip.filetype_extend("go", {})
+lua_snip.filetype_extend("lua", {})
+lua_snip.filetype_extend("shell", {})
+lua_snip.filetype_extend("kubernetes", {})
 
 -- Terraform Snippets
-lua_snip.add_snippets("all", {
+lua_snip.add_snippets("terraform", {
 	snippet("allow_iam_statement", {
 		text_node({ "statement {", "\tactions = [" }),
 		insert_node(1, ""),

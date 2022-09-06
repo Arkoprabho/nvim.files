@@ -105,5 +105,6 @@ return require("packer").startup(function()
 	use({ "echasnovski/mini.nvim", branch = "stable" })
 
 	-- Golang related plugins
+	use("rafamadriz/friendly-snippets")
 	use("leoluz/nvim-dap-go")
 end)
