@@ -166,6 +166,16 @@ _G.packer_plugins = {
     path = "/Users/arko/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/Users/arko/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-go"] = {
+    loaded = true,
+    path = "/Users/arko/.local/share/nvim/site/pack/packer/start/nvim-dap-go",
+    url = "https://github.com/leoluz/nvim-dap-go"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/arko/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -222,6 +232,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/arko/.local/share/nvim/site/pack/packer/start/telescope-bookmarks.nvim",
     url = "https://github.com/dhruvmanila/telescope-bookmarks.nvim"
+  },
+  ["telescope-dap.nvim"] = {
+    loaded = true,
+    path = "/Users/arko/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim",
+    url = "https://github.com/nvim-telescope/telescope-dap.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,

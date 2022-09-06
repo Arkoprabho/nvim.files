@@ -101,5 +101,13 @@ map("x", "<leader>|", '<ESC><CMD>lua require("Comment.api").toggle.blockwise(vim
 -- Bookmars
 map("n", "<leader>b", "<CMD>Telescope bookmarks<CR>", opts)
 
+-- DAP
+map("n", "<leader>repl", "<Cmd>lua require'dap'.repl.open()<CR>", opts)
+map("n", "<F12>", "<Cmd>lua require'dap'.step_into()<CR>", opts)
+map("n", "<F11>", "<Cmd>lua require'dap'.step_into()<CR>", opts)
+map("n", "<F10>", "<Cmd>lua require'dap'.step_over()<CR>", opts)
+map("n", "<F5>", "<Cmd>lua require'dap'.continue()<CR>", opts)
+map("n", "<leader>bp", "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
+
 -- Misc
 map("n", "<leader>T", "<CMD>Telescope<CR>", opts)

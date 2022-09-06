@@ -34,6 +34,8 @@ return require("packer").startup(function()
 	-- Bar
 	use("romgrk/barbar.nvim")
 	-- Development plugins
+	use("mfussenegger/nvim-dap")
+	use("nvim-telescope/telescope-dap.nvim")
 	use({
 		"iamcco/markdown-preview.nvim",
 		run = "cd app && npm install",
@@ -101,4 +103,7 @@ return require("packer").startup(function()
 	use("nvim-treesitter/nvim-treesitter-context")
 	use("justinmk/vim-sneak")
 	use({ "echasnovski/mini.nvim", branch = "stable" })
+
+	-- Golang related plugins
+	use("leoluz/nvim-dap-go")
 end)
