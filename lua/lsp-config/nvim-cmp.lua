@@ -23,7 +23,7 @@ cmp.setup({
 		["<C-d>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
 		["<C-Space>"] = cmp.mapping.complete(),
-		["<CR>"] = cmp.mapping.confirm({
+		["<A-CR>"] = cmp.mapping.confirm({
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true,
 		}),
@@ -47,10 +47,10 @@ cmp.setup({
 		end, { "i", "s" }),
 	}),
 	sources = {
-		{ name = "nvim_lsp", priority = 3 },
+		{ name = "nvim_lsp", priority = 30 },
 		{ name = "path", priority = 1 },
-		{ name = "luasnip", priority = 2 },
-		{ name = "nvim_lua" },
+		{ name = "luasnip", priority = 20 },
+		-- { name = "nvim_lua" },
 	},
 	formatting = {
 		format = lspkind.cmp_format({
