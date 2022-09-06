@@ -151,6 +151,11 @@ _G.packer_plugins = {
     path = "/Users/arko/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
   },
+  ["mini.nvim"] = {
+    loaded = true,
+    path = "/Users/arko/.local/share/nvim/site/pack/packer/start/mini.nvim",
+    url = "https://github.com/echasnovski/mini.nvim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/arko/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
