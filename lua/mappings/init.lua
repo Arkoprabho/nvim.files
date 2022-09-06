@@ -14,7 +14,7 @@ map("n", "@t", ":split<CR> 15<C-w>_ :terminal<CR>", opts)
 
 -- Files
 map("n", "<A-F>", ":Telescope live_grep<CR>", opts)
-map("n", "<C-f>", ":Telescope git_files<CR>", opts)
+map("n", "<C-f>", ":Telescope find_files<CR>", opts)
 
 -- Navigation
 -- Splits
