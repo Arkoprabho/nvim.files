@@ -76,6 +76,7 @@ return require("packer").startup(function()
 	use("akinsho/toggleterm.nvim")
 
 	-- Git
+	use("f-person/git-blame.nvim")
 	use("kdheepak/lazygit.nvim")
 	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 	use("lewis6991/gitsigns.nvim")
