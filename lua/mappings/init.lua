@@ -111,3 +111,10 @@ map("n", "<leader>bp", "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
 
 -- Misc
 map("n", "<leader>T", "<CMD>Telescope<CR>", opts)
+map("n", "<leader>%", "<CMD>luafile %<CR>", opts)
+
+-- Packer
+map("n", "<leader>ps", "<CMD>PackerSync<CR>", opts)
+map("n", "<leader>pt", "<CMD>PackerStatus<CR>", opts)
+map("n", "<leader>pp", "<CMD>PackerProfile<CR>", opts)
+map("n", "<leader>pc", "<CMD>PackerCompile profile=true<CR>", opts)
