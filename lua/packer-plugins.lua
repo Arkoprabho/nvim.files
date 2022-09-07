@@ -28,7 +28,13 @@ return packer.startup(function()
 	use("wbthomason/packer.nvim")
 
 	-- Colorscheme
-	use({ "catppuccin/nvim", as = "catppuccin" })
+	use({
+		"catppuccin/nvim",
+		as = "catppuccin",
+		config = function()
+			require("plugin-config.theme-config")
+		end,
+	})
 	-- use({ "Everblush/everblush.nvim", as = "everblush" })
 
 	-- Bookmarks
@@ -36,10 +42,18 @@ return packer.startup(function()
 
 	use({
 		"folke/which-key.nvim",
+		config = function()
+			require("plugin-config.which-key-config")
+		end,
 	})
 
 	-- Notification
-	use("rcarriga/nvim-notify")
+	use({
+		"rcarriga/nvim-notify",
+		config = function()
+			require("plugin-config.neoclip-config")
+		end,
+	})
 
 	-- File Explorer
 	use({
@@ -47,19 +61,40 @@ return packer.startup(function()
 		requires = {
 			"kyazdani42/nvim-web-devicons", -- optional, for file icons
 		},
+		config = function()
+			require("plugin-config.nvimtree-config")
+		end,
 	})
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.0",
 		requires = { { "nvim-lua/plenary.nvim" } },
+		config = function()
+			require("plugin-config.telescope-config")
+		end,
 	})
 	-- Status
-	use("nvim-lualine/lualine.nvim")
+	use({
+		"nvim-lualine/lualine.nvim",
+		config = function()
+			require("plugin-config.lualine-config")
+		end,
+	})
 
 	-- Bar
-	use("romgrk/barbar.nvim")
+	use({
+		"romgrk/barbar.nvim",
+		config = function()
+			require("plugin-config.bufferline-config")
+		end,
+	})
 	-- Development plugins
-	use("mfussenegger/nvim-dap")
+	use({
+		"mfussenegger/nvim-dap",
+		config = function()
+			require("plugin-config.dap-config")
+		end,
+	})
 	use("nvim-telescope/telescope-dap.nvim")
 	use({
 		"iamcco/markdown-preview.nvim",
@@ -83,6 +118,9 @@ return packer.startup(function()
 		run = function()
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
+		config = function()
+			require("plugin-config.treesitter-config")
+		end,
 	})
 	use({
 		"tpope/vim-fugitive",
@@ -91,13 +129,23 @@ return packer.startup(function()
 	use("tpope/vim-surround")
 
 	--- LSP Config
-	use("folke/trouble.nvim")
+	use({
+		"folke/trouble.nvim",
+		config = function()
+			require("plugin-config.trouble-config")
+		end,
+	})
 	use("neovim/nvim-lspconfig")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/nvim-cmp") -- Autocompletion plugin
 	use("hrsh7th/cmp-nvim-lsp") -- LSP source for nvim-cmp
 	use("saadparwaiz1/cmp_luasnip") -- Snippets source for nvim-cmp
-	use("L3MON4D3/LuaSnip") -- Snippets plugin
+	use({
+		"L3MON4D3/LuaSnip",
+		config = function()
+			require("plugin-config.snippets-config")
+		end,
+	}) -- Snippets plugin
 	use("onsails/lspkind.nvim")
 	use({
 		"AckslD/nvim-neoclip.lua",
@@ -105,8 +153,16 @@ return packer.startup(function()
 			{ "nvim-telescope/telescope.nvim" },
 			{ "kkharji/sqlite.lua", module = "sqlite" },
 		},
+		config = function()
+			require("plugin-config.neoclip-config")
+		end,
 	})
-	use("jose-elias-alvarez/null-ls.nvim")
+	use({
+		"jose-elias-alvarez/null-ls.nvim",
+		config = function()
+			require("plugin-config.null-ls-config")
+		end,
+	})
 
 	-- Terminal
 	use("akinsho/toggleterm.nvim")
@@ -114,6 +170,9 @@ return packer.startup(function()
 	-- Git
 	use({
 		"f-person/git-blame.nvim",
+		config = function()
+			require("plugin-config.gitblame-config")
+		end,
 		cond = git_exists(),
 	})
 	use({
@@ -131,9 +190,17 @@ return packer.startup(function()
 	})
 	use({
 		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("plugin-config.gitsigns-config")
+		end,
 		cond = git_exists(),
 	})
-	use("lukas-reineke/indent-blankline.nvim")
+	use({
+		"lukas-reineke/indent-blankline.nvim",
+		config = function()
+			require("plugin-config.indent-blankline-config")
+		end,
+	})
 
 	-- Misc
 	use({
@@ -148,7 +215,13 @@ return packer.startup(function()
 	})
 	use("nvim-treesitter/nvim-treesitter-context")
 	use("justinmk/vim-sneak")
-	use({ "echasnovski/mini.nvim", branch = "stable" })
+	use({
+		"echasnovski/mini.nvim",
+		branch = "stable",
+		config = function()
+			require("plugin-config.mini-config")
+		end,
+	})
 
 	-- Golang related plugins
 	use("rafamadriz/friendly-snippets")
