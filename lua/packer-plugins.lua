@@ -1,4 +1,12 @@
-return require("packer").startup(function()
+local packer = require("packer")
+packer.init({
+	display = {
+		open_fn = function()
+			return require("packer.util").float({ border = "rounded" })
+		end,
+	},
+})
+return packer.startup(function()
 	-- Packer can manager itself
 	use("wbthomason/packer.nvim")
 
