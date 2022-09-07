@@ -13,7 +13,7 @@ end
 
 local function git_exists()
 	print("Checking if .git exists")
-	return exists(".git/")
+	return exists(".git/") ~= nil
 end
 
 packer.init({
@@ -112,17 +112,27 @@ return packer.startup(function()
 	use("akinsho/toggleterm.nvim")
 
 	-- Git
-	use("f-person/git-blame.nvim")
-	use("kdheepak/lazygit.nvim")
+	use({
+		"f-person/git-blame.nvim",
+		cond = git_exists(),
+	})
+	use({
+		"kdheepak/lazygit.nvim",
+		cond = git_exists(),
+	})
 	use({
 		"sindrets/diffview.nvim",
 		requires = "nvim-lua/plenary.nvim",
 		commit = "7e631e5da655dab31d1be10ba01a288f515ce6cc",
+		cond = git_exists(),
 		config = function()
 			require("plugin-config.diffview")
 		end,
 	})
-	use("lewis6991/gitsigns.nvim")
+	use({
+		"lewis6991/gitsigns.nvim",
+		cond = git_exists(),
+	})
 	use("lukas-reineke/indent-blankline.nvim")
 
 	-- Misc
