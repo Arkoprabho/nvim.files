@@ -71,7 +71,12 @@ return packer.startup(function()
 	})
 
 	use("mg979/vim-visual-multi")
-	use("numToStr/Comment.nvim")
+	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("plugin-config.comment")
+		end,
+	})
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		commit = "3e09c81b4c33bf14907b8a59025904d14c234b1e",
