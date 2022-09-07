@@ -1,4 +1,20 @@
 local packer = require("packer")
+local function exists(file)
+	print("Checking if .git exists")
+	local ok, err, code = os.rename(file, file)
+	if not ok then
+		if code == 13 then
+			-- Permission denied, File exists
+			return true
+		end
+	end
+	return ok, err
+end
+
+local function git_exists()
+	return exists(".git/")
+end
+
 packer.init({
 	display = {
 		open_fn = function()
@@ -62,7 +78,10 @@ return packer.startup(function()
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
 	})
-	use("tpope/vim-fugitive") -- Deprecated
+	use({
+		"tpope/vim-fugitive",
+		cond = git_exists(),
+	}) -- Deprecated
 	use("tpope/vim-surround")
 
 	--- LSP Config
