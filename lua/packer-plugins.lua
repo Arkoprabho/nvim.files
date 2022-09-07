@@ -1,21 +1,5 @@
 local packer = require("packer")
 
-local function exists(file)
-	local ok, err, code = os.rename(file, file)
-	if not ok then
-		if code == 13 then
-			-- Permission denied, File exists
-			return true
-		end
-	end
-	return ok, err
-end
-
-local function git_exists()
-	print("Checking if .git exists")
-	return exists(".git/") ~= nil
-end
-
 packer.init({
 	display = {
 		open_fn = function()
@@ -26,6 +10,9 @@ packer.init({
 return packer.startup(function()
 	-- Packer can manager itself
 	use("wbthomason/packer.nvim")
+
+	-- Performance
+	use("lewis6991/impatient.nvim")
 
 	-- Colorscheme
 	use({
@@ -124,7 +111,6 @@ return packer.startup(function()
 	})
 	use({
 		"tpope/vim-fugitive",
-		cond = git_exists(),
 	}) -- Deprecated
 	use("tpope/vim-surround")
 
@@ -165,7 +151,12 @@ return packer.startup(function()
 	})
 
 	-- Terminal
-	use("akinsho/toggleterm.nvim")
+	use({
+		"akinsho/toggleterm.nvim",
+		config = function()
+			require("plugin-config.toggleterm-config")
+		end,
+	})
 
 	-- Git
 	use({
@@ -173,17 +164,14 @@ return packer.startup(function()
 		config = function()
 			require("plugin-config.gitblame-config")
 		end,
-		cond = git_exists(),
 	})
 	use({
 		"kdheepak/lazygit.nvim",
-		cond = git_exists(),
 	})
 	use({
 		"sindrets/diffview.nvim",
 		requires = "nvim-lua/plenary.nvim",
 		commit = "7e631e5da655dab31d1be10ba01a288f515ce6cc",
-		cond = git_exists(),
 		config = function()
 			require("plugin-config.diffview-config")
 		end,
@@ -193,7 +181,6 @@ return packer.startup(function()
 		config = function()
 			require("plugin-config.gitsigns-config")
 		end,
-		cond = git_exists(),
 	})
 	use({
 		"lukas-reineke/indent-blankline.nvim",

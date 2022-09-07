@@ -1,5 +1,6 @@
 vim.o.relativenumber = true
 
+require("impatient")
 require("packer-plugins")
 require("settings")
 require("autocommands")
