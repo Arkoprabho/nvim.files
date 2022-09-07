@@ -177,8 +177,11 @@ _G.packer_plugins = {
     url = "https://github.com/mfussenegger/nvim-dap"
   },
   ["nvim-dap-go"] = {
-    loaded = true,
-    path = "/Users/arko/.local/share/nvim/site/pack/packer/start/nvim-dap-go",
+    config = { "\27LJ\2\n4\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\vdap-go\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/arko/.local/share/nvim/site/pack/packer/opt/nvim-dap-go",
     url = "https://github.com/leoluz/nvim-dap-go"
   },
   ["nvim-lspconfig"] = {
@@ -259,8 +262,11 @@ _G.packer_plugins = {
     url = "https://github.com/folke/trouble.nvim"
   },
   ["vim-fugitive"] = {
-    loaded = true,
-    path = "/Users/arko/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    cond = { "\27LJ\2\n\27\0\0\3\1\1\0\3-\0\0\0'\2\0\0D\0\2\0\0\0\n.git/\0" },
+    loaded = false,
+    needs_bufread = true,
+    only_cond = true,
+    path = "/Users/arko/.local/share/nvim/site/pack/packer/opt/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-sneak"] = {
@@ -328,10 +334,15 @@ time([[Setup for markdown-preview.nvim]], false)
 time([[Config for zen-mode.nvim]], true)
 try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rzen-mode\frequire\0", "config", "zen-mode.nvim")
 time([[Config for zen-mode.nvim]], false)
+-- Conditional loads
+time([[Conditional loading of vim-fugitive]], true)
+  require("packer.load")({"vim-fugitive"}, {}, _G.packer_plugins)
+time([[Conditional loading of vim-fugitive]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType go ++once lua require("packer.load")({'nvim-dap-go'}, { ft = "go" }, _G.packer_plugins)]]
 vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")

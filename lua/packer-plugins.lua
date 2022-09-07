@@ -1,4 +1,5 @@
 local packer = require("packer")
+
 local function exists(file)
 	print("Checking if .git exists")
 	local ok, err, code = os.rename(file, file)
@@ -133,5 +134,11 @@ return packer.startup(function()
 
 	-- Golang related plugins
 	use("rafamadriz/friendly-snippets")
-	use("leoluz/nvim-dap-go")
+	use({
+		"leoluz/nvim-dap-go",
+		config = function()
+			require("dap-go").setup()
+		end,
+		ft = { "go" },
+	})
 end)
