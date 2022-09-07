@@ -1,4 +1,7 @@
 local set = vim.opt
+
+set.autowrite = true
+set.autowriteall = true
 set.guifont = "JetBrains Mono:h15"
 set.foldmethod = "expr"
 set.ignorecase = true
