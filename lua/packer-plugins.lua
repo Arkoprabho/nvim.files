@@ -74,7 +74,7 @@ return packer.startup(function()
 	use({
 		"numToStr/Comment.nvim",
 		config = function()
-			require("plugin-config.comment")
+			require("plugin-config.comment-config")
 		end,
 	})
 	use({
@@ -126,7 +126,7 @@ return packer.startup(function()
 		commit = "7e631e5da655dab31d1be10ba01a288f515ce6cc",
 		cond = git_exists(),
 		config = function()
-			require("plugin-config.diffview")
+			require("plugin-config.diffview-config")
 		end,
 	})
 	use({
@@ -155,7 +155,7 @@ return packer.startup(function()
 	use({
 		"leoluz/nvim-dap-go",
 		config = function()
-			require("plugin-config.go-dap")
+			require("plugin-config.go-dap-config")
 		end,
 		ft = { "go" },
 	})
