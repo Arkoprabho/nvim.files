@@ -1,7 +1,6 @@
 local packer = require("packer")
 
 local function exists(file)
-	print("Checking if .git exists")
 	local ok, err, code = os.rename(file, file)
 	if not ok then
 		if code == 13 then
@@ -13,6 +12,7 @@ local function exists(file)
 end
 
 local function git_exists()
+	print("Checking if .git exists")
 	return exists(".git/")
 end
 
