@@ -113,6 +113,9 @@ return packer.startup(function()
 		"sindrets/diffview.nvim",
 		requires = "nvim-lua/plenary.nvim",
 		commit = "7e631e5da655dab31d1be10ba01a288f515ce6cc",
+		config = function()
+			require("plugin-config.diffview")
+		end,
 	})
 	use("lewis6991/gitsigns.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
