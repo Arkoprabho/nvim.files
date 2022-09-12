@@ -6,6 +6,13 @@
 if vim.fn.has("mac") == 1 or vim.g.use_nerd_icons then
 	-- elseif vim.fn.has "mac" == 1 then
 	return {
+		separator = {
+			filled_left = "",
+			filled_right = "",
+			hollow_right = "",
+			hollow_left = "",
+			fill_pipe = "▎",
+		},
 		kind = {
 			Text = "",
 			-- Method = "m",
@@ -99,6 +106,7 @@ if vim.fn.has("mac") == 1 or vim.g.use_nerd_icons then
 			Table = "",
 			Calendar = "",
 			CloudDownload = "",
+			Pin = "車",
 		},
 		diagnostics = {
 			Error = "",

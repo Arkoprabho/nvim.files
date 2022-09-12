@@ -72,7 +72,7 @@ return packer.startup(function()
 		end,
 	})
 
-	-- Bar
+	-- Tabline
 	use({
 		"romgrk/barbar.nvim",
 		config = function()
