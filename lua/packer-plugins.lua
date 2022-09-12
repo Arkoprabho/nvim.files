@@ -74,11 +74,19 @@ return packer.startup(function()
 
 	-- Tabline
 	use({
-		"romgrk/barbar.nvim",
+		"akinsho/bufferline.nvim",
+		tag = "v2.*",
+		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
-			require("plugin-config.bufferline-config")
+			require("plugin-config.tabline-config")
 		end,
 	})
+	-- use({
+	-- 	"romgrk/barbar.nvim",
+	-- 	config = function()
+	-- 		require("plugin-config.bufferline-config")
+	-- 	end,
+	-- })
 	-- Development plugins
 	use({
 		"mfussenegger/nvim-dap",

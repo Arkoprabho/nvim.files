@@ -8,7 +8,7 @@ require("catppuccin").setup({
 	},
 	integrations = {
 		treesitter = true,
-		barbar = true,
+		bufferline = true,
 		nvimtree = {
 			enabled = true,
 			show_root = true,
