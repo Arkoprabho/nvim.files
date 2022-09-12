@@ -27,12 +27,4 @@ if file_exists(file_name) then
 		desc = "Restores the session on starting vim if a .vim_session file exists in the current folder",
 		nested = true,
 	})
-
-	vim.api.nvim_create_autocmd("VimLeave", {
-		command = string.format("mksession! %s", file_name),
-		group = group,
-		once = true,
-		desc = "Creates the session when leaving vim in the current folder",
-		nested = true,
-	})
 end
