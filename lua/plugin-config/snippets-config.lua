@@ -8,7 +8,7 @@ end
 if not lua_snip_status_ok then
 	return
 end
-require("luasnip.loaders.from_vscode").load()
+-- require("luasnip.loaders.from_vscode").load()
 
 local snippet = lua_snip.s
 local text_node = lua_snip.text_node
