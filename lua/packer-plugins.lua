@@ -247,6 +247,12 @@ return packer.startup(function()
 			require("plugin-config.mini-config")
 		end,
 	})
+	use({
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("plugin-config.colorizer-config")
+		end,
+	})
 
 	-- Golang related plugins
 	use("rafamadriz/friendly-snippets")
