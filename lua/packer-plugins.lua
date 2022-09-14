@@ -101,6 +101,13 @@ return packer.startup(function()
 			require("plugin-config.dap-config")
 		end,
 	})
+	use({
+		"rcarriga/nvim-dap-ui",
+		config = function()
+			require("plugin-config.dap-ui-config")
+		end,
+		requires = { "mfussenegger/nvim-dap" },
+	})
 	use("nvim-telescope/telescope-dap.nvim")
 	use({
 		"iamcco/markdown-preview.nvim",
