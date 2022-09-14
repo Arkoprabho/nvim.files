@@ -146,6 +146,7 @@ return packer.startup(function()
 	use({ "tpope/vim-surround", opt = true }) -- Deprecated
 
 	--- LSP Config
+	use({ "WhoIsSethDaniel/lualine-lsp-progress.nvim" })
 	use({
 		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
 		config = function()
