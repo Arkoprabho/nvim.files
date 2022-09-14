@@ -19,9 +19,16 @@ return packer.startup(function()
 	use("lewis6991/impatient.nvim")
 
 	-- Colorscheme
+	-- use({
+	-- 	"catppuccin/nvim",
+	-- 	as = "catppuccin",
+	-- 	config = function()
+	-- 		require("plugin-config.theme-config")
+	-- 	end,
+	-- })
 	use({
-		"catppuccin/nvim",
-		as = "catppuccin",
+		"folke/tokyonight.nvim",
+		commit = "3e79e043dfdc31b320d61432eae2eefc26478965",
 		config = function()
 			require("plugin-config.theme-config")
 		end,

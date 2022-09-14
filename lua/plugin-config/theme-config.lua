@@ -1,23 +1,13 @@
-vim.g.catpuccin_flavour = "mocha"
+-- vim.g.catpuccin_flavour = "mocha"
 
-require("catppuccin").setup({
-	dim_inactive = {
-		enabled = true,
-		shade = "dark",
-		percentage = 0.5,
-	},
-	integrations = {
-		treesitter = true,
-		bufferline = true,
-		nvimtree = {
-			enabled = true,
-			show_root = true,
-			transparent_panel = false,
-		},
-	},
+require("tokyonight").setup({
+	style = "night",
+	terminal_colors = true,
+	dim_inactive = true,
+	lualine_bold = true,
 })
 
-vim.cmd([[colorscheme catppuccin ]])
+vim.cmd([[colorscheme tokyonight ]])
 
 -- local everblush = require("everblush")
 --
