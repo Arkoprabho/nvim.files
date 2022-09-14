@@ -130,8 +130,20 @@ return packer.startup(function()
 	})
 	use({
 		"tpope/vim-fugitive",
+		opt = true,
 	}) -- Deprecated
-	use("tpope/vim-surround")
+	use({
+		"kylechui/nvim-surround",
+		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+		config = function()
+			require("plugin-config.surround-config")
+		end,
+		requires = {
+			{ "nvim-treesitter/nvim-treesitter" },
+			{ "nvim-treesitter/nvim-treesitter-textobjects" },
+		},
+	})
+	use({ "tpope/vim-surround", opt = true }) -- Deprecated
 
 	--- LSP Config
 	use({
