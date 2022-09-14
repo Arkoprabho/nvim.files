@@ -42,6 +42,7 @@ map("n", "<leader>8", "<Cmd>BufferLineGoToBuffer 8<CR>", opts)
 map("n", "<leader>9", "<Cmd>BufferLineGoToBuffer 9<CR>", opts)
 -- Close buffer
 map("n", "<A-c>", "<Cmd>tabclose<CR>", opts)
+map("n", "<A-p>", "<Cmd>BufferLineTogglePin<CR>", opts)
 -- Wipeout buffer
 --                 :BufferWipeout
 -- Close commands
@@ -51,7 +52,7 @@ map("n", "<A-c>", "<Cmd>tabclose<CR>", opts)
 --                 :BufferCloseBuffersLeft
 --                 :BufferCloseBuffersRight
 -- Magic buffer-picking mode
-map("n", "<C-p>", "<Cmd>BufferPick<CR>", opts)
+map("n", "<C-p>", "<Cmd>BufferLinePick<CR>", opts)
 -- Sort automatically by...
 map("n", "<leader>bb", "<Cmd>BufferOrderByBufferNumber<CR>", opts)
 map("n", "<leader>bd", "<Cmd>BufferOrderByDirectory<CR>", opts)
