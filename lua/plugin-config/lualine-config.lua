@@ -12,11 +12,11 @@ local colors = {
 local lsp_progress = {
 	"lsp_progress",
 	colors = {
-		percentage = colors.cyan,
-		title = colors.cyan,
-		message = colors.cyan,
-		spinner = colors.cyan,
-		lsp_client_name = colors.magenta,
+		percentage = colors.blue,
+		title = colors.blue,
+		message = colors.blue,
+		spinner = colors.blue,
+		lsp_client_name = colors.green,
 		use = true,
 	},
 	separators = {
