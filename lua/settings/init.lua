@@ -1,9 +1,10 @@
 local set = vim.opt
 
+set.colorcolumn = "120"
 set.autowrite = true
 set.autowriteall = true
 set.guifont = "JetBrains Mono:h15"
-set.foldmethod = "expr"
+set.foldmethod = "indent"
 set.ignorecase = true
 set.foldexpr = "nvim_treesitter#foldexpr()"
 set.expandtab = true
