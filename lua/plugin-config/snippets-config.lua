@@ -13,7 +13,7 @@ end
 local snippet = lua_snip.s
 local text_node = lua_snip.text_node
 local insert_node = lua_snip.insert_node
-local function_node = lua_snip.function_node
+-- local function_node = lua_snip.function_node
 
 -- Configuration
 lua_snip.config.set_config = {

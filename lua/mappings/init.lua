@@ -107,6 +107,7 @@ map("n", "<leader>bp", "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
 -- Misc
 map("n", "<leader>T", "<CMD>Telescope<CR>", opts)
 map("n", "<leader>%", "<CMD>luafile %<CR>", opts)
+map("n", "<leader>lsl", "<CMD>lua require('luasnip.loaders.from_vscode').load()<CR>", opts)
 
 -- Packer
 map("n", "<leader>ps", "<CMD>PackerSync<CR>", opts)
