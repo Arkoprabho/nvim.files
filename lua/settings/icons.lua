@@ -123,6 +123,7 @@ if vim.fn.has("mac") == 1 or vim.g.use_nerd_icons then
 			Smiley = "ﲃ",
 			Package = "",
 			CircuitBoard = "",
+			SelectionCaret = "",
 		},
 	}
 else
