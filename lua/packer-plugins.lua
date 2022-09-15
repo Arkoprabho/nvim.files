@@ -35,9 +35,6 @@ return packer.startup(function()
 	})
 	-- use({ "Everblush/everblush.nvim", as = "everblush" })
 
-	-- Bookmarks
-	use("dhruvmanila/telescope-bookmarks.nvim")
-
 	use({
 		"folke/which-key.nvim",
 		config = function()
