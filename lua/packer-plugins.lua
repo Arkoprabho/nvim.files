@@ -95,7 +95,7 @@ return packer.startup(function()
 	use({
 		"mfussenegger/nvim-dap",
 		config = function()
-			require("plugin-config.dap-config")
+			require("dap.dap-config")
 		end,
 	})
 	use({
@@ -150,6 +150,12 @@ return packer.startup(function()
 	use({ "tpope/vim-surround", opt = true }) -- Deprecated
 
 	--- LSP Config
+	use({
+		"williamboman/mason.nvim",
+		config = function()
+			require("plugin-config.mason-config")
+		end,
+	})
 	use({ "WhoIsSethDaniel/lualine-lsp-progress.nvim" })
 	use({
 		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
@@ -263,7 +269,7 @@ return packer.startup(function()
 	use({
 		"leoluz/nvim-dap-go",
 		config = function()
-			require("plugin-config.go-dap-config")
+			require("dap.go-dap-config")
 		end,
 		ft = { "go" },
 	})
