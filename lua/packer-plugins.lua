@@ -40,6 +40,7 @@ return packer.startup(function()
 		config = function()
 			require("plugin-config.which-key-config")
 		end,
+		opt = true,
 	})
 
 	-- Notification
