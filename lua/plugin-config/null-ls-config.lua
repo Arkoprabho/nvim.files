@@ -6,7 +6,7 @@ end
 
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
-local completion = null_ls.builtins.completion
+
 null_ls.setup({
 	-- you can reuse a shared lspconfig on_attach callback here
 	on_attach = function(client, bufnr)
@@ -28,6 +28,5 @@ null_ls.setup({
 		formatting.trim_whitespace,
 		formatting.terraform_fmt,
 		diagnostics.golangci_lint,
-		completion.spell,
 	},
 })
