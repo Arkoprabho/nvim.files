@@ -5,8 +5,8 @@ require("packer-plugins")
 require("settings")
 require("autocommands")
 require("mappings")
-require("lsp-config.language-servers")
-require("lsp-config.nvim-cmp")
+require("lsp.language-servers")
+require("lsp.nvim-cmp")
 
 if vim.g.neovide then
 	vim.opt.guifont = "JetBrains Mono:h15"
