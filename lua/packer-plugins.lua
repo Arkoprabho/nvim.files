@@ -164,12 +164,6 @@ return packer.startup(function()
 	})
 	use({ "WhoIsSethDaniel/lualine-lsp-progress.nvim" })
 	use({
-		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-		config = function()
-			require("plugin-config.lsp-lines-config")
-		end,
-	})
-	use({
 		"folke/trouble.nvim",
 		config = function()
 			require("plugin-config.trouble-config")
