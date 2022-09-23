@@ -16,6 +16,7 @@ require("lualine").setup({
 		lualine_b = { lualine_components.branch, lualine_components.diff },
 		lualine_c = { lualine_components.filename, lualine_components.lsp_progress },
 		lualine_x = {
+			lualine_components.lsp,
 			lualine_components.spaces,
 			lualine_components.filetype,
 		},
@@ -25,8 +26,8 @@ require("lualine").setup({
 	inactive_sections = {
 		lualine_a = {},
 		lualine_b = {},
-		lualine_c = { "filename" },
-		lualine_x = { "location" },
+		lualine_c = { lualine_components.filename },
+		lualine_x = { lualine_components.location },
 		lualine_y = {},
 		lualine_z = {},
 	},
