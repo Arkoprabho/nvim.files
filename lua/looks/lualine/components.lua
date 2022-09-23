@@ -1,7 +1,7 @@
 local icons = require("settings.icons")
-local colors = require("plugin-config.lualine.colors")
-local conditions = require("plugin-config.lualine.conditions")
-local lualine_functions = require("plugin-config.lualine.functions")
+local colors = require("looks.lualine.colors")
+local conditions = require("looks.lualine.conditions")
+local lualine_functions = require("looks.lualine.functions")
 
 return {
 	mode = {
