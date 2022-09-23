@@ -52,6 +52,7 @@ cmp.setup({
 		{ name = "nvim_lsp", priority = 30 },
 		{ name = "path", priority = 1 },
 		{ name = "luasnip", priority = 20 },
+		{ name = "buffer", priority = 0 },
 		-- { name = "nvim_lua" },
 	},
 	formatting = {
