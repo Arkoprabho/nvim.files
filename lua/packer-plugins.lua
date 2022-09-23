@@ -30,7 +30,7 @@ return packer.startup(function()
 		"folke/tokyonight.nvim",
 		commit = "3e79e043dfdc31b320d61432eae2eefc26478965",
 		config = function()
-			require("plugin-config.theme-config")
+			require("looks.colorscheme.theme")
 		end,
 	})
 	-- use({ "Everblush/everblush.nvim", as = "everblush" })
