@@ -195,7 +195,7 @@ return packer.startup(function()
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
 		config = function()
-			require("lsp.null-ls-config")
+			require("lsp.null-ls.config")
 		end,
 	})
 
