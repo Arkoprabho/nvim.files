@@ -14,7 +14,7 @@ telescope.setup({
 			},
 		},
 		prompt_prefix = icons.ui.Search .. " ",
-		selection_caret = icons.ui.ChevronRight .. " ",
+		selection_caret = " ",
 		path_display = { "smart" },
 	},
 	pickers = {
