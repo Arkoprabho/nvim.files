@@ -1,45 +1,9 @@
 local icons = require("settings.icons")
-local location_color = "SLBranchName"
+local colors = require("plugin-config.lualine.colors")
+local conditions = require("plugin-config.lualine.conditions")
+local lualine_functions = require("plugin-config.lualine.functions")
 
-local window_width_limit = 1000
-local conditions = {
-	buffer_not_empty = function()
-		return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
-	end,
-	hide_in_width = function()
-		return vim.o.columns > window_width_limit
-	end,
-	-- check_git_workspace = function()
-	--   local filepath = vim.fn.expand "%:p:h"
-	--   local gitdir = vim.fn.finddir(".git", filepath .. ";")
-	--   return gitdir and #gitdir > 0 and #gitdir < #filepath
-	-- end,
-}
-
-local function diff_source()
-	local gitsigns = vim.b.gitsigns_status_dict
-	if gitsigns then
-		return {
-			added = gitsigns.added,
-			modified = gitsigns.changed,
-			removed = gitsigns.removed,
-		}
-	end
-end
-
-local colors = {
-	yellow = "#ECBE7B",
-	cyan = "#008080",
-	darkblue = "#081633",
-	green = "#98be65",
-	orange = "#FF8800",
-	violet = "#a9a1e1",
-	magenta = "#c678dd",
-	blue = "#51afef",
-	red = "#ec5f67",
-}
-
-local lualine_components = {
+return {
 	mode = {
 		function()
 			return " " .. icons.misc.Mode .. " "
@@ -60,7 +24,7 @@ local lualine_components = {
 	},
 	diff = {
 		"diff",
-		source = diff_source,
+		source = lualine_functions.diff_source,
 		symbols = { added = icons.git.Add .. " ", modified = icons.git.Mod .. " ", removed = icons.git.Remove .. " " },
 		padding = { left = 2, right = 1 },
 		diff_color = {
@@ -150,34 +114,3 @@ local lualine_components = {
 		cond = nil,
 	},
 }
-require("lualine").setup({
-	options = {
-		theme = "tokyonight",
-		globalstatus = true,
-		component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
-	},
-	extensions = {
-		"nvim-tree",
-		"toggleterm",
-	},
-	sections = {
-		lualine_a = { lualine_components.mode },
-		lualine_b = { lualine_components.branch, lualine_components.diff },
-		lualine_c = { lualine_components.filename, lualine_components.lsp_progress },
-		lualine_x = {
-			lualine_components.spaces,
-			lualine_components.filetype,
-		},
-		lualine_y = { lualine_components.progress },
-		lualine_z = { lualine_components.location },
-	},
-	inactive_sections = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = { "filename" },
-		lualine_x = { "location" },
-		lualine_y = {},
-		lualine_z = {},
-	},
-})
