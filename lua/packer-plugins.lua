@@ -26,6 +26,8 @@ return packer.startup(function()
 	-- 		require("plugin-config.theme-config")
 	-- 	end,
 	-- })
+	use("kyazdani42/nvim-web-devicons")
+
 	use({
 		"folke/tokyonight.nvim",
 		commit = "3e79e043dfdc31b320d61432eae2eefc26478965",
@@ -54,6 +56,7 @@ return packer.startup(function()
 	-- File Explorer
 	use({
 		"kyazdani42/nvim-tree.lua",
+		keys = "<leader>nt",
 		requires = {
 			"kyazdani42/nvim-web-devicons", -- optional, for file icons
 		},
@@ -63,6 +66,7 @@ return packer.startup(function()
 	})
 	use({
 		"nvim-telescope/telescope.nvim",
+		keys = "<leader>t",
 		tag = "0.1.0",
 		requires = { { "nvim-lua/plenary.nvim" } },
 		config = function()
@@ -72,6 +76,7 @@ return packer.startup(function()
 	-- Status
 	use({
 		"nvim-lualine/lualine.nvim",
+		keys = "<leader>ll",
 		config = function()
 			require("looks.lualine.init")
 		end,
@@ -221,6 +226,8 @@ return packer.startup(function()
 		"sindrets/diffview.nvim",
 		requires = "nvim-lua/plenary.nvim",
 		commit = "7e631e5da655dab31d1be10ba01a288f515ce6cc",
+		opt = true,
+		cmd = { "DiffviewOpen", "DiffviewToggleFiles", "DiffviewFocusFiles" },
 		config = function()
 			require("plugin-config.diffview-config")
 		end,
