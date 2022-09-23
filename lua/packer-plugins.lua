@@ -56,7 +56,6 @@ return packer.startup(function()
 	-- File Explorer
 	use({
 		"kyazdani42/nvim-tree.lua",
-		keys = "<leader>nt",
 		requires = {
 			"kyazdani42/nvim-web-devicons", -- optional, for file icons
 		},
@@ -66,7 +65,6 @@ return packer.startup(function()
 	})
 	use({
 		"nvim-telescope/telescope.nvim",
-		keys = "<leader>t",
 		tag = "0.1.0",
 		requires = { { "nvim-lua/plenary.nvim" } },
 		config = function()
@@ -76,7 +74,6 @@ return packer.startup(function()
 	-- Status
 	use({
 		"nvim-lualine/lualine.nvim",
-		keys = "<leader>ll",
 		config = function()
 			require("looks.lualine.init")
 		end,
