@@ -42,7 +42,7 @@ local colors = {
 local lualine_components = {
 	mode = {
 		function()
-			return "  "
+			return " " .. icons.misc.Mode .. " "
 		end,
 		padding = { left = 0, right = 0 },
 		color = {},
