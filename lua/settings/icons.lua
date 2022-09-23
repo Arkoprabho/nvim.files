@@ -12,6 +12,7 @@ if vim.fn.has("mac") == 1 or vim.g.use_nerd_icons then
 			hollow_right = "",
 			hollow_left = "",
 			fill_pipe = "▎",
+			hollow_pipe = "│ ",
 		},
 		kind = {
 			Text = "",
@@ -72,6 +73,7 @@ if vim.fn.has("mac") == 1 or vim.g.use_nerd_icons then
 			Diff = "",
 			Repo = "",
 			Octoface = "",
+			Branch = "",
 		},
 		ui = {
 			ArrowClosed = "",
