@@ -25,6 +25,7 @@ null_ls.setup({
 	sources = {
 		formatting.stylua,
 		formatting.gofmt,
+		formatting.black,
 		formatting.trim_whitespace,
 		formatting.terraform_fmt,
 		diagnostics.golangci_lint,
