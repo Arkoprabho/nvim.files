@@ -237,6 +237,13 @@ return packer.startup(function()
 	})
 
 	-- Misc
+	use("superhawk610/ascii-blocks.nvim")
+	use({
+		"gen740/SmoothCursor.nvim",
+		config = function()
+			require("plugin-config.smoothcursor-config")
+		end,
+	})
 	use({
 		"anuvyklack/windows.nvim",
 		requires = {
