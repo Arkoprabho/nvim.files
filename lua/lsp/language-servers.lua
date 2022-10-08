@@ -80,14 +80,12 @@ lspconfig["sumneko_lua"].setup({
 	},
 })
 
+local helper_functions = require("lsp.helper-functions")
 -- YAML Config
 lspconfig["yamlls"].setup({
 	settings = {
 		yaml = {
-			schemas = {
-				["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-				kubernetes = "/*.yaml",
-			},
+			schemas = helper_functions.yaml_schema(),
 		},
 	},
 })
