@@ -248,7 +248,6 @@ return packer.startup(function()
 		"anuvyklack/windows.nvim",
 		requires = {
 			"anuvyklack/middleclass",
-			"anuvyklack/animation.nvim",
 		},
 		config = function()
 			require("plugin-config.windows-config")
