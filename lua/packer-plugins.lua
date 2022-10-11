@@ -267,15 +267,14 @@ return packer.startup(function()
 			require("plugin-config.gitsigns-config")
 		end,
 	})
+	-- Misc
 	use({
-		"lukas-reineke/indent-blankline.nvim",
-		tag = "v2.20.2",
+		"echasnovski/mini.nvim",
+		commit = "1e0a7aa0d62867974ae93a73fdd39e62d8d5b7af",
 		config = function()
-			require("plugin-config.indent-blankline-config")
+			require("plugin-config.mini-config")
 		end,
 	})
-
-	-- Misc
 	use({
 		"superhawk610/ascii-blocks.nvim",
 		commit = "a8a7d99fc52df30d7c4e7664818542fd44839d97",

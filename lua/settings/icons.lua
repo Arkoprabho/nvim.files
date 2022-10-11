@@ -7,6 +7,7 @@ if vim.fn.has("mac") == 1 or vim.g.use_nerd_icons then
 	-- elseif vim.fn.has "mac" == 1 then
 	return {
 		separator = {
+			indent_separator = "╎",
 			filled_left = "",
 			filled_right = "",
 			hollow_right = "",
