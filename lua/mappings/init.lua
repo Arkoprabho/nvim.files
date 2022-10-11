@@ -64,16 +64,6 @@ map("n", "<leader>bw", "<Cmd>BufferOrderByWindowNumber<CR>", opts)
 map("", "<F2>", "<CMD>NvimTreeClose <bar> mksession! .vim_session<CR>", opts)
 map("", "<F3>", "<CMD>source .vim_session<CR>", opts)
 
--- Pair mappings (like bracket inverted comma etc)
-map("i", '"', '""<left>', opts)
-map("i", "(", "()<left>", opts)
-map("i", "(<CR>", "(<CR>)<ESC>O", opts)
-map("i", "'", "''<left>", opts)
-map("i", "[", "[]<left>", opts)
-map("i", "{", "{}<left>", opts)
-map("i", "{<CR>", "{<CR>}<ESC>O", opts)
-map("i", "{;<CR>", "{<CR>};<ESC>O", opts)
-
 -- Clipboard mappings
 -- Telescope
 map("n", "<A-P>", ":Telescope neoclip<CR>", opts)
