@@ -1,5 +1,7 @@
 local icons = require("settings.icons")
+
 require("mini.cursorword").setup({})
+
 require("mini.indentscope").setup({
 	draw = {
 		-- Delay (in ms) between event and start of drawing scope indicator
@@ -43,6 +45,7 @@ require("mini.indentscope").setup({
 	-- Which character to use for drawing scope indicator
 	symbol = icons.separator.hollow_pipe,
 })
+
 require("mini.comment").setup({
 	-- Module mappings. Use `''` (empty string) to disable one.
 	mappings = {
