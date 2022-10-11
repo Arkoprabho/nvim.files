@@ -139,13 +139,6 @@ return packer.startup(function()
 		commit = "724bd53adfbaf32e129b001658b45d4c5c29ca1a",
 	})
 	use({
-		"numToStr/Comment.nvim",
-		tag = "v0.7.0",
-		config = function()
-			require("plugin-config.comment-config")
-		end,
-	})
-	use({
 		"nvim-treesitter/nvim-treesitter",
 		commit = "3e09c81b4c33bf14907b8a59025904d14c234b1e",
 		run = function()
