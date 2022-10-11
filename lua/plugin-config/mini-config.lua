@@ -1,4 +1,5 @@
 local icons = require("settings.icons")
+require("mini.cursorword").setup({})
 require("mini.indentscope").setup({
 	draw = {
 		-- Delay (in ms) between event and start of drawing scope indicator
