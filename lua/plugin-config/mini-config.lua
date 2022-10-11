@@ -138,7 +138,7 @@ require("mini.surround").setup({
 
 	-- Module mappings. Use `''` (empty string) to disable one.
 	mappings = {
-		add = "ya", -- Add surrounding in Normal and Visual modes
+		add = "ys", -- Add surrounding in Normal and Visual modes
 		delete = "yd", -- Delete surrounding
 		find = "yf", -- Find surrounding (to the right)
 		find_left = "yF", -- Find surrounding (to the left)
