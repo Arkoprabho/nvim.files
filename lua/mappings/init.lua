@@ -79,14 +79,6 @@ map("n", "<leader>gsta", "<CMD>Telescope git_stash<CR>", opts)
 map("n", "<leader>gbb", "<CMD>Gitsigns blame_line<CR>", opts)
 map("n", "<leader>gb", "<CMD>G blame<CR>", opts)
 
--- Comments
-map("n", "<leader>|", "<CMD>lua require('Comment.api').toggle.blockwise.current()<CR>", opts)
-map("n", "<leader>\\", "<CMD>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
-
--- # VISUAL mode
-map("x", "<leader>\\", "<ESC><CMD>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
-map("x", "<leader>|", '<ESC><CMD>lua require("Comment.api").toggle.blockwise(vim.fn.visualmode())<CR>', opts)
-
 -- DAP
 map("n", "<F12>", "<Cmd>lua require'dap'.step_into()<CR>", opts)
 map("n", "<F11>", "<Cmd>lua require'dap'.step_into()<CR>", opts)
