@@ -148,17 +148,6 @@ return packer.startup(function()
 			require("plugin-config.treesitter-config")
 		end,
 	})
-	use({
-		"kylechui/nvim-surround",
-		tag = "v1.0.0", -- Use for stability; omit to use `main` branch for the latest features
-		config = function()
-			require("plugin-config.surround-config")
-		end,
-		requires = {
-			{ "nvim-treesitter/nvim-treesitter" },
-			{ "nvim-treesitter/nvim-treesitter-textobjects" },
-		},
-	})
 
 	--- LSP Config
 	use({
