@@ -281,6 +281,7 @@ return packer.startup(function()
 		commit = "e3a1217976d4ec8d2515cb634dbf5d26cabd46d5",
 		requires = {
 			"anuvyklack/middleclass",
+			"anuvyklack/animation.nvim",
 		},
 		config = function()
 			require("plugin-config.windows-config")
