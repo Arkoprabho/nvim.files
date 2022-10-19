@@ -71,13 +71,9 @@ map("i", "<A-P>", "<ESC>:Telescope neoclip<CR>", opts)
 
 -- Git
 map("n", "<leader>gg", "<CMD>LazyGit<CR>", opts)
-map("n", "<leader>gpp", ":G push<CR>", opts)
-map("n", "<leader>gll", ":G pull<CR>", opts)
 map("n", "<leader>gsto", "<CMD>DiffviewOpen<CR>", opts)
 map("n", "<leader>gstc", "<CMD>DiffviewClose<CR>", opts)
 map("n", "<leader>gsta", "<CMD>Telescope git_stash<CR>", opts)
-map("n", "<leader>gbb", "<CMD>Gitsigns blame_line<CR>", opts)
-map("n", "<leader>gb", "<CMD>G blame<CR>", opts)
 
 -- DAP
 map("n", "<F12>", "<Cmd>lua require'dap'.step_into()<CR>", opts)
