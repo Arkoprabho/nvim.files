@@ -324,4 +324,9 @@ return packer.startup(function()
 		end,
 		ft = { "go" },
 	})
+
+	-- Python related plugins
+	use({
+		"mfussenegger/nvim-dap-python",
+	})
 end)
