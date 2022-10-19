@@ -1,6 +1,10 @@
 local icons = require("settings.icons")
 
 require("mini.cursorword").setup({})
+local map = require("mini.map")
+map.setup({
+	symbols = { encode = map.gen_encode_symbols.dot("4x2") },
+})
 
 require("mini.indentscope").setup({
 	draw = {
@@ -43,7 +47,7 @@ require("mini.indentscope").setup({
 	},
 
 	-- Which character to use for drawing scope indicator
-	symbol = icons.separator.hollow_pipe,
+	symbol = icons.separator.fill_pipe,
 })
 
 require("mini.comment").setup({

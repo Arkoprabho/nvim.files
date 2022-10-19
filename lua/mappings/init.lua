@@ -8,6 +8,7 @@ local opts = {
 -- File Explorer config
 map("n", "<leader>r", ":NvimTreeFindFile<CR>", opts)
 map("n", "<leader>ntt", ":NvimTreeToggle<CR>", opts)
+map("n", "<leader>mpt", "<CMD>lua MiniMap.toggle()<CR>", opts)
 
 -- Terminal
 map("n", "@t", ":split<CR> 15<C-w>_ :terminal<CR>", opts)
