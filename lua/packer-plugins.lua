@@ -63,6 +63,13 @@ return packer.startup(function()
 
 	-- File Explorer
 	use({
+		"ThePrimeagen/harpoon",
+		commit = "4dfe94e633945c14ad0f03044f601b8e6a99c708",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+	})
+	use({
 		"kyazdani42/nvim-tree.lua",
 		commit = "875d38e52cc4367bad10e648a906a6bd73b3691c",
 		requires = {

@@ -9,6 +9,10 @@ local opts = {
 map("n", "<leader>r", ":NvimTreeFindFile<CR>", opts)
 map("n", "<leader>ntt", ":NvimTreeToggle<CR>", opts)
 map("n", "<leader>mpt", "<CMD>lua MiniMap.toggle()<CR>", opts)
+map("n", "<leader>hm", "<CMD>lua require('harpoon.mark').add_file()<CR>", opts)
+map("n", "<leader>htm", "<CMD>lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
+map("n", "<leader>htn", "<CMD>lua require('harpoon.ui').nav_next()<CR>", opts)
+map("n", "<leader>htp", "<CMD>lua require('harpoon.ui').nav_prev()<CR>", opts)
 
 -- Terminal
 map("n", "@t", ":split<CR> 15<C-w>_ :terminal<CR>", opts)
@@ -16,6 +20,7 @@ map("n", "@t", ":split<CR> 15<C-w>_ :terminal<CR>", opts)
 -- Files
 map("n", "<A-F>", ":Telescope live_grep<CR>", opts)
 map("n", "<C-f>", ":Telescope find_files hidden=true<CR>", opts)
+map("n", "<leader>H", "<CMD>Telescope harpoon marks<CR>", opts)
 
 -- Navigation
 -- Splits
