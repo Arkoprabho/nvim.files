@@ -32,3 +32,4 @@ set.hidden = true
 set.clipboard = "unnamedplus"
 
 vim.notify = require("notify")
+vim.g.use_nerd_icons = true
