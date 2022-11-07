@@ -44,6 +44,7 @@ end
 lua_snip.filetype_extend("go", {})
 lua_snip.filetype_extend("lua", {})
 lua_snip.filetype_extend("shell", {})
+lua_snip.filetype_extend("python", {})
 lua_snip.filetype_extend("kubernetes", {})
 
 -- Terraform Snippets
