@@ -11,8 +11,8 @@ map("n", "<leader>ntt", ":NvimTreeToggle<CR>", opts)
 map("n", "<leader>mpt", "<CMD>lua MiniMap.toggle()<CR>", opts)
 map("n", "<leader>hm", "<CMD>lua require('harpoon.mark').add_file()<CR>", opts)
 map("n", "<leader>htm", "<CMD>lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
-map("n", "<leader>htn", "<CMD>lua require('harpoon.ui').nav_next()<CR>", opts)
-map("n", "<leader>htp", "<CMD>lua require('harpoon.ui').nav_prev()<CR>", opts)
+map("n", "<leader>hn", "<CMD>lua require('harpoon.ui').nav_next()<CR>", opts)
+map("n", "<leader>hp", "<CMD>lua require('harpoon.ui').nav_prev()<CR>", opts)
 
 -- Terminal
 map("n", "@t", ":split<CR> 15<C-w>_ :terminal<CR>", opts)
