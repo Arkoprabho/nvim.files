@@ -10,7 +10,12 @@ capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-	if client.name == "sumneko_lua" or client.name == "gopls" or client.name == "tsserver" then
+	if
+		client.name == "sumneko_lua"
+		or client.name == "gopls"
+		or client.name == "tsserver"
+		or client.name == "dockerls"
+	then
 		client.resolved_capabilities.document_formatting = false -- 0.7 and earlier
 	end
 	-- Enable completion triggered by <c-x><c-o>
@@ -41,7 +46,7 @@ local lsp_flags = {
 	-- This is the default in Nvim 0.7+
 	debounce_text_changes = 150,
 }
-local servers = { "pyright", "tsserver", "terraform_lsp", "yamlls", "csharp_ls", "gopls" }
+local servers = { "pyright", "tsserver", "terraform_lsp", "yamlls", "csharp_ls", "gopls", "dockerls" }
 local lspconfig = require("lspconfig")
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
