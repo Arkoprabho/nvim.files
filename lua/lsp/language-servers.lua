@@ -9,13 +9,17 @@ capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
+local function Set(list)
+	local set = {}
+	for _, l in ipairs(list) do
+		set[l] = true
+	end
+	return set
+end
+
+local disabled_document_formatting_clients = Set({ "sumneko_lua", "gopls", "tsserver", "dockerls" })
 local on_attach = function(client, bufnr)
-	if
-		client.name == "sumneko_lua"
-		or client.name == "gopls"
-		or client.name == "tsserver"
-		or client.name == "dockerls"
-	then
+	if disabled_document_formatting_clients[client.name] then
 		client.resolved_capabilities.document_formatting = false -- 0.7 and earlier
 	end
 	-- Enable completion triggered by <c-x><c-o>
