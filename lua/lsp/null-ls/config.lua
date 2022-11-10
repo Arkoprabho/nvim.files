@@ -28,6 +28,7 @@ null_ls.setup({
 		formatting.black,
 		formatting.trim_whitespace,
 		formatting.terraform_fmt,
+		formatting.prettier,
 		diagnostics.golangci_lint,
 		diagnostics.hadolint,
 	},
