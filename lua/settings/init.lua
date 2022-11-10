@@ -20,7 +20,7 @@ set.smartcase = true
 
 set.splitbelow = true
 set.splitright = true
-set.wrap = false
+set.wrap = true
 set.scrolloff = 10
 set.fileencoding = "utf-8"
 set.termguicolors = true
