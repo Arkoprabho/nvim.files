@@ -335,5 +335,6 @@ return packer.startup(function()
 	-- Python related plugins
 	use({
 		"mfussenegger/nvim-dap-python",
+		commit = "27a0eff2bd3114269bb010d895b179e667e712bd",
 	})
 end)
