@@ -53,6 +53,7 @@ cmp.setup({
 		{ name = "path", priority = 1 },
 		{ name = "luasnip", priority = 20 },
 		{ name = "buffer", priority = 0 },
+		{ name = "jenkinsfile", options = {} },
 		-- { name = "nvim_lua" },
 	},
 	formatting = {

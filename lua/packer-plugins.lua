@@ -337,4 +337,10 @@ return packer.startup(function()
 		"mfussenegger/nvim-dap-python",
 		commit = "27a0eff2bd3114269bb010d895b179e667e712bd",
 	})
+
+	-- Jenkins related plugin
+	use({
+		"joshzcold/cmp-jenkinsfile",
+		commit = "cf0b5dafc8239ac038da630f0c780a71d064866b",
+	})
 end)
