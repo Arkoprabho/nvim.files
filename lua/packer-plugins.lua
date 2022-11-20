@@ -342,9 +342,11 @@ return packer.startup(function()
 	use({
 		"martinda/Jenkinsfile-vim-syntax",
 		commit = "0d05729168ea44d60862f17cffa80024ab30bcc9",
+		ft = { "Jenkinsfile" },
 	})
 	use({
 		"joshzcold/cmp-jenkinsfile",
 		commit = "cf0b5dafc8239ac038da630f0c780a71d064866b",
+		ft = { "Jenkinsfile" },
 	})
 end)
