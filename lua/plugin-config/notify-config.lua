@@ -10,7 +10,7 @@ local bottom_fade_in_slide_out_stages = {
 		end
 		return {
 			relative = "editor",
-			anchor = "NE",
+			anchor = "SE",
 			width = state.message.width,
 			height = state.message.height,
 			col = vim.opt.columns:get(),
