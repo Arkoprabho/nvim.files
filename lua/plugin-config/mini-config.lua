@@ -3,7 +3,7 @@ local icons = require("settings.icons")
 require("mini.cursorword").setup({})
 local map = require("mini.map")
 map.setup({
-	symbols = { encode = map.gen_encode_symbols.dot("4x2") },
+	-- symbols = { encode = map.gen_encode_symbols.dot("4x2") },
 })
 
 require("mini.indentscope").setup({
