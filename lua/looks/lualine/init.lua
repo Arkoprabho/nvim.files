@@ -1,4 +1,5 @@
 local lualine_components = require("looks.lualine.components")
+local git_blame = require("gitblame")
 local icons = require("settings.icons")
 
 require("lualine").setup({
@@ -15,7 +16,7 @@ require("lualine").setup({
 	sections = {
 		lualine_a = { lualine_components.mode },
 		lualine_b = { lualine_components.branch, lualine_components.diff },
-		lualine_c = { lualine_components.filename, lualine_components.lsp_progress },
+		lualine_c = { lualine_components.lsp_progress, git_blame.get_current_blame_text },
 		lualine_x = {
 			lualine_components.lsp,
 			lualine_components.spaces,
