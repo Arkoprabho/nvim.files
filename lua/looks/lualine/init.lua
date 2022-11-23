@@ -1,11 +1,12 @@
 local lualine_components = require("looks.lualine.components")
+local icons = require("settings.icons")
 
 require("lualine").setup({
 	options = {
 		theme = "tokyonight",
 		globalstatus = true,
-		component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
+		component_separators = { left = icons.separator.hollow_right, right = icons.separator.hollow_left },
+		section_separators = { left = icons.separator.filled_right, right = icons.separator.filled_left },
 	},
 	extensions = {
 		"nvim-tree",
