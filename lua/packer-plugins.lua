@@ -277,13 +277,6 @@ return packer.startup(function()
 		cmd = { "AsciiBlockify" },
 	})
 	use({
-		"gen740/SmoothCursor.nvim",
-		commit = "abc2065f748f346c02bed19b3a075d561b20aa6f",
-		config = function()
-			require("plugin-config.smoothcursor-config")
-		end,
-	})
-	use({
 		"anuvyklack/windows.nvim",
 		commit = "e3a1217976d4ec8d2515cb634dbf5d26cabd46d5",
 		requires = {
