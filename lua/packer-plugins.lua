@@ -95,12 +95,7 @@ return packer.startup(function()
 			require("plugin-config.tabline-config")
 		end,
 	})
-	-- use({
-	-- 	"romgrk/barbar.nvim",
-	-- 	config = function()
-	-- 		require("plugin-config.bufferline-config")
-	-- 	end,
-	-- })
+
 	-- Development plugins
 	use({
 		"mfussenegger/nvim-dap",
