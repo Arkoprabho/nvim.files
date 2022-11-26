@@ -99,7 +99,7 @@ return packer.startup(function()
 	-- Development plugins
 	use({
 		"mfussenegger/nvim-dap",
-		commit = "6b12294a57001d994022df8acbe2ef7327d30587",
+		commit = "61643680dcb771a29073cd432894e2f81a7c2ae3",
 		config = function()
 			require("dap.dap-config")
 		end,
