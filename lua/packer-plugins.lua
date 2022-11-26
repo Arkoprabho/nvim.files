@@ -80,7 +80,7 @@ return packer.startup(function()
 	-- Status
 	use({
 		"nvim-lualine/lualine.nvim",
-		commit = "edca2b03c724f22bdc310eee1587b1523f31ec7c",
+		commit = "b6314ac556098d7abea9bb8cf896d2e3500eca41",
 		config = function()
 			require("looks.lualine.init")
 		end,
