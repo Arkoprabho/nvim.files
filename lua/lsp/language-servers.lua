@@ -20,7 +20,7 @@ end
 local disabled_document_formatting_clients = Set({ "sumneko_lua", "gopls", "tsserver", "dockerls" })
 local on_attach = function(client, bufnr)
 	if disabled_document_formatting_clients[client.name] then
-		client.server_capabilities.document_formatting = false -- 0.7 and earlier
+		client.server_capabilities.document_formatting = false
 	end
 	-- Enable completion triggered by <c-x><c-o>
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
