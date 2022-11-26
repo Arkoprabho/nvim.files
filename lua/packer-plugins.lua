@@ -18,7 +18,7 @@ return packer.startup(function()
 	-- Performance
 	use({
 		"lewis6991/impatient.nvim",
-		commit = "b842e16ecc1a700f62adb9802f8355b99b52a5a6",
+		commit = "d3dd30ff0b811756e735eb9020609fa315bfbbcc",
 	})
 
 	-- Colorscheme
