@@ -41,16 +41,6 @@ return packer.startup(function()
 			require("looks.colorscheme.theme")
 		end,
 	})
-	-- use({ "Everblush/everblush.nvim", as = "everblush" })
-
-	use({
-		"folke/which-key.nvim",
-		commit = "6885b669523ff4238de99a7c653d47b081b5506d",
-		config = function()
-			require("plugin-config.which-key-config")
-		end,
-		opt = true,
-	})
 
 	-- Notification
 	use({
