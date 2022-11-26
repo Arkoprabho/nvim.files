@@ -36,7 +36,7 @@ return packer.startup(function()
 
 	use({
 		"folke/tokyonight.nvim",
-		commit = "3e79e043dfdc31b320d61432eae2eefc26478965",
+		commit = "62b4e89ea1766baa3b5343ca77d62c817f5f48d0",
 		config = function()
 			require("looks.colorscheme.theme")
 		end,
