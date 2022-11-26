@@ -1,3 +1,4 @@
 .vim_session
 packer_compiled.lua
 *.log
+.luarc.json
