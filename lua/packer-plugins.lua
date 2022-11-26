@@ -54,7 +54,7 @@ return packer.startup(function()
 	-- File Explorer
 	use({
 		"ThePrimeagen/harpoon",
-		commit = "4dfe94e633945c14ad0f03044f601b8e6a99c708",
+		commit = "21d0d1bfa3000e4384740bfaefa0ebc51c773786",
 		requires = {
 			"nvim-lua/plenary.nvim",
 		},
