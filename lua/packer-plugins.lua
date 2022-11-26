@@ -61,7 +61,7 @@ return packer.startup(function()
 	})
 	use({
 		"kyazdani42/nvim-tree.lua",
-		commit = "875d38e52cc4367bad10e648a906a6bd73b3691c",
+		commit = "b17358ff4d822deeb42b97919065800f8f91cb55",
 		requires = {
 			"kyazdani42/nvim-web-devicons", -- optional, for file icons
 		},
