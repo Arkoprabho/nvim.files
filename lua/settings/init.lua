@@ -1,6 +1,7 @@
 local set = vim.opt
 
 set.colorcolumn = "120"
+set.cmdheight = 0
 set.autowrite = true
 set.autowriteall = true
 set.guifont = "JetBrains Mono:h15"
