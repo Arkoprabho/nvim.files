@@ -25,6 +25,8 @@ map("n", "<leader>H", "<CMD>Telescope harpoon marks<CR>", opts)
 -- Navigation
 map("n", "j", "gj", opts)
 map("n", "k", "gk", opts)
+map("n", "<C-d>", "<C-d>zz", opts)
+map("n", "<C-u>", "<C-u>zz", opts)
 -- Splits
 map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-j>", "<C-w>j", opts)
