@@ -3,3 +3,4 @@ vim.fn.sign_define("DapBreakpoint", { text = icons.ui.Circle, texthl = "", lineh
 
 require("dap.csharp").setup()
 require("dap.python")
+require("dap.kotlin").setup()
