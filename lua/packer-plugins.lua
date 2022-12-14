@@ -244,7 +244,7 @@ return packer.startup(function()
 	-- Misc
 	use({
 		"echasnovski/mini.nvim",
-		commit = "1e0a7aa0d62867974ae93a73fdd39e62d8d5b7af",
+		commit = "82e04074117635ebe7ae2202953a0c3d78db5146",
 		config = function()
 			require("plugin-config.mini-config")
 		end,
