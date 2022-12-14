@@ -16,7 +16,11 @@ require("mini.indentscope").setup({
 		-- |MiniIndentscope.gen_animation()| for builtin options. To disable
 		-- animation, use `require('mini.indentscope').gen_animation('none')`.
 		-- animation = --<function: implements constant 20ms between steps>,
-		animation = require("mini.indentscope").gen_animation("quadraticOut", { duration = 100, unit = "total" }),
+		animation = require("mini.indentscope").gen_animation.quadratic({
+			easing = "out",
+			duration = 100,
+			unit = "total",
+		}),
 	},
 
 	-- Module mappings. Use `''` (empty string) to disable one.
