@@ -175,9 +175,9 @@ require("mini.sessions").setup({
 	-- Whether to write current session before quitting Neovim
 	autowrite = true,
 
-	directory = "session",
+	directory = "~/.local/share/nvim/session",
 	-- Whether to force possibly harmful actions (meaning depends on function)
-	force = { read = false, write = true, delete = false },
+	force = { read = true, write = true, delete = false },
 
 	-- Hook functions for actions. Default `nil` means 'do nothing'.
 	hooks = {
