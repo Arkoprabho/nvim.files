@@ -6,7 +6,6 @@ local opts = {
 }
 
 -- File Explorer config
-map("n", "<leader>mpt", "<CMD>lua MiniMap.toggle()<CR>", opts)
 map("n", "<leader>hm", "<CMD>lua require('harpoon.mark').add_file()<CR>", opts)
 map("n", "<leader>htm", "<CMD>lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
 map("n", "<leader>hn", "<CMD>lua require('harpoon.ui').nav_next()<CR>", opts)
