@@ -5,18 +5,6 @@ local opts = {
 	silent = true,
 }
 
--- Navigation
-map("n", "j", "gj", opts)
-map("n", "k", "gk", opts)
-map("n", "<C-d>", "<C-d>zz", opts)
-map("n", "<C-u>", "<C-u>zz", opts)
--- Splits
-map("n", "<C-h>", "<C-w>h", opts)
-map("n", "<C-j>", "<C-w>j", opts)
-map("n", "<C-k>", "<C-w>k", opts)
-map("n", "<C-l>", "<C-w>l", opts)
-map("n", "<C-w>z", "<Cmd>WindowsMaximize<CR>", opts)
-
 -- Bar Bar mappings
 -- Move to previous/next
 map("n", "<A-,>", "<Cmd>BufferLineCyclePrev<CR>", opts)
