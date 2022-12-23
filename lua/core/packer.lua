@@ -62,9 +62,6 @@ return packer.startup(function()
 	use({
 		"nvim-lualine/lualine.nvim",
 		commit = "b6314ac556098d7abea9bb8cf896d2e3500eca41",
-		config = function()
-			require("looks.lualine.init")
-		end,
 	})
 
 	-- Tabline
