@@ -1,5 +1,3 @@
--- vim.g.catpuccin_flavour = "mocha"
-
 require("tokyonight").setup({
 	style = "night",
 	terminal_colors = true,
@@ -24,6 +22,8 @@ require("tokyonight").setup({
 
 vim.cmd([[colorscheme tokyonight ]])
 
--- local everblush = require("everblush")
---
--- everblush.setup({ nvim_tree = { contrast = true } })
+require("colorizer").setup({
+	"*", -- Highlight all files, but customize some others.
+	css = { rgb_fn = true }, -- Enable parsing rgb(...) functions in css.
+	html = { names = false }, -- Disable parsing "names" like Blue or Gray
+})
