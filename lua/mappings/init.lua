@@ -5,14 +5,6 @@ local opts = {
 	silent = true,
 }
 
--- Terminal
-map("n", "@t", ":split<CR> 15<C-w>_ :terminal<CR>", opts)
-
--- Files
-map("n", "<A-F>", ":Telescope live_grep<CR>", opts)
-map("n", "<leader>pv", ":Telescope find_files hidden=true<CR>", opts)
-map("n", "<C-f>", ":Telescope git_files<CR>", opts)
-
 -- Navigation
 map("n", "j", "gj", opts)
 map("n", "k", "gk", opts)
@@ -84,7 +76,6 @@ map("n", "<F5>", "<Cmd>lua require'dap'.continue()<CR>", opts)
 map("n", "<leader>bp", "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
 
 -- Misc
-map("n", "<leader>T", "<CMD>Telescope<CR>", opts)
 map("n", "<leader>%", "<CMD>luafile %<CR>", opts)
 map("n", "<leader>lsl", "<CMD>lua require('luasnip.loaders.from_vscode').load()<CR>", opts)
 

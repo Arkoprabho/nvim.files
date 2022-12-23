@@ -33,3 +33,11 @@ telescope.setup({
 		},
 	},
 })
+
+-- Mappings
+local map = vim.keymap.set
+local builtin = require("telescope.builtin")
+map("n", "<A-F>", builtin.live_grep)
+map("n", "<leader>pv", builtin.find_files)
+map("n", "<C-f>", builtin.git_files)
+map("n", "<leader>T", builtin.builtin)
