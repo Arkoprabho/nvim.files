@@ -57,3 +57,4 @@ local map = vim.keymap.set
 local api = require("nvim-tree.api")
 
 map("n", "<leader>ntt", api.tree.toggle)
+map("n", "<leader>r", "<CMD>NvimTreeFindFile<CR>")
