@@ -50,3 +50,10 @@ require("nvim-tree").setup({
 		dotfiles = true,
 	},
 })
+
+-- NvimTree mappings
+
+local map = vim.keymap.set
+local api = require("nvim-tree.api")
+
+map("n", "<leader>ntt", api.tree.toggle)
