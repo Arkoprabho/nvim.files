@@ -99,7 +99,7 @@ lspconfig["yamlls"].setup({
 		},
 	},
 })
-local icons = require("settings.icons")
+local icons = require("globals.icons")
 local signs = {
 	Error = icons.diagnostics.Error,
 	Warn = icons.diagnostics.Warning,

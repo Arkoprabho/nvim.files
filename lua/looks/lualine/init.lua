@@ -1,6 +1,6 @@
 local lualine_components = require("looks.lualine.components")
 local git_blame = require("gitblame")
-local icons = require("settings.icons")
+local icons = require("globals.icons")
 
 require("lualine").setup({
 	options = {

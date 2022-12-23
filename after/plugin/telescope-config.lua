@@ -1,6 +1,6 @@
 local telescope = require("telescope")
 local actions = require("telescope.actions")
-local icons = require("settings.icons")
+local icons = require("globals.icons")
 
 telescope.load_extension("neoclip")
 telescope.load_extension("notify")

@@ -1,5 +1,5 @@
 local tree_cb = require("nvim-tree.config").nvim_tree_callback
-local icons = require("settings.icons")
+local icons = require("globals.icons")
 require("nvim-tree").setup({
 	sync_root_with_cwd = true,
 	respect_buf_cwd = true,

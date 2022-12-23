@@ -1,4 +1,4 @@
-local icons = require("settings.icons")
+local icons = require("globals.icons")
 require("bufferline").setup({
 	options = {
 		mode = "tabs",

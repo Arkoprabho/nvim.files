@@ -1,4 +1,4 @@
-local icons = require("settings.icons")
+local icons = require("globals.icons")
 local colors = require("looks.lualine.colors")
 local conditions = require("looks.lualine.conditions")
 local lualine_functions = require("looks.lualine.functions")
