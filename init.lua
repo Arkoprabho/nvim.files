@@ -2,7 +2,6 @@ vim.o.relativenumber = true
 
 require("impatient")
 require("core")
-require("autocommands")
 require("mappings")
 require("lsp.language-servers")
 require("lsp.nvim-cmp")
