@@ -36,9 +36,6 @@ return packer.startup(function()
 	use({
 		"rcarriga/nvim-notify",
 		commit = "e7cb3e5f93b1fef6a713dbc182eff98badfc6dd4",
-		config = function()
-			require("plugin-config.neoclip-config")
-		end,
 	})
 
 	-- File Explorer
@@ -55,17 +52,11 @@ return packer.startup(function()
 		requires = {
 			"kyazdani42/nvim-web-devicons", -- optional, for file icons
 		},
-		config = function()
-			require("plugin-config.nvimtree-config")
-		end,
 	})
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.0",
 		requires = { { "nvim-lua/plenary.nvim" } },
-		config = function()
-			require("plugin-config.telescope-config")
-		end,
 	})
 	-- Status
 	use({
@@ -81,9 +72,6 @@ return packer.startup(function()
 		"akinsho/bufferline.nvim",
 		tag = "v2.12.*",
 		requires = "kyazdani42/nvim-web-devicons",
-		config = function()
-			require("plugin-config.tabline-config")
-		end,
 	})
 
 	-- Development plugins
@@ -97,9 +85,6 @@ return packer.startup(function()
 	use({
 		"rcarriga/nvim-dap-ui",
 		tag = "v2.1.*",
-		config = function()
-			require("plugin-config.dap-ui-config")
-		end,
 		requires = { "mfussenegger/nvim-dap" },
 	})
 	use({
@@ -126,18 +111,12 @@ return packer.startup(function()
 		run = function()
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
-		config = function()
-			require("plugin-config.treesitter-config")
-		end,
 	})
 
 	--- LSP Config
 	use({
 		"williamboman/mason.nvim",
 		commit = "13217bbf59ed1e3d7633bd7e8e518b93a77e22c5",
-		config = function()
-			require("plugin-config.mason-config")
-		end,
 	})
 	use({
 		"WhoIsSethDaniel/lualine-lsp-progress.nvim",
@@ -146,9 +125,6 @@ return packer.startup(function()
 	use({
 		"folke/trouble.nvim",
 		commit = "929315ea5f146f1ce0e784c76c943ece6f36d786",
-		config = function()
-			require("plugin-config.trouble-config")
-		end,
 	})
 	use({
 		"neovim/nvim-lspconfig",
@@ -173,9 +149,6 @@ return packer.startup(function()
 	use({
 		"L3MON4D3/LuaSnip",
 		tag = "v1.0.0",
-		config = function()
-			require("plugin-config.snippets-config")
-		end,
 	}) -- Snippets plugin
 	use({
 		"onsails/lspkind.nvim",
@@ -188,9 +161,6 @@ return packer.startup(function()
 			{ "nvim-telescope/telescope.nvim" },
 			{ "kkharji/sqlite.lua", module = "sqlite" },
 		},
-		config = function()
-			require("plugin-config.neoclip-config")
-		end,
 	})
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
@@ -204,18 +174,12 @@ return packer.startup(function()
 	use({
 		"akinsho/toggleterm.nvim",
 		commit = "2a787c426ef00cb3488c11b14f5dcf892bbd0bda",
-		config = function()
-			require("plugin-config.toggleterm-config")
-		end,
 	})
 
 	-- Git
 	use({
 		"f-person/git-blame.nvim",
 		commit = "08e75b7061f4a654ef62b0cac43a9015c87744a2",
-		config = function()
-			require("plugin-config.gitblame-config")
-		end,
 	})
 	use({
 		"kdheepak/lazygit.nvim",
@@ -227,24 +191,15 @@ return packer.startup(function()
 		commit = "7e631e5da655dab31d1be10ba01a288f515ce6cc",
 		opt = true,
 		cmd = { "DiffviewOpen", "DiffviewToggleFiles", "DiffviewFocusFiles" },
-		config = function()
-			require("plugin-config.diffview-config")
-		end,
 	})
 	use({
 		"lewis6991/gitsigns.nvim",
 		tag = "v0.5",
-		config = function()
-			require("plugin-config.gitsigns-config")
-		end,
 	})
 	-- Misc
 	use({
 		"echasnovski/mini.nvim",
 		commit = "82e04074117635ebe7ae2202953a0c3d78db5146",
-		config = function()
-			require("plugin-config.mini-config")
-		end,
 	})
 	use({
 		"superhawk610/ascii-blocks.nvim",
@@ -258,9 +213,6 @@ return packer.startup(function()
 			"anuvyklack/middleclass",
 			"anuvyklack/animation.nvim",
 		},
-		config = function()
-			require("plugin-config.windows-config")
-		end,
 	})
 	use({
 		"folke/zen-mode.nvim",
@@ -281,9 +233,6 @@ return packer.startup(function()
 	use({
 		"norcalli/nvim-colorizer.lua",
 		commit = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6",
-		config = function()
-			require("plugin-config.colorizer-config")
-		end,
 	})
 
 	-- Golang related plugins
