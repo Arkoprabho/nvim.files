@@ -1,4 +1,4 @@
-local color_codes = {
+return {
 	yellow = "#ECBE7B",
 	cyan = "#008080",
 	darkblue = "#081633",
@@ -11,4 +11,3 @@ local color_codes = {
 	bg = "#202328",
 	fg = "#bbc2cf",
 }
-
