@@ -1,8 +1,7 @@
 vim.o.relativenumber = true
 
 require("impatient")
-require("packer-plugins")
-require("settings")
+require("core")
 require("autocommands")
 require("mappings")
 require("lsp.language-servers")
