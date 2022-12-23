@@ -5,12 +5,6 @@ local opts = {
 	silent = true,
 }
 
--- File Explorer config
-map("n", "<leader>hm", "<CMD>lua require('harpoon.mark').add_file()<CR>", opts)
-map("n", "<leader>htm", "<CMD>lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
-map("n", "<leader>hn", "<CMD>lua require('harpoon.ui').nav_next()<CR>", opts)
-map("n", "<leader>hp", "<CMD>lua require('harpoon.ui').nav_prev()<CR>", opts)
-
 -- Terminal
 map("n", "@t", ":split<CR> 15<C-w>_ :terminal<CR>", opts)
 
@@ -18,7 +12,6 @@ map("n", "@t", ":split<CR> 15<C-w>_ :terminal<CR>", opts)
 map("n", "<A-F>", ":Telescope live_grep<CR>", opts)
 map("n", "<leader>pv", ":Telescope find_files hidden=true<CR>", opts)
 map("n", "<C-f>", ":Telescope git_files<CR>", opts)
-map("n", "<leader>H", "<CMD>Telescope harpoon marks<CR>", opts)
 
 -- Navigation
 map("n", "j", "gj", opts)

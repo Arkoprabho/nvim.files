@@ -22,3 +22,14 @@ harpoon.setup({
 	-- set marks specific to each git branch inside git repository
 	mark_branch = false,
 })
+
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+local telescope = require("telescope")
+local map = vim.keymap.set
+
+map("n", "<leader>ha", mark.add_file)
+map("n", "<leader>htm", ui.toggle_quick_menu)
+map("n", "<leader>hn", ui.nav_next)
+map("n", "<leader>hp", ui.nav_prev)
+map("n", "<leader>H", "<CMD>Telescope harpoon marks<CR>")
