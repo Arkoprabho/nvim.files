@@ -38,7 +38,6 @@ function dap_config.kotlin()
 	}
 
 	-- Configuration
-	dap.configurations.kotlin = {
 		{
 			type = "kotlin",
 			name = "launch - kotlin",
@@ -63,3 +62,12 @@ if not status_ok then
 	return
 end
 dap_go.setup()
+
+-- Mappings
+
+local map = vim.keymap.set
+map("n", "<F12>", dap.close)
+map("n", "<F11>", dap.step_into)
+map("n", "<F10>", dap.step_over)
+map("n", "<F5>", dap.continue)
+map("n", "<leader>bp", dap.toggle_breakpoint)

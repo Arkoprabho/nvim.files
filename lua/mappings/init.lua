@@ -27,13 +27,6 @@ map("n", "<leader>gsto", "<CMD>DiffviewOpen<CR>", opts)
 map("n", "<leader>gstc", "<CMD>DiffviewClose<CR>", opts)
 map("n", "<leader>gsta", "<CMD>Telescope git_stash<CR>", opts)
 
--- DAP
-map("n", "<F12>", "<Cmd>lua require'dap'.close()<CR>", opts)
-map("n", "<F11>", "<Cmd>lua require'dap'.step_into()<CR>", opts)
-map("n", "<F10>", "<Cmd>lua require'dap'.step_over()<CR>", opts)
-map("n", "<F5>", "<Cmd>lua require'dap'.continue()<CR>", opts)
-map("n", "<leader>bp", "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
-
 -- Misc
 map("n", "<leader>%", "<CMD>luafile %<CR>", opts)
 map("n", "<leader>lsl", "<CMD>lua require('luasnip.loaders.from_vscode').load()<CR>", opts)
