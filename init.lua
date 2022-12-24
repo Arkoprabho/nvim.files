@@ -3,8 +3,6 @@ vim.o.relativenumber = true
 require("impatient")
 require("core")
 require("mappings")
-require("lsp.language-servers")
-require("lsp.nvim-cmp")
 
 if vim.g.neovide then
 	vim.opt.guifont = "JetBrains Mono:h15"

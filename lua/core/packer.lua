@@ -162,9 +162,6 @@ return packer.startup(function()
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
 		commit = "355f7012b4afd92c0387770f1bea892e74a91b2e",
-		config = function()
-			require("lsp.null-ls.config")
-		end,
 	})
 
 	-- Terminal
