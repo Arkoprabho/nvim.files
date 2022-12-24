@@ -58,4 +58,8 @@ vim.fn.sign_define("DapBreakpoint", { text = icons.ui.Circle, texthl = "", lineh
 dap_config.csharp()
 require("dap-python").setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
 dap_config.kotlin()
-require("dap-go").setup()
+local status_ok, dap_go = pcall(require, "dap-go")
+if not status_ok then
+	return
+end
+dap_go.setup()

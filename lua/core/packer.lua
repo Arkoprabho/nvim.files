@@ -75,9 +75,6 @@ return packer.startup(function()
 	use({
 		"mfussenegger/nvim-dap",
 		commit = "61643680dcb771a29073cd432894e2f81a7c2ae3",
-		config = function()
-			require("dap.dap-config")
-		end,
 	})
 	use({
 		"rcarriga/nvim-dap-ui",
@@ -237,9 +234,6 @@ return packer.startup(function()
 	use({
 		"leoluz/nvim-dap-go",
 		commit = "c2902bb96c45e872d947d7e174775e652439add4",
-		config = function()
-			require("dap.go-dap-config")
-		end,
 		ft = { "go" },
 	})
 
