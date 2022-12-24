@@ -23,7 +23,6 @@ map("n", "<A-P>", ":Telescope neoclip<CR>", opts)
 map("i", "<A-P>", "<ESC>:Telescope neoclip<CR>", opts)
 
 -- Git
-map("n", "<leader>gg", "<CMD>LazyGit<CR>", opts)
 map("n", "<leader>gsto", "<CMD>DiffviewOpen<CR>", opts)
 map("n", "<leader>gstc", "<CMD>DiffviewClose<CR>", opts)
 map("n", "<leader>gsta", "<CMD>Telescope git_stash<CR>", opts)
