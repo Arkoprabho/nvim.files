@@ -136,7 +136,8 @@ require("mini.pairs").setup({
 		["'"] = { action = "closeopen", pair = "''", neigh_pattern = "[^%a\\].", register = { cr = false } },
 		["`"] = { action = "closeopen", pair = "``", neigh_pattern = "[^\\].", register = { cr = false } },
 
-		["<"] = { action = "open", pair = "<t", neigh_pattern = "[^\\]." },
+		["<"] = { action = "open", pair = "<>", neigh_pattern = "[^\\]." },
+		[">"] = { action = "close", pair = "<>", neigh_pattern = "[^\\]." },
 	},
 })
 
