@@ -169,6 +169,10 @@ return packer.startup(function()
 
 	-- Git
 	use({
+		"nvim-telescope/telescope-github.nvim",
+		commit = "ee95c509901c3357679e9f2f9eaac3561c811736",
+	})
+	use({
 		"f-person/git-blame.nvim",
 		commit = "08e75b7061f4a654ef62b0cac43a9015c87744a2",
 	})
