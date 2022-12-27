@@ -3,7 +3,7 @@ local bufferline = require("bufferline")
 bufferline.setup({
 	options = {
 		mode = "tabs",
-		numbers = "buffer_id",
+		numbers = "ordinal",
 		buffer_close_icon = icons.ui.Close,
 		diagnostics = "nvim_lsp",
 		modified_icon = icons.ui.Circle .. " ",
