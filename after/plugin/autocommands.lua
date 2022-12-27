@@ -47,3 +47,12 @@ vim.api.nvim_create_autocmd("TermOpen", {
 	desc = "Disables the mini related plugins when entering a terminal",
 	nested = true,
 })
+
+local cmdheight = vim.api.nvim_create_augroup("cmdheight", { clear = true })
+vim.api.nvim_create_autocmd("VimEnter", {
+	command = string.format("set cmdheight=0"),
+	group = cmdheight,
+	once = true,
+	desc = "Sets the cmdheight to 0 post vim startup",
+	nested = true,
+})
