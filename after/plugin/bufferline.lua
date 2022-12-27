@@ -13,8 +13,8 @@ bufferline.setup({
 })
 local map = vim.keymap.set
 -- Move to previous/next
-map("n", "<A-,>", "<Cmd>BufferLineCyclePrev<CR>")
-map("n", "<A-.>", "<Cmd>BufferLineCycleNext<CR>")
+map("n", "<A-h>", "<Cmd>BufferLineCyclePrev<CR>")
+map("n", "<A-l>", "<Cmd>BufferLineCycleNext<CR>")
 -- Re-order to previous/next
 map("n", "<A-<>", "<Cmd>BufferMovePrevious<CR>")
 map("n", "<A->>", "<Cmd>BufferMoveNext<CR>")
