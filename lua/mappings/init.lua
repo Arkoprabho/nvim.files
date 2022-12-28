@@ -29,7 +29,6 @@ map("n", "<leader>gsta", "<CMD>Telescope git_stash<CR>", opts)
 
 -- Misc
 map("n", "<leader>%", "<CMD>luafile %<CR>", opts)
-map("n", "<leader>lsl", "<CMD>lua require('luasnip.loaders.from_vscode').load()<CR>", opts)
 
 -- Packer
 map("n", "<leader>ps", "<CMD>PackerSync<CR>", opts)

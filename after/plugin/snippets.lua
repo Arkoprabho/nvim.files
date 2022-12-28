@@ -71,3 +71,7 @@ lua_snip.add_snippets("terraform", {
 		text_node({ '"', "}" }),
 	}),
 })
+
+-- Mappings
+local vscode = require("luasnip.loaders.from_vscode")
+vim.keymap.set("n", "<leader>lsl", vscode.load)
