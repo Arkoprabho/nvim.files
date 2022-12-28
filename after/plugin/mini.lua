@@ -194,5 +194,7 @@ require("mini.sessions").setup({
 	verbose = { read = true, write = true, delete = true },
 })
 
+require("mini.ai").setup({})
+
 -- Mappings
 vim.keymap.set("n", "<leader>mpt", map.toggle)
