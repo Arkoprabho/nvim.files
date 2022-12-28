@@ -226,6 +226,10 @@ return packer.startup(function()
 		commit = "c46a8a0a60412a8fe43aa6bd3a01845c46de6bf2",
 	})
 	use({
+		"p00f/nvim-ts-rainbow",
+		commit = "064fd6c0a15fae7f876c2c6dd4524ca3fad96750",
+	})
+	use({
 		"norcalli/nvim-colorizer.lua",
 		commit = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6",
 	})
