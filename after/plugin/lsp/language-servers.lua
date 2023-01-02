@@ -50,8 +50,7 @@ local lsp_flags = {
 	-- This is the default in Nvim 0.7+
 	debounce_text_changes = 150,
 }
-local servers =
-	{ "pyright", "tsserver", "terraform_lsp", "yamlls", "csharp_ls", "gopls", "dockerls", "kotlin_language_server" }
+local servers = { "pyright", "tsserver", "terraform_lsp", "csharp_ls", "gopls", "dockerls", "kotlin_language_server" }
 local lspconfig = require("lspconfig")
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
@@ -90,24 +89,55 @@ lspconfig["sumneko_lua"].setup({
 	},
 })
 
-local helper_functions = {
-	yaml_schema = function()
-		local schema = {
-			-- ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-			-- ["https://raw.githubusercontent.com/vscode-kubernetes-tools/vscode-kubernetes-tools/master/syntaxes/helm.tmLanguage.json"] = "/*.yaml",
-			kubernetes = "/*.yaml",
-		}
-		return schema
-	end,
-}
--- YAML Config
-lspconfig["yamlls"].setup({
-	settings = {
-		yaml = {
-			schemas = helper_functions.yaml_schema(),
+-- YAML Language server
+local yaml_companion = require("yaml-companion")
+
+yaml_companion.setup({
+	-- Built in file matchers
+	builtin_matchers = {
+		-- Detects Kubernetes files based on content
+		kubernetes = { enabled = true },
+		cloud_init = { enabled = true },
+	},
+
+	-- Additional schemas available in Telescope picker
+	schemas = {
+		result = {
+			--{
+			--  name = "Kubernetes 1.22.4",
+			--  uri = "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.22.4-standalone-strict/all.json",
+			--},
+		},
+	},
+
+	-- Pass any additional options that will be merged in the final LSP config
+	lspconfig = {
+		flags = {
+			debounce_text_changes = 150,
+		},
+		settings = {
+			redhat = { telemetry = { enabled = false } },
+			yaml = {
+				validate = true,
+				format = { enable = true },
+				hover = true,
+				schemaStore = {
+					enable = true,
+					url = "https://www.schemastore.org/api/json/catalog.json",
+				},
+				schemaDownload = { enable = true },
+				schemas = {
+					kubernetes = "/*.yaml",
+				},
+				trace = { server = "debug" },
+			},
 		},
 	},
 })
+
+lspconfig["yamlls"].setup(yaml_companion)
+require("telescope").load_extension("yaml_schema")
+
 local icons = require("globals.icons")
 local signs = {
 	Error = icons.diagnostics.Error,

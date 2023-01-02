@@ -262,4 +262,15 @@ return packer.startup(function()
 		commit = "cf0b5dafc8239ac038da630f0c780a71d064866b",
 		ft = { "Jenkinsfile" },
 	})
+
+	-- YAML related plugin
+	use({
+		"someone-stole-my-name/yaml-companion.nvim",
+		requires = {
+			{ "neovim/nvim-lspconfig" },
+			{ "nvim-lua/plenary.nvim" },
+			{ "nvim-telescope/telescope.nvim" },
+		},
+		tag = "0.1.3",
+	})
 end)
