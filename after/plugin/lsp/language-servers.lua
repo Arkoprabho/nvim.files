@@ -126,9 +126,7 @@ yaml_companion.setup({
 					url = "https://www.schemastore.org/api/json/catalog.json",
 				},
 				schemaDownload = { enable = true },
-				schemas = {
-					kubernetes = "/*.yaml",
-				},
+				schemas = {},
 				trace = { server = "debug" },
 			},
 		},
