@@ -90,9 +90,7 @@ lspconfig["sumneko_lua"].setup({
 })
 
 -- YAML Language server
-local yaml_companion = require("yaml-companion")
-
-yaml_companion.setup({
+local yaml_companion = require("yaml-companion").setup({
 	-- Built in file matchers
 	builtin_matchers = {
 		-- Detects Kubernetes files based on content
