@@ -101,10 +101,14 @@ local yaml_companion = require("yaml-companion").setup({
 	-- Additional schemas available in Telescope picker
 	schemas = {
 		result = {
-			--{
-			--  name = "Kubernetes 1.22.4",
-			--  uri = "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.22.4-standalone-strict/all.json",
-			--},
+			{
+				name = "Kubernetes 1.22.4",
+				uri = "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.22.4-standalone-strict/all.json",
+			},
+			{
+				name = "Kubernetes 1.26.0",
+				uri = "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.26.0-standalone-strict/all.json",
+			},
 		},
 	},
 
