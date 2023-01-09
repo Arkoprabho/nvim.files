@@ -197,6 +197,10 @@ return packer.startup(function()
 		commit = "82e04074117635ebe7ae2202953a0c3d78db5146",
 	})
 	use({
+		"tpope/vim-sleuth",
+		commit = "8332f123a63c739c870c96907d987cc3ff719d24",
+	})
+	use({
 		"superhawk610/ascii-blocks.nvim",
 		commit = "a8a7d99fc52df30d7c4e7664818542fd44839d97",
 		cmd = { "AsciiBlockify" },
