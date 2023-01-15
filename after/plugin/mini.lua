@@ -196,5 +196,7 @@ require("mini.sessions").setup({
 
 require("mini.ai").setup({})
 
+require("mini.move").setup({})
+
 -- Mappings
 vim.keymap.set("n", "<leader>mpt", map.toggle)

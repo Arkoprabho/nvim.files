@@ -198,7 +198,7 @@ return packer.startup(function()
 	})
 	use({
 		"echasnovski/mini.nvim",
-		commit = "82e04074117635ebe7ae2202953a0c3d78db5146",
+		commit = "d7b2f437077da10819771f2404a6a3e581d44008",
 	})
 	use({
 		"tpope/vim-sleuth",
