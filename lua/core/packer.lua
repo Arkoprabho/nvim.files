@@ -193,6 +193,10 @@ return packer.startup(function()
 	})
 	-- Misc
 	use({
+		"christoomey/vim-tmux-navigator",
+		commit = "cdd66d6a37d991bba7997d593586fc51a5b37aa8",
+	})
+	use({
 		"echasnovski/mini.nvim",
 		commit = "82e04074117635ebe7ae2202953a0c3d78db5146",
 	})
