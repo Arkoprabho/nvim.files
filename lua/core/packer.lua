@@ -27,11 +27,7 @@ return packer.startup(function()
 		commit = "189ad3790d57c548896a78522fd8b0d0fc11be31",
 	})
 
-	use({
-		"folke/tokyonight.nvim",
-		commit = "62b4e89ea1766baa3b5343ca77d62c817f5f48d0",
-	})
-
+	use({ "projekt0n/github-nvim-theme", tag = "v0.0.7" })
 	-- Notification
 	use({
 		"rcarriga/nvim-notify",

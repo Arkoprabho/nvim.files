@@ -183,7 +183,7 @@ local lualine_components = {
 
 require("lualine").setup({
 	options = {
-		theme = "tokyonight",
+		theme = "auto",
 		globalstatus = true,
 		component_separators = { left = icons.separator.hollow_right, right = icons.separator.hollow_left },
 		section_separators = { left = icons.separator.filled_right, right = icons.separator.filled_left },
