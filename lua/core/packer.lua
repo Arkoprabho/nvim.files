@@ -194,6 +194,10 @@ return packer.startup(function()
 	})
 	-- Misc
 	use({
+		"SmiteshP/nvim-navic",
+		requires = "neovim/nvim-lspconfig",
+	})
+	use({
 		"christoomey/vim-tmux-navigator",
 		commit = "cdd66d6a37d991bba7997d593586fc51a5b37aa8",
 	})

@@ -3,6 +3,7 @@ vim.keymap.set("n", "<leader>of", vim.diagnostic.open_float, opts)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts)
+local navic = require("nvim-navic")
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
@@ -21,6 +22,9 @@ local disabled_document_formatting_clients = Set({ "sumneko_lua", "gopls", "yaml
 local on_attach = function(client, bufnr)
 	if disabled_document_formatting_clients[client.name] then
 		client.server_capabilities.document_formatting = false
+	end
+	if client.server_capabilities.documentSymbolProvider then
+		navic.attach(client, bufnr)
 	end
 	-- Enable completion triggered by <c-x><c-o>
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
