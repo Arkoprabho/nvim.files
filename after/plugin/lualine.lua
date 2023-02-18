@@ -186,7 +186,7 @@ require("lualine").setup({
 		theme = "auto",
 		globalstatus = true,
 		component_separators = { left = icons.separator.hollow_right, right = icons.separator.hollow_left },
-		section_separators = { left = icons.separator.filled_right, right = icons.separator.filled_left },
+		section_separators = { left = icons.separator.curved_filled_right, right = icons.separator.curved_filled_left },
 	},
 	extensions = {
 		"nvim-tree",

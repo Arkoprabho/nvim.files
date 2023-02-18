@@ -14,6 +14,10 @@ if vim.fn.has("mac") == 1 or vim.g.use_nerd_icons then
 			hollow_left = "",
 			fill_pipe = "▎",
 			hollow_pipe = "│ ",
+			curved_hollow_left = "",
+			curved_hollow_right = "",
+			curved_filled_left = "",
+			curved_filled_right = "",
 		},
 		kind = {
 			Text = "",
