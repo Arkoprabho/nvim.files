@@ -106,7 +106,7 @@ return packer.startup(function()
 	--- LSP Config
 	use({
 		"williamboman/mason.nvim",
-		commit = "13217bbf59ed1e3d7633bd7e8e518b93a77e22c5",
+		commit = "2e83e412d877a7e6daf04b2b6359521f6fb8c20e",
 	})
 	use({
 		"WhoIsSethDaniel/lualine-lsp-progress.nvim",
