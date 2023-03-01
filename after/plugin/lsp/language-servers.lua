@@ -54,7 +54,7 @@ local lsp_flags = {
 	-- This is the default in Nvim 0.7+
 	debounce_text_changes = 150,
 }
-local servers = { "pyright", "tsserver", "terraform_lsp", "csharp_ls", "gopls", "dockerls", "kotlin_language_server" }
+local servers = { "pyright", "tsserver", "terraformls", "csharp_ls", "gopls", "dockerls", "kotlin_language_server" }
 local lspconfig = require("lspconfig")
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
