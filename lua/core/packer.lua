@@ -165,15 +165,6 @@ return packer.startup(function()
 
 	-- Git
 	use({
-		"ldelossa/gh.nvim",
-		commit = "bc731bb53909481995ac2edb4bf6418c051fec1a",
-		requires = { { "ldelossa/litee.nvim" } },
-	})
-	use({
-		"nvim-telescope/telescope-github.nvim",
-		commit = "ee95c509901c3357679e9f2f9eaac3561c811736",
-	})
-	use({
 		"f-person/git-blame.nvim",
 		commit = "08e75b7061f4a654ef62b0cac43a9015c87744a2",
 	})
@@ -208,11 +199,6 @@ return packer.startup(function()
 	use({
 		"tpope/vim-sleuth",
 		commit = "8332f123a63c739c870c96907d987cc3ff719d24",
-	})
-	use({
-		"superhawk610/ascii-blocks.nvim",
-		commit = "a8a7d99fc52df30d7c4e7664818542fd44839d97",
-		cmd = { "AsciiBlockify" },
 	})
 	use({
 		"anuvyklack/windows.nvim",
@@ -262,18 +248,6 @@ return packer.startup(function()
 	use({
 		"mfussenegger/nvim-dap-python",
 		commit = "27a0eff2bd3114269bb010d895b179e667e712bd",
-	})
-
-	-- Jenkins related plugin
-	use({
-		"martinda/Jenkinsfile-vim-syntax",
-		commit = "0d05729168ea44d60862f17cffa80024ab30bcc9",
-		ft = { "Jenkinsfile" },
-	})
-	use({
-		"joshzcold/cmp-jenkinsfile",
-		commit = "cf0b5dafc8239ac038da630f0c780a71d064866b",
-		ft = { "Jenkinsfile" },
 	})
 
 	-- YAML related plugin
