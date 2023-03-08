@@ -7,6 +7,7 @@ require("nvim-treesitter.configs").setup({
 		"typescript",
 		"javascript",
 		"c_sharp",
+		"kotlin",
 		"yaml",
 		"bash",
 		"make",
