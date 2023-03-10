@@ -218,11 +218,6 @@ return packer.startup(function()
 		commit = "8332f123a63c739c870c96907d987cc3ff719d24",
 	})
 	use({
-		"superhawk610/ascii-blocks.nvim",
-		commit = "a8a7d99fc52df30d7c4e7664818542fd44839d97",
-		cmd = { "AsciiBlockify" },
-	})
-	use({
 		"anuvyklack/windows.nvim",
 		commit = "e3a1217976d4ec8d2515cb634dbf5d26cabd46d5",
 		requires = {
@@ -270,18 +265,6 @@ return packer.startup(function()
 	use({
 		"mfussenegger/nvim-dap-python",
 		commit = "27a0eff2bd3114269bb010d895b179e667e712bd",
-	})
-
-	-- Jenkins related plugin
-	use({
-		"martinda/Jenkinsfile-vim-syntax",
-		commit = "0d05729168ea44d60862f17cffa80024ab30bcc9",
-		ft = { "Jenkinsfile" },
-	})
-	use({
-		"joshzcold/cmp-jenkinsfile",
-		commit = "cf0b5dafc8239ac038da630f0c780a71d064866b",
-		ft = { "Jenkinsfile" },
 	})
 
 	-- YAML related plugin
