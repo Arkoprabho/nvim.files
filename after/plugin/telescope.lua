@@ -6,6 +6,7 @@ telescope.load_extension("neoclip")
 telescope.load_extension("notify")
 telescope.load_extension("dap")
 telescope.load_extension("harpoon")
+telescope.load_extension("gh")
 
 telescope.setup({
 	defaults = {
@@ -37,9 +38,12 @@ telescope.setup({
 -- Mappings
 local map = vim.keymap.set
 local builtin = require("telescope.builtin")
+local github = require("telescope").extensions.gh
 
 map("n", "<A-F>", builtin.live_grep)
 map("n", "<leader>pv", builtin.find_files)
 map("n", "<C-f>", builtin.git_files)
 map("n", "<leader>T", builtin.builtin)
+map("n", "<leader>ghpr", github.pull_request)
 map("n", "<leader>ghbr", builtin.git_branches)
+map("n", "<leader>ghi", github.issues)
