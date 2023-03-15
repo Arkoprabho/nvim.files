@@ -31,6 +31,8 @@ map("n", "<leader>gsta", "<CMD>Telescope git_stash<CR>", opts)
 map("n", "<leader>%", "<CMD>luafile %<CR>", opts)
 map("n", "<CR>", "m`o<Esc>``", opts)
 map("n", "<S-CR>", "m`O<Esc>``", opts)
+map("v", "<", "<gv", opts)
+map("v", ">", ">gv", opts)
 
 -- Packer
 map("n", "<leader>ps", "<CMD>PackerSync<CR>", opts)
