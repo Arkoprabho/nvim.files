@@ -56,3 +56,13 @@ vim.api.nvim_create_autocmd("VimEnter", {
 	desc = "Sets the cmdheight to 0 post vim startup",
 	nested = true,
 })
+
+local terraform = vim.api.nvim_create_augroup("terraform", { clear = true })
+vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
+	command = string.format("set filetype=terraform"),
+	group = terraform,
+	pattern = { "*.tf" },
+	once = true,
+	desc = "Sets the file type of .tf files to terraform instead of tf",
+	nested = true,
+})
