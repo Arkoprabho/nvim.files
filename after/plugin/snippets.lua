@@ -63,6 +63,12 @@ lua_snip.add_snippets("terraform", {
 		insert_node(2, ""),
 		text_node({ "]", "}" }),
 	}),
+	snippet("assume_service_principal", {
+		text_node({ "statement {", '\tactions = ["sts:AssumeRole"]' }),
+		text_node({ "", '\teffect = "Allow"', "\tprincipals {", '\t\ttype = "Service"', '\t\tidentifiers =["' }),
+		insert_node(1, ""),
+		text_node({ '"]', "\t}", "}" }),
+	}),
 	snippet("module", {
 		text_node("module "),
 		insert_node(1, "module_name"),
