@@ -43,6 +43,10 @@ return packer.startup(function()
 		},
 	})
 	use({
+		"kiran94/s3edit.nvim",
+		tag = "v1.1.1",
+	})
+	use({
 		"kyazdani42/nvim-tree.lua",
 		commit = "b17358ff4d822deeb42b97919065800f8f91cb55",
 		requires = {
