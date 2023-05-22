@@ -27,7 +27,7 @@ return packer.startup(function()
 		commit = "189ad3790d57c548896a78522fd8b0d0fc11be31",
 	})
 
-	use({ "projekt0n/github-nvim-theme", tag = "v0.0.7" })
+	use({ "projekt0n/github-nvim-theme", tag = "v1.0.0" })
 	-- Notification
 	use({
 		"rcarriga/nvim-notify",

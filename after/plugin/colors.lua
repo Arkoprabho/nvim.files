@@ -1,8 +1,15 @@
 require("github-theme").setup({
-	theme_style = "dimmed",
-	sidebars = { "nvim-tree" },
+	options = {
+		darken = {
+			floats = true,
+			sidebar = {
+				enable = true,
+				list = { "nvim-tree" },
+			},
+		},
+	},
 })
-vim.cmd([[colorscheme github_* ]])
+vim.cmd([[colorscheme github_dark ]])
 
 require("colorizer").setup({
 	"*", -- Highlight all files, but customize some others.
