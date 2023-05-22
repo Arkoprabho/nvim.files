@@ -18,7 +18,8 @@ local function Set(list)
 	return set
 end
 
-local disabled_document_formatting_clients = Set({ "sumneko_lua", "gopls", "yamlls", "tsserver", "dockerls" })
+local disabled_document_formatting_clients =
+	Set({ "sumneko_lua", "gopls", "yamlls", "tsserver", "dockerls", "kotlin_language_server" })
 local on_attach = function(client, bufnr)
 	if disabled_document_formatting_clients[client.name] then
 		client.server_capabilities.document_formatting = false
