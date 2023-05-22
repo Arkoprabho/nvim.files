@@ -58,7 +58,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 })
 
 local terraform = vim.api.nvim_create_augroup("terraform", { clear = true })
-vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufWinEnter", "BufEnter" }, {
 	command = string.format("set filetype=terraform"),
 	group = terraform,
 	pattern = { "*.tf" },
