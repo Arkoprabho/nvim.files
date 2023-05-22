@@ -173,7 +173,7 @@ require("mini.surround").setup({
 
 require("mini.sessions").setup({
 	-- Whether to read latest session if Neovim opened without file arguments
-	autoread = true,
+	autoread = false,
 
 	-- Whether to write current session before quitting Neovim
 	autowrite = true,
