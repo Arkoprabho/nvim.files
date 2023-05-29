@@ -235,14 +235,7 @@ return packer.startup(function()
 	use({
 		"folke/zen-mode.nvim",
 		cmd = { "ZenMode" },
-		commit = "6f5702db4fd4a4c9a212f8de3b7b982f3d93b03c",
-		config = function()
-			require("zen-mode").setup({
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-				-- refer to the configuration section below
-			})
-		end,
+		commit = "68f554702de63f4b7b6b6d4bcb10178f41a0acc7",
 	})
 	use({
 		"nvim-treesitter/nvim-treesitter-context",
