@@ -57,6 +57,10 @@ return packer.startup(function()
 		},
 	})
 	use({
+		"stevearc/oil.nvim",
+		commit = "64d2f305d30cec13938aa99f8f13bd84c502e020",
+	})
+	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.0",
 		requires = { { "nvim-lua/plenary.nvim" } },
