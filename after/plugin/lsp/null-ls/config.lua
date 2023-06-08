@@ -26,9 +26,12 @@ null_ls.setup({
 		formatting.gofmt,
 		formatting.black,
 		formatting.trim_whitespace,
-		formatting.terraform_fmt,
+		formatting.terraform_fmt.with({
+			extra_filetypes = { "hcl" },
+		}),
 		formatting.prettier,
 		diagnostics.golangci_lint,
 		diagnostics.hadolint,
+		diagnostics.actionlint,
 	},
 })
