@@ -33,6 +33,8 @@ map("n", "<CR>", "m`o<Esc>``", opts)
 map("n", "<S-CR>", "m`O<Esc>``", opts)
 map("v", "<", "<gv", opts)
 map("v", ">", ">gv", opts)
+map("i", "<A-BS>", "<ESC>cb", opts)
+map("n", "<A-BS>", "db", opts)
 
 -- Packer
 map("n", "<leader>ps", "<CMD>PackerSync<CR>", opts)
