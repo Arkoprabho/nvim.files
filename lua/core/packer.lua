@@ -176,11 +176,6 @@ return packer.startup(function()
 
 	-- Git
 	use({
-		"ldelossa/gh.nvim",
-		commit = "bc731bb53909481995ac2edb4bf6418c051fec1a",
-		requires = { { "ldelossa/litee.nvim" } },
-	})
-	use({
 		"nvim-telescope/telescope-github.nvim",
 		commit = "ee95c509901c3357679e9f2f9eaac3561c811736",
 	})
