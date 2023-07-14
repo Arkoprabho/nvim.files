@@ -195,7 +195,7 @@ return packer.startup(function()
 	use({
 		"sindrets/diffview.nvim",
 		requires = "nvim-lua/plenary.nvim",
-		commit = "7e631e5da655dab31d1be10ba01a288f515ce6cc",
+		commit = "b0cc22f5708f6b2b4f873b44fbc5eb93020f4e0c",
 		opt = true,
 		cmd = { "DiffviewOpen", "DiffviewToggleFiles", "DiffviewFocusFiles" },
 	})
