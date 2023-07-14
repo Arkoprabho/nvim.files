@@ -180,6 +180,11 @@ return packer.startup(function()
 		commit = "ee95c509901c3357679e9f2f9eaac3561c811736",
 	})
 	use({
+		"NeogitOrg/neogit",
+		requires = "nvim-lua/plenary.nvim",
+		commit = "015c27c5b74eba9b151c683579c838e742bf36a2",
+	})
+	use({
 		"f-person/git-blame.nvim",
 		commit = "08e75b7061f4a654ef62b0cac43a9015c87744a2",
 	})
