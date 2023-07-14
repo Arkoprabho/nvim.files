@@ -205,14 +205,6 @@ return packer.startup(function()
 	})
 	-- Misc
 	use({
-		"folke/noice.nvim",
-		tag = "v1.9.1",
-		requires = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		},
-	})
-	use({
 		"SmiteshP/nvim-navic",
 		requires = "neovim/nvim-lspconfig",
 	})
