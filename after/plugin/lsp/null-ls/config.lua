@@ -6,6 +6,7 @@ end
 
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
+local code_actions = null_ls.builtins.code_actions
 
 null_ls.setup({
 	-- you can reuse a shared lspconfig on_attach callback here
@@ -25,6 +26,7 @@ null_ls.setup({
 		formatting.stylua,
 		formatting.gofmt,
 		formatting.black,
+		formatting.beautysh,
 		formatting.trim_whitespace,
 		formatting.terraform_fmt.with({
 			extra_filetypes = { "hcl" },
@@ -33,5 +35,7 @@ null_ls.setup({
 		diagnostics.golangci_lint,
 		diagnostics.hadolint,
 		diagnostics.actionlint,
+		diagnostics.shellcheck,
+		code_actions.shellcheck,
 	},
 })
