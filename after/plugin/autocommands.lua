@@ -66,3 +66,48 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufWinEnter", "BufEnter" }, {
 	desc = "Sets the file type of .tf files to terraform instead of tf",
 	nested = true,
 })
+
+-- Fade out highlight
+local timers = {}
+local search_timer_timeout = 5000
+local search_timer_iter = 50
+local bg_highlight = "#3E68D7"
+local bg_highlight_vals = {
+	"#3B62C8",
+	"#395CBA",
+	"#3655AB",
+	"#344F9C",
+	"#31498E",
+	"#2F437F",
+	"#2C3D71",
+	"#2A3762",
+	"#273053",
+	"#252A45",
+	"#222436",
+}
+local function timed_color_change()
+	for _, t in ipairs(timers) do
+		vim.fn.timer_stop(t)
+	end
+	timers = {}
+	local search_timer = vim.fn.timer_start(search_timer_timeout, function()
+		for i = 1, #bg_highlight_vals, 1 do
+			local timer = vim.fn.timer_start(i * search_timer_iter, function()
+				vim.api.nvim_set_hl(0, "IncSearch", { bg = bg_highlight_vals[i] })
+				vim.api.nvim_set_hl(0, "Search", { bg = bg_highlight_vals[i] })
+			end)
+			table.insert(timers, timer)
+		end
+		local timer = vim.fn.timer_start((#bg_highlight_vals + 1) * search_timer_iter + search_timer_iter, function()
+			vim.cmd("nohl")
+		end)
+		table.insert(timers, timer)
+	end)
+	table.insert(timers, search_timer)
+end
+vim.keymap.set("n", "n", function()
+	vim.api.nvim_set_hl(0, "IncSearch", { bg = bg_highlight })
+	vim.api.nvim_set_hl(0, "Search", { bg = bg_highlight })
+	vim.fn.feedkeys("nzz", "n")
+	timed_color_change()
+end, { noremap = true })
