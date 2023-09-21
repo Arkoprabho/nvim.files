@@ -40,3 +40,14 @@ map("n", "<leader>ps", "<CMD>PackerSync<CR>", opts)
 map("n", "<leader>pt", "<CMD>PackerStatus<CR>", opts)
 map("n", "<leader>pp", "<CMD>PackerProfile<CR>", opts)
 map("n", "<leader>pc", "<CMD>PackerCompile profile=true<CR>", opts)
+
+-- Abbreviations
+vim.cmd([[
+inoreabbrev seperate separate
+inoreabbrev ture true
+inoreabbrev flase false
+cabbrev Wq wq
+cabbrev LWq wq
+cabbrev Lw w
+cabbrev Lq q
+]])
