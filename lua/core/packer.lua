@@ -193,13 +193,6 @@ return packer.startup(function()
 		commit = "9c73fd69a4c1cb3b3fc35b741ac968e331642600",
 	})
 	use({
-		"sindrets/diffview.nvim",
-		requires = "nvim-lua/plenary.nvim",
-		commit = "b0cc22f5708f6b2b4f873b44fbc5eb93020f4e0c",
-		opt = true,
-		cmd = { "DiffviewOpen", "DiffviewToggleFiles", "DiffviewFocusFiles" },
-	})
-	use({
 		"lewis6991/gitsigns.nvim",
 		tag = "v0.5",
 	})
