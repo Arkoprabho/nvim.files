@@ -1,4 +1,15 @@
 local icons = require("globals.icons")
+local function split(inputstr, sep)
+	if sep == nil then
+		sep = "%s"
+	end
+	local t = {}
+	for str in string.gmatch(inputstr, "([^" .. sep .. "]+)") do
+		table.insert(t, str)
+	end
+	return t[#t]
+end
+
 local test_function_query_string = [[
 (
  (function_declaration
@@ -36,7 +47,7 @@ end
 local make_key = function(entry)
 	assert(entry.Package, "Must have Package:" .. vim.inspect(entry))
 	assert(entry.Test, "Must have Test:" .. vim.inspect(entry))
-	return string.format("%s/%s", entry.Package, entry.Test)
+	return string.format("%s/%s", split(entry.Package), entry.Test)
 end
 
 local add_golang_test = function(state, entry)
@@ -98,7 +109,6 @@ local attach_to_buffer = function(bufnr, command)
 					for _, line in ipairs(data) do
 						local decoded = vim.json.decode(line)
 						if decoded.Action == "run" then
-							print("SUPERMAN WAS HERE")
 							add_golang_test(state, decoded)
 						elseif decoded.Action == "output" then
 							if not decoded.Test then
@@ -116,8 +126,7 @@ local attach_to_buffer = function(bufnr, command)
 								})
 							end
 						elseif decoded.Action == "start" or decoded.Action == "cont" then
-							-- Do nothing
-							print("Skipped the start")
+						-- Do nothing
 						else
 							error("Failed to handle" .. vim.inspect(data))
 						end
@@ -150,9 +159,5 @@ local attach_to_buffer = function(bufnr, command)
 end
 
 vim.api.nvim_create_user_command("GoTestOnSave", function()
-	attach_to_buffer(vim.api.nvim_get_current_buf(), { "go", "test", ".", "-v", "-json", "-count=1" })
+	attach_to_buffer(vim.api.nvim_get_current_buf(), { "go", "test", "./...", "-v", "-json", "-count=1" })
 end, {})
-
--- attach_to_buffer(80, { "go", "run", "main.go" })
--- attach_to_buffer(16, { "go", "test", "./...", "-v", "-json" })
--- attach_to_buffer(1, { "go", "test", "./...", "-v", "-json", "-run", "TestDoesFailStill" })
