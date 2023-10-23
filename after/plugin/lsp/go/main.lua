@@ -1,3 +1,4 @@
+local icons = require("globals.icons")
 local test_function_query_string = [[
 (
  (function_declaration
@@ -109,7 +110,7 @@ local attach_to_buffer = function(bufnr, command)
 
 							local test = state.tests[make_key(decoded)]
 							if test.success then
-								local text = { "✓" }
+								local text = { icons.ui.Check }
 								vim.api.nvim_buf_set_extmark(bufnr, ns, test.line, 0, {
 									virt_text = { text },
 								})
