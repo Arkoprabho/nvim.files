@@ -68,16 +68,6 @@ local attach_to_buffer = function(bufnr, command)
 		tests = {},
 	}
 
-	vim.api.nvim_buf_create_user_command(bufnr, "GoTestLineDiag", function()
-		local line = vim.fn.line(".") - 1
-		for _, test in pairs(state.tests) do
-			if test.line == line then
-				vim.cmd.new()
-				vim.api.nvim_buf_set_lines(vim.api.nvim_get_current_buf(), 0, -1, false, test.output)
-			end
-		end
-	end, {})
-
 	vim.api.nvim_create_autocmd("BufWritePost", {
 		group = group,
 		pattern = "*.go",
