@@ -40,7 +40,7 @@ local make_key = function(entry)
 	return string.format("%s/%s", entry.Package, entry.Test)
 end
 
-local add_golang_test = function(state, entry)
+local add_golang_test = function(state, entry, _, _)
 	state.tests[make_key(entry)] = {
 		name = entry.Test,
 		line = find_test_line(state.bufnr, entry.Test),
@@ -48,16 +48,56 @@ local add_golang_test = function(state, entry)
 	}
 end
 
-local add_golang_output = function(state, entry)
-	assert(state.tests, vim.inspect(state))
-	table.insert(state.tests[make_key(entry)].output, vim.trim(entry.Output))
+local add_golang_output = function(state, entry, _, _)
+	if entry.Test then
+		assert(state.tests, vim.inspect(state))
+		table.insert(state.tests[make_key(entry)].output, vim.trim(entry.Output))
+	end
 end
 
-local mark_success = function(state, entry)
+local mark_success = function(state, entry, bufnr, namespace)
 	state.tests[make_key(entry)].success = entry.Action == "pass"
+	local test = state.tests[make_key(entry)]
+	if test.success then
+		local text = { icons.ui.Check }
+		vim.api.nvim_buf_set_extmark(bufnr, namespace, test.line, 0, {
+			virt_text = { text },
+		})
+	end
 end
 
--- local display_golang_output = function(state, bufnr) end
+local parse_test_table = {
+	["run"] = add_golang_test,
+	["output"] = add_golang_output,
+	["pass"] = mark_success,
+	["fail"] = mark_success,
+	["start"] = function() end,
+	["skip"] = function() end,
+}
+
+local item_in_list = function(item, list)
+	for _, value in pairs(list) do
+		if value == item then
+			return true
+		end
+	end
+	return false
+end
+
+local decode_parse_tests = function(state, data, namespace, bufnr)
+	local allowed_actions = { "run", "output", "pass", "fail", "start", "skip" }
+	if not data then
+		return
+	end
+	for _, line in ipairs(data) do
+		local decoded = vim.json.decode(line)
+		if item_in_list(decoded.Action, allowed_actions) then
+			parse_test_table[decoded.Action](state, decoded, bufnr, namespace)
+		else
+			error("Failed to handle" .. vim.inspect(data))
+		end
+	end
+end
 
 local ns = vim.api.nvim_create_namespace("live-tests")
 local group = vim.api.nvim_create_augroup("GoTests", { clear = true })
@@ -82,36 +122,8 @@ local attach_to_buffer = function(bufnr, command)
 			vim.fn.jobstart(command, {
 				stdout_buffered = true,
 				on_stdout = function(_, data)
-					if not data then
-						return
-					end
-
-					for _, line in ipairs(data) do
-						local decoded = vim.json.decode(line)
-						if decoded.Action == "run" then
-							add_golang_test(state, decoded)
-						elseif decoded.Action == "output" then
-							if decoded.Test then
-								add_golang_output(state, decoded)
-							end
-						elseif decoded.Action == "pass" or decoded.Action == "fail" then
-							mark_success(state, decoded)
-
-							local test = state.tests[make_key(decoded)]
-							if test.success then
-								local text = { icons.ui.Check }
-								vim.api.nvim_buf_set_extmark(bufnr, ns, test.line, 0, {
-									virt_text = { text },
-								})
-							end
-						elseif decoded.Action == "start" or decoded.Action == "skip" then
-						-- Do nothing
-						else
-							error("Failed to handle" .. vim.inspect(data))
-						end
-					end
+					decode_parse_tests(state, data, ns, bufnr)
 				end,
-
 				on_exit = function()
 					local failed = {}
 					for _, test in pairs(state.tests) do
