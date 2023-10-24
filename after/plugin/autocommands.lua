@@ -48,15 +48,6 @@ vim.api.nvim_create_autocmd("TermOpen", {
 	nested = true,
 })
 
-local cmdheight = vim.api.nvim_create_augroup("cmdheight", { clear = true })
-vim.api.nvim_create_autocmd("VimEnter", {
-	command = string.format("set cmdheight=0"),
-	group = cmdheight,
-	once = true,
-	desc = "Sets the cmdheight to 0 post vim startup",
-	nested = true,
-})
-
 local terraform = vim.api.nvim_create_augroup("terraform", { clear = true })
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufWinEnter", "BufEnter" }, {
 	command = string.format("set filetype=terraform"),
