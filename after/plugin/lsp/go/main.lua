@@ -71,8 +71,12 @@ local parse_test_table = {
 	["output"] = add_golang_output,
 	["pass"] = mark_success,
 	["fail"] = mark_success,
-	["start"] = function() end,
-	["skip"] = function() end,
+	["start"] = function()
+		-- Do nothing
+	end,
+	["skip"] = function()
+		-- Do nothing
+	end,
 }
 
 local item_in_list = function(item, list)
