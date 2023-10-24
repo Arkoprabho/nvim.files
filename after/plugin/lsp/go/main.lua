@@ -101,10 +101,9 @@ local attach_to_buffer = function(bufnr, command)
 						if decoded.Action == "run" then
 							add_golang_test(state, decoded)
 						elseif decoded.Action == "output" then
-							if not decoded.Test then
-								return
+							if decoded.Test then
+								add_golang_output(state, decoded)
 							end
-							add_golang_output(state, decoded)
 						elseif decoded.Action == "pass" or decoded.Action == "fail" then
 							mark_success(state, decoded)
 
