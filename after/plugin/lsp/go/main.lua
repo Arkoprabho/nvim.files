@@ -131,21 +131,18 @@ local attach_to_buffer = function(bufnr, command)
 				on_exit = function()
 					local failed = {}
 					for _, test in pairs(state.tests) do
-						if test.line then
-							if not test.success then
-								table.insert(failed, {
-									bufnr = bufnr,
-									lnum = test.line,
-									col = 0,
-									severity = vim.diagnostic.severity.ERROR,
-									source = "go-test",
-									message = "Test Failed",
-									user_data = {},
-								})
-							end
+						if not test.success and test.line then
+							table.insert(failed, {
+								bufnr = bufnr,
+								lnum = test.line,
+								col = 0,
+								severity = vim.diagnostic.severity.ERROR,
+								source = "go-test",
+								message = "Test Failed",
+								user_data = {},
+							})
 						end
 					end
-
 					vim.diagnostic.set(ns, bufnr, failed, {})
 				end,
 			})
