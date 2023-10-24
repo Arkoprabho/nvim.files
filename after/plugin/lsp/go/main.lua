@@ -1,14 +1,4 @@
 local icons = require("globals.icons")
-local function split(inputstr, sep)
-	if sep == nil then
-		sep = "%s"
-	end
-	local t = {}
-	for str in string.gmatch(inputstr, "([^" .. sep .. "]+)") do
-		table.insert(t, str)
-	end
-	return t[#t]
-end
 
 local test_function_query_string = [[
 (
@@ -47,7 +37,7 @@ end
 local make_key = function(entry)
 	assert(entry.Package, "Must have Package:" .. vim.inspect(entry))
 	assert(entry.Test, "Must have Test:" .. vim.inspect(entry))
-	return string.format("%s/%s", split(entry.Package), entry.Test)
+	return string.format("%s/%s", entry.Package, entry.Test)
 end
 
 local add_golang_test = function(state, entry)
@@ -125,7 +115,7 @@ local attach_to_buffer = function(bufnr, command)
 									virt_text = { text },
 								})
 							end
-						elseif decoded.Action == "start" or decoded.Action == "cont" then
+						elseif decoded.Action == "start" or decoded.Action == "skip" then
 						-- Do nothing
 						else
 							error("Failed to handle" .. vim.inspect(data))
