@@ -57,6 +57,36 @@ local lsp_flags = {
 }
 local servers = { "pyright", "tsserver", "terraformls", "csharp_ls", "gopls", "dockerls", "kotlin_language_server" }
 local lspconfig = require("lspconfig")
+lspconfig["gopls"].setup({
+	settings = {
+		gopls = {
+			gofumpt = true, -- Enable 'gofumpt' for source code formatting
+			staticcheck = true, -- Enable 'staticcheck' for linting
+			importShortcut = "Both", -- Include import statements for both definitions and references
+			symbolMatcher = "Fuzzy", -- Set symbol matcher to fuzzy matching
+			-- codelenses = {
+			-- 	gc_details = true, -- Enable/Disable the GC details lens
+			-- 	regenerate_cgo = true, -- Enable/Disable the 'regenerate cgo' lens
+			-- 	tidy = true, -- Enable/Disable the 'tidy' lens
+			-- 	upgrade_dependency = true, -- Enable/Disable the 'upgrade dependency' lens
+			-- 	vendor = true, -- Enable/Disable the 'vendor' lens
+			-- },
+			analyses = {
+				unusedparams = true, -- Report unused function parameters
+				fieldalignment = true, -- Find structs that would take less memory if their fields were sorted
+			},
+			usePlaceholders = true, -- Enable placeholders for function parameters when completing function calls
+			-- completeUnimported = true, -- Enable completion of unimported packages
+			matcher = "CaseSensitive", -- Change the default matcher to be case-sensitive
+			-- experimentalPostfixCompletions = true, -- Enable experimental postfix completions
+			-- allExperiments = true, -- Enable all code lenses. This option is intended for testing only
+			hoverKind = "FullDocumentation", -- Toggle between 'NoDocumentation' and 'FullDocumentation'
+			linkTarget = "pkg.go.dev", -- If hoverKind is set to FullDocumentation, this option controls where documentation links go: 'godoc.org' or 'pkg.go.dev'
+			-- buildFlags = { "-tags", "integration" }, -- Specify build flags for the workspace. Each string is a separate flag.
+		},
+	},
+})
+
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
 		on_attach = on_attach,
