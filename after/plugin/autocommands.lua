@@ -102,3 +102,10 @@ vim.keymap.set("n", "n", function()
 	vim.fn.feedkeys("nzz", "n")
 	timed_color_change()
 end, { noremap = true })
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})
+
