@@ -47,6 +47,16 @@ lua_snip.filetype_extend("shell", {})
 lua_snip.filetype_extend("python", {})
 lua_snip.filetype_extend("kubernetes", {})
 
+-- Golang snippets
+lua_snip.add_snippets("go", {
+	snippet("iferr", {
+		text_node({ "if " }),
+		insert_node(1, ""),
+		text_node({ "!= nil {" }),
+		insert_node(2, ""),
+		text_node({ "}" }),
+	}),
+})
 -- Terraform Snippets
 lua_snip.add_snippets("terraform", {
 	snippet("allow_iam_statement", {
