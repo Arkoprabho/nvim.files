@@ -40,7 +40,7 @@ return packer.startup(function()
 	-- File Explorer
 	use({
 		"ThePrimeagen/harpoon",
-		commit = "21d0d1bfa3000e4384740bfaefa0ebc51c773786",
+		commit = "c1aebbad9e3d13f20bedb8f2ce8b3a94e39e424a",
 		requires = {
 			"nvim-lua/plenary.nvim",
 		},
@@ -62,7 +62,7 @@ return packer.startup(function()
 	})
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.0",
+		tag = "0.1.4",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 	-- Status
@@ -108,7 +108,7 @@ return packer.startup(function()
 	})
 	use({
 		"nvim-treesitter/nvim-treesitter",
-		commit = "3e09c81b4c33bf14907b8a59025904d14c234b1e",
+		tag = "v0.9.1",
 		run = function()
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
