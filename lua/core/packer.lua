@@ -228,7 +228,7 @@ return packer.startup(function()
 	})
 	use({
 		"nvim-treesitter/nvim-treesitter-context",
-		commit = "c46a8a0a60412a8fe43aa6bd3a01845c46de6bf2",
+		commit = "2806d83e3965017382ce08792ee527e708fa1bd4",
 	})
 	use({
 		"p00f/nvim-ts-rainbow",
