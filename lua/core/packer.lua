@@ -202,6 +202,10 @@ return packer.startup(function()
 	})
 	-- Misc
 	use({
+		"carbon-steel/detour.nvim",
+		commit = "087bbcfce3a7e3e9c4defa420493132bbdd16499",
+	})
+	use({
 		"SmiteshP/nvim-navic",
 		requires = "neovim/nvim-lspconfig",
 	})
