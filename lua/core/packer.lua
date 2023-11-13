@@ -116,6 +116,10 @@ return packer.startup(function()
 
 	--- LSP Config
 	use({
+		"ray-x/lsp_signature.nvim",
+		commit = "1fba8f477b8c65add5e07cda0504cf7f81a9a4ab",
+	})
+	use({
 		"williamboman/mason.nvim",
 		commit = "2e83e412d877a7e6daf04b2b6359521f6fb8c20e",
 	})

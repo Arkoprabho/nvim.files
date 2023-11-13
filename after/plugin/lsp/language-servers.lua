@@ -58,6 +58,9 @@ local lsp_flags = {
 local servers = { "pyright", "tsserver", "terraformls", "csharp_ls", "gopls", "dockerls", "kotlin_language_server" }
 local lspconfig = require("lspconfig")
 lspconfig["gopls"].setup({
+	on_attach = function(client, bufnr)
+		require("lsp_signature").on_attach(client, bufnr)
+	end,
 	settings = {
 		gopls = {
 			gofumpt = true, -- Enable 'gofumpt' for source code formatting
