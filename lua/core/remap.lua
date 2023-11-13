@@ -3,8 +3,6 @@ vim.g.mapleader = "\\"
 local map = vim.keymap.set
 
 -- Navigation
-map("n", "j", "gj")
-map("n", "k", "gk")
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
 -- Splits
