@@ -62,19 +62,19 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufWinEnter", "BufEnter" }, {
 local timers = {}
 local search_timer_timeout = 5000
 local search_timer_iter = 50
-local bg_highlight = "#EFFF00"
+local bg_highlight = "#3E68D7"
 local bg_highlight_vals = {
-	"#EFFF01",
-	"#DCED12",
-	"#cbd827",
-	"#b1be41",
-	"#a4ad52",
-	"#969c63",
-	"#8a8d72",
-	"#81837c",
-	"#83837c",
-	"#82817d",
-	"#80807f",
+	"#3B62C8",
+	"#395CBA",
+	"#3655AB",
+	"#344F9C",
+	"#31498E",
+	"#2F437F",
+	"#2C3D71",
+	"#2A3762",
+	"#273053",
+	"#252A45",
+	"#222436",
 }
 local function timed_color_change()
 	for _, t in ipairs(timers) do
