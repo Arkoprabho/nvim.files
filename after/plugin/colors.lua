@@ -1,3 +1,3 @@
-vim.g.monokaipro_filter = "ristretto"
+vim.g.monokaipro_filter = "spectrum"
 
 vim.cmd([[colorscheme monokaipro]])
