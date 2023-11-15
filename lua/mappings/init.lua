@@ -47,6 +47,7 @@ inoreabbrev seperate separate
 inoreabbrev ture true
 inoreabbrev flase false
 cabbrev Wq wq
+cabbrev Wa wa
 cabbrev Qa qa
 cabbrev LWq wq
 cabbrev Lw w
