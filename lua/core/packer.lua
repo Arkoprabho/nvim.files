@@ -144,6 +144,10 @@ return packer.startup(function()
 		commit = "0e436ee23abc6c3fe5f3600145d2a413703e7272",
 	}) -- Autocompletion plugin
 	use({
+		"David-Kunz/gen.nvim",
+		commit = "f5866b91a48dd4ab86edfe931bf563e15381f91f",
+	})
+	use({
 		"hrsh7th/cmp-nvim-lsp",
 		commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8",
 	}) -- LSP source for nvim-cmp
