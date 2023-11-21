@@ -33,7 +33,7 @@ if vim.g.neovide then
 	end
 	-- Set transparency and background color (title bar color)
 	vim.g.neovide_transparency = 0.0
-	vim.g.neovide_transparency_point = 1
+	vim.g.neovide_transparency_point = 0.9
 	vim.g.neovide_background_color = "#272822" .. alpha()
 	-- Add keybinds to change transparency
 	local change_transparency = function(delta)
@@ -41,9 +41,9 @@ if vim.g.neovide then
 		vim.g.neovide_background_color = "#272822" .. alpha()
 	end
 	vim.keymap.set({ "n", "v", "o" }, "<D-]>", function()
-		change_transparency(0.01)
+		change_transparency(0.05)
 	end)
 	vim.keymap.set({ "n", "v", "o" }, "<D-[>", function()
-		change_transparency(-0.01)
+		change_transparency(-0.05)
 	end)
 end
