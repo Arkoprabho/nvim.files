@@ -13,6 +13,7 @@ if vim.g.neovide then
 	vim.g.neovide_cursor_trail_length = 0.8
 	vim.g.neovide_floating_blur_amount_x = 20.0
 	vim.g.neovide_floating_blur_amount_y = 20.0
+	vim.g.neovide_floating_blur = true
 	vim.g.neovide_profiler = false
 	vim.g.neovide_cursor_antialiasing = true
 	vim.g.neovide_remember_window_size = true
