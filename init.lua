@@ -5,9 +5,7 @@ require("core")
 require("mappings")
 
 if vim.g.neovide then
-	vim.opt.guifont = "JetBrains Mono:h15"
-
-	vim.g.neovide_refresh_rate = 60
+	vim.g.neovide_refresh_rate = 100
 	-- vim.g.neovide_transparency = 0.8
 	vim.g.neovide_cursor_animation_length = 0.07
 	vim.g.neovide_cursor_trail_length = 0.8
@@ -30,12 +28,12 @@ if vim.g.neovide then
 
 	-- Helper function for transparency formatting
 	local alpha = function()
-		local transparency = 0.8
+		local transparency = 1
 		return string.format("%x", math.floor((255 * vim.g.neovide_transparency_point) or transparency))
 	end
 	-- Set transparency and background color (title bar color)
 	vim.g.neovide_transparency = 0.0
-	vim.g.neovide_transparency_point = 0.8
+	vim.g.neovide_transparency_point = 1
 	vim.g.neovide_background_color = "#272822" .. alpha()
 	-- Add keybinds to change transparency
 	local change_transparency = function(delta)
