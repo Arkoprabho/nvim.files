@@ -1,18 +1,10 @@
-local telescope = require("telescope")
 local actions = require("telescope.actions")
 local icons = require("globals.icons")
-
-telescope.load_extension("neoclip")
-telescope.load_extension("notify")
-telescope.load_extension("dap")
-telescope.load_extension("harpoon")
-telescope.load_extension("gh")
-
-telescope.setup({
+require("telescope").setup({
 	defaults = {
-		layout_strategy = "vertical",
+		layout_strategy = "horizontal",
 		layout_config = {
-			vertical = {
+			horizontal = {
 				width = 0.9,
 				height = 0.9,
 				preview_height = 0.6,
@@ -34,6 +26,12 @@ telescope.setup({
 		},
 	},
 })
+
+require("telescope").load_extension("neoclip")
+require("telescope").load_extension("notify")
+require("telescope").load_extension("dap")
+require("telescope").load_extension("harpoon")
+require("telescope").load_extension("gh")
 
 -- Mappings
 local map = vim.keymap.set
