@@ -1,6 +1,5 @@
 local set = vim.opt
 
-set.colorcolumn = "120"
 set.cmdheight = 1
 set.autowrite = true
 set.autowriteall = true
@@ -27,7 +26,7 @@ set.termguicolors = true
 set.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
 set.relativenumber = true
-set.cursorline = true
+set.cursorline = false
 
 set.hidden = true
 set.clipboard = "unnamedplus"
