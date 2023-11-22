@@ -183,7 +183,7 @@ local lualine_components = {
 
 require("lualine").setup({
 	options = {
-		theme = "monokaipro",
+		theme = "monokai-pro",
 		globalstatus = true,
 		component_separators = { left = icons.separator.hollow_right, right = icons.separator.hollow_left },
 		section_separators = { left = icons.separator.curved_filled_right, right = icons.separator.curved_filled_left },

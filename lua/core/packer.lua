@@ -28,8 +28,11 @@ return packer.startup(function()
 	})
 
 	use({
-		"https://gitlab.com/__tpb/monokai-pro.nvim",
-		commit = "826d028edbcc7a8aadc0f7a32b32747d97575615",
+		"loctvl842/monokai-pro.nvim",
+		commit = "70c384c43b9e19b59df3d6489b544ad4df155100",
+		requires = {
+			"MunifTanjim/nui.nvim",
+		},
 	})
 	-- Notification
 	use({

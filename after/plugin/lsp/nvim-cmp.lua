@@ -4,6 +4,12 @@ local lspkind = require("lspkind")
 -- nvim-cmp setup
 local cmp = require("cmp")
 cmp.setup({
+	window = {
+		border = "rounded",
+	},
+	completion = {
+		border = "rounded",
+	},
 	enabled = function()
 		-- disable completion in comments
 		local context = require("cmp.config.context")
