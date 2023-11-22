@@ -24,6 +24,11 @@ require("telescope").setup({
 		find_files = {
 			find_command = { "fd", "--type", "f", "--strip-cwd-prefix", "--no-ignore" },
 		},
+		live_grep = {
+			additional_args = function(opts)
+				return { "--hidden" }
+			end,
+		},
 	},
 })
 
