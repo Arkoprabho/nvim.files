@@ -3,7 +3,6 @@ require("monokai-pro").setup({
 	devicons = true, -- highlight the icons of `nvim-web-devicons`
 	background_clear = {
 		"toggleterm",
-		"telescope",
 		"float-win",
 	},
 	day_night = {

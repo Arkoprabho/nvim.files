@@ -2,6 +2,7 @@ local actions = require("telescope.actions")
 local icons = require("globals.icons")
 require("telescope").setup({
 	defaults = {
+		borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" },
 		layout_strategy = "horizontal",
 		layout_config = {
 			horizontal = {
