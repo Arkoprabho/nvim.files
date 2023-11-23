@@ -84,11 +84,11 @@ return packer.startup(function()
 	-- Development plugins
 	use({
 		"mfussenegger/nvim-dap",
-		commit = "61643680dcb771a29073cd432894e2f81a7c2ae3",
+		commit = "e154fdb6d70b3765d71f296e718b29d8b7026a63",
 	})
 	use({
 		"rcarriga/nvim-dap-ui",
-		tag = "v2.1.*",
+		tag = "v3.9.1",
 		requires = { "mfussenegger/nvim-dap" },
 	})
 	use({
@@ -261,7 +261,7 @@ return packer.startup(function()
 	})
 	use({
 		"leoluz/nvim-dap-go",
-		commit = "c2902bb96c45e872d947d7e174775e652439add4",
+		commit = "a5cc8dcad43f0732585d4793deb02a25c4afb766",
 		ft = { "go" },
 	})
 
