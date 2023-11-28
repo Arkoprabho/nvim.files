@@ -143,6 +143,10 @@ return packer.startup(function()
 		commit = "91ff86cd9c29299a64f968ebb45846c485725f23",
 	})
 	use({
+		"stevearc/aerial.nvim",
+		commit = "88764566f96bf900a64b3dcd6d178cfb69b1c8ce",
+	})
+	use({
 		"hrsh7th/nvim-cmp",
 		commit = "0e436ee23abc6c3fe5f3600145d2a413703e7272",
 	}) -- Autocompletion plugin
