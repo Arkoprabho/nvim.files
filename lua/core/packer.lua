@@ -167,6 +167,11 @@ return packer.startup(function()
 		tag = "v1.0.0",
 	}) -- Snippets plugin
 	use({
+		"chrisgrieser/nvim-scissors",
+		dependencies = "nvim-telescope/telescope.nvim",
+		commit = "f7a24fbbb10c1c87f1907e57de5f384cc01baf24",
+	})
+	use({
 		"onsails/lspkind.nvim",
 		commit = "c68b3a003483cf382428a43035079f78474cd11e",
 	})
