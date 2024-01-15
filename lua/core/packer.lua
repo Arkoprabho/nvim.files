@@ -119,6 +119,10 @@ return packer.startup(function()
 
 	--- LSP Config
 	use({
+		"David-Kunz/gen.nvim",
+		commit = "41ad952c8269fa7aa3a4b8a5abb44541cb628313",
+	})
+	use({
 		"ray-x/lsp_signature.nvim",
 		commit = "1fba8f477b8c65add5e07cda0504cf7f81a9a4ab",
 	})
@@ -150,10 +154,6 @@ return packer.startup(function()
 		"hrsh7th/nvim-cmp",
 		commit = "0e436ee23abc6c3fe5f3600145d2a413703e7272",
 	}) -- Autocompletion plugin
-	use({
-		"David-Kunz/gen.nvim",
-		commit = "f5866b91a48dd4ab86edfe931bf563e15381f91f",
-	})
 	use({
 		"hrsh7th/cmp-nvim-lsp",
 		commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8",
