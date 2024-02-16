@@ -1,4 +1,9 @@
-require("dap-go").setup({
+local status_ok, dap_go = pcall(require, "dap-go")
+if not status_ok then
+	return
+end
+
+dap_go.setup({
 	-- Additional dap configurations can be added.
 	-- dap_configurations accepts a list of tables where each entry
 	-- represents a dap configuration. For more details do:
