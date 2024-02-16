@@ -1,0 +1,10 @@
+{
+  "fun (Kotlin)": {
+    "body": [
+      "fun ${1:functionName}(${2:args}) {",
+      "    ${3}",
+      "}"
+    ],
+    "prefix": "fun (Kotlin)"
+  }
+}

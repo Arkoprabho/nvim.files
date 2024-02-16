@@ -6,6 +6,18 @@
           "lua"
         ],
         "path": "./lua.json"
+      },
+      {
+        "language": [
+          "kotlin"
+        ],
+        "path": "./kotlin.json"
+      },
+      {
+        "language": [
+          "terraform"
+        ],
+        "path": "./terraform.json"
       }
     ]
   },

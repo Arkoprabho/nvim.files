@@ -1,0 +1,6 @@
+{
+  "aws_trivy_ignore": {
+    "body": "#trivy:ignore:AVD-AWS-$1",
+    "prefix": "aws_trivy_ignore"
+  }
+}
