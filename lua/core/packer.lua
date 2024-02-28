@@ -37,7 +37,7 @@ return packer.startup(function()
 	-- Notification
 	use({
 		"rcarriga/nvim-notify",
-		commit = "e7cb3e5f93b1fef6a713dbc182eff98badfc6dd4",
+		commit = "5371f4bfc1f6d3adf4fe9d62cd3a9d44356bfd15",
 	})
 
 	-- File Explorer
@@ -140,7 +140,7 @@ return packer.startup(function()
 	})
 	use({
 		"neovim/nvim-lspconfig",
-		commit = "0a8064eda0c7a4475c4a8ceb39199e975308797b",
+		commit = "aa199c5bbdbb7fd28b56212a89206f13db02799e",
 	})
 	use({
 		"hrsh7th/cmp-path",
