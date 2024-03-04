@@ -42,6 +42,10 @@ return packer.startup(function()
 
 	-- File Explorer
 	use({
+		"nvim-pack/nvim-spectre",
+		commit = "3712ff0cdf4f9f877d9ca708d835a877d9a0abaf",
+	})
+	use({
 		"ThePrimeagen/harpoon",
 		commit = "c1aebbad9e3d13f20bedb8f2ce8b3a94e39e424a",
 		requires = {
