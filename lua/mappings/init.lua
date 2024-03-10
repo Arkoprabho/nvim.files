@@ -49,6 +49,7 @@ inoreabbrev flase false
 cabbrev Wq wq
 cabbrev Wa wa
 cabbrev Qa qa
+cabbrev Q q
 cabbrev LWq wq
 cabbrev Lw w
 cabbrev Lq q
