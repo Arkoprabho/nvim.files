@@ -41,6 +41,10 @@ map("n", "<leader>pt", "<CMD>PackerStatus<CR>", opts)
 map("n", "<leader>pp", "<CMD>PackerProfile<CR>", opts)
 map("n", "<leader>pc", "<CMD>PackerCompile profile=true<CR>", opts)
 
+-- Fugitive
+map("n", "<leader>gc", "<CMD>Git commit<CR>", opts)
+map("n", "<leader>gp", "<CMD>Git! push<CR>", opts)
+
 -- Abbreviations
 vim.cmd([[
 inoreabbrev seperate separate
