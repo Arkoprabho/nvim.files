@@ -200,6 +200,10 @@ return packer.startup(function()
 
 	-- Git
 	use({
+		"tpope/vim-fugitive",
+		commit = "41beedabc7e948c787ea5696e04c3544c3674e23",
+	})
+	use({
 		"nvim-telescope/telescope-github.nvim",
 		commit = "ee95c509901c3357679e9f2f9eaac3561c811736",
 	})
