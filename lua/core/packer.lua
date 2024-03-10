@@ -213,10 +213,6 @@ return packer.startup(function()
 		commit = "015c27c5b74eba9b151c683579c838e742bf36a2",
 	})
 	use({
-		"f-person/git-blame.nvim",
-		commit = "08e75b7061f4a654ef62b0cac43a9015c87744a2",
-	})
-	use({
 		"kdheepak/lazygit.nvim",
 		commit = "9c73fd69a4c1cb3b3fc35b741ac968e331642600",
 	})

@@ -1,5 +1,4 @@
 local colors = require("globals.colors")
-local git_blame = require("gitblame")
 local icons = require("globals.icons")
 local window_width_limit = 1000
 
@@ -195,7 +194,7 @@ require("lualine").setup({
 	sections = {
 		lualine_a = { lualine_components.mode },
 		lualine_b = { lualine_components.branch, lualine_components.diff },
-		lualine_c = { lualine_components.lsp_progress, git_blame.get_current_blame_text },
+		lualine_c = { lualine_components.lsp_progress },
 		lualine_x = {
 			lualine_components.lsp,
 			lualine_components.spaces,
