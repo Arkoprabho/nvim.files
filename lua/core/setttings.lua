@@ -1,4 +1,5 @@
 local set = vim.opt
+local globals = vim.g
 
 set.cmdheight = 1
 set.autowrite = true
@@ -33,4 +34,5 @@ set.hidden = true
 set.clipboard = "unnamedplus"
 
 vim.notify = require("notify")
-vim.g.use_nerd_icons = true
+globals.editorconfig = true
+globals.use_nerd_icons = true
