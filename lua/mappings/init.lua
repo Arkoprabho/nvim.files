@@ -22,11 +22,6 @@ map("", "<F3>", "<CMD>source .vim_session<CR>", opts)
 map("n", "<A-P>", ":Telescope neoclip<CR>", opts)
 map("i", "<A-P>", "<ESC>:Telescope neoclip<CR>", opts)
 
--- Git
-map("n", "<leader>gsto", "<CMD>DiffviewOpen<CR>", opts)
-map("n", "<leader>gstc", "<CMD>DiffviewClose<CR>", opts)
-map("n", "<leader>gsta", "<CMD>Telescope git_stash<CR>", opts)
-
 -- Misc
 map("n", "<leader>%", "<CMD>luafile %<CR>", opts)
 map("n", "<CR>", "m`o<Esc>``", opts)
