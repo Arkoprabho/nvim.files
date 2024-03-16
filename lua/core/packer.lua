@@ -47,7 +47,8 @@ return packer.startup(function()
 	})
 	use({
 		"ThePrimeagen/harpoon",
-		commit = "c1aebbad9e3d13f20bedb8f2ce8b3a94e39e424a",
+		branch = "harpoon2",
+		commit = "a38be6e0dd4c6db66997deab71fc4453ace97f9c",
 		requires = {
 			"nvim-lua/plenary.nvim",
 		},
