@@ -209,6 +209,10 @@ return packer.startup(function()
 		commit = "ee95c509901c3357679e9f2f9eaac3561c811736",
 	})
 	use({
+		"isak102/telescope-git-file-history.nvim",
+		commit = "db896227635a9da22796c787d813ee376f69fe17",
+	})
+	use({
 		"NeogitOrg/neogit",
 		requires = "nvim-lua/plenary.nvim",
 		commit = "015c27c5b74eba9b151c683579c838e742bf36a2",

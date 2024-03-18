@@ -38,6 +38,7 @@ require("telescope").load_extension("notify")
 require("telescope").load_extension("dap")
 require("telescope").load_extension("harpoon")
 require("telescope").load_extension("gh")
+require("telescope").load_extension("git_file_history")
 
 -- Mappings
 local map = vim.keymap.set
