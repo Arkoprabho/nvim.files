@@ -3,3 +3,4 @@ packer_compiled.lua
 *.log
 .luarc.json
 .DS_Store
+spell/
