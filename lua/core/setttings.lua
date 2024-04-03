@@ -33,6 +33,9 @@ set.cursorline = false
 set.hidden = true
 set.clipboard = "unnamedplus"
 
+set.spelllang = "en_us"
+set.spell = true
+
 vim.notify = require("notify")
 globals.editorconfig = true
 globals.use_nerd_icons = true
