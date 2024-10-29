@@ -52,4 +52,5 @@ cabbrev Q q
 cabbrev LWq wq
 cabbrev Lw w
 cabbrev Lq q
+cabbrev git Git
 ]])
