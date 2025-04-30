@@ -39,6 +39,7 @@ map("n", "<leader>pc", "<CMD>PackerCompile profile=true<CR>", opts)
 -- Fugitive
 map("n", "<leader>gc", "<CMD>Git commit<CR>", opts)
 map("n", "<leader>gp", "<CMD>Git! push<CR>", opts)
+map("n", "<leader>cnv", "<CMD>Git commit --no-verify<CR>", opts)
 
 -- Abbreviations
 vim.cmd([[
