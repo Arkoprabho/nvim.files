@@ -30,13 +30,13 @@ local mini_files = {
             trim_left   = '<',
             trim_right  = '>',
         },
+        content = {
+          filter = function(entry)
+            return not entry.name:match("^%.") -- hide dotfiles
+          end
+        },
         options = {
           use_as_default_explorer = true,
-          content = {
-              filter = function(entry)
-                return not entry.name:match("^%.") -- hide dotfiles
-              end
-            }
         },
       },
     config = function(_, opts)
