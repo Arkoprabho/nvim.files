@@ -3,6 +3,7 @@ local mason = {
     build = ":MasonUpdate",
     config = true,
 }
+
 local mason_lsp_config = {
     "williamboman/mason-lspconfig.nvim",
     dependencies = { "williamboman/mason.nvim", "neovim/nvim-lspconfig" },
@@ -34,13 +35,56 @@ local mason_lsp_config = {
         end
 
         for _, server in ipairs(require("mason-lspconfig").get_installed_servers()) do
-            lspconfig[server].setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-            })
+            if server == "yamlls" then
+                lspconfig.yamlls.setup({
+                    capabilities = capabilities,
+                    on_attach = function(client, bufnr)
+                        on_attach(client, bufnr) -- your original mappings
+
+                        print("[DEBUG] yamlls attached to " .. vim.api.nvim_buf_get_name(bufnr))
+
+                        -- Force Kubernetes schema on all YAML files for debugging
+                        local uri = vim.uri_from_bufnr(bufnr)
+                        print("[DEBUG] Applying Kubernetes schema to: " .. uri)
+
+                        client.notify("workspace/didChangeConfiguration", {
+                            settings = {
+                                yaml = {
+                                    schemaStore = { enable = false, url = "" },
+                                    schemas = {
+                                        ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.33.0-standalone-strict/all.json"] = {
+                                            uri,
+                                        },
+                                    },
+                                    validate = true,
+                                    completion = true,
+                                    hover = true,
+                                    format = { enable = true },
+                                },
+                            },
+                        })
+                    end,
+                    settings = {
+                        yaml = {
+                            schemaStore = { enable = false, url = "" },
+                            schemas = {},
+                            validate = true,
+                            completion = true,
+                            hover = true,
+                            format = { enable = true },
+                        },
+                    },
+                })
+            else
+                lspconfig[server].setup({
+                    capabilities = capabilities,
+                    on_attach = on_attach,
+                })
+            end
         end
     end,
 }
+
 local cmp = {
     "hrsh7th/nvim-cmp",
     dependencies = {
