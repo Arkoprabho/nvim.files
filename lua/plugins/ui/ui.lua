@@ -2,6 +2,31 @@ local nvim_devicons = {
     "nvim-tree/nvim-web-devicons",
     commit = "c2599a81ecabaae07c49ff9b45dcd032a8d90f1a",
 }
+
+local monokai = {
+    "loctvl842/monokai-pro.nvim",
+    version = "v1.26.1",
+    event = "VeryLazy",
+    priority = 1000,
+    config = function()
+        require("monokai-pro").setup({
+          day_night = {
+              enable = true,
+              day_filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
+              night_filter = "spectrum"
+          },
+          background_clear = { "float_win", "toggleterm", "telescope" },
+          devicons = true,
+          styles = {
+            comment = { italic = true },
+            keyword = { italic = true },
+            type = { italic = true },
+          },
+        })
+        vim.cmd.colorscheme("monokai-pro")
+    end,
+}
+
 local bufferline = {
     "akinsho/bufferline.nvim",
     version = "v4.9.1",
@@ -23,5 +48,6 @@ local bufferline = {
 
 return {
     nvim_devicons,
+    monokai,
     bufferline
 }
