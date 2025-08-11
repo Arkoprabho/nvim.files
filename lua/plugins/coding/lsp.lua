@@ -38,36 +38,32 @@ local mason_lsp_config = {
             if server == "yamlls" then
                 lspconfig.yamlls.setup({
                     capabilities = capabilities,
-                    on_attach = function(client, bufnr)
-                        on_attach(client, bufnr) -- your original mappings
-
-                        print("[DEBUG] yamlls attached to " .. vim.api.nvim_buf_get_name(bufnr))
-
-                        -- Force Kubernetes schema on all YAML files for debugging
-                        local uri = vim.uri_from_bufnr(bufnr)
-                        print("[DEBUG] Applying Kubernetes schema to: " .. uri)
-
-                        client.notify("workspace/didChangeConfiguration", {
-                            settings = {
-                                yaml = {
-                                    schemaStore = { enable = false, url = "" },
-                                    schemas = {
-                                        ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.33.0-standalone-strict/all.json"] = {
-                                            uri,
-                                        },
-                                    },
-                                    validate = true,
-                                    completion = true,
-                                    hover = true,
-                                    format = { enable = true },
-                                },
-                            },
-                        })
-                    end,
+                    on_attach = on_attach,
                     settings = {
                         yaml = {
-                            schemaStore = { enable = false, url = "" },
-                            schemas = {},
+                            schemaStore = {
+                                enable = true,
+                                url = "https://www.schemastore.org/api/json/catalog.json",
+                            },
+                            schemas = {
+                                -- Kubernetes schema for all yaml files in k8s directories
+                                ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.33.0-standalone-strict/all.json"] = {
+                                    "/*.k8s.yaml",
+                                    "/*.k8s.yml",
+                                    "*/k8s/*.yaml",
+                                    "*/k8s/*.yml",
+                                    "*/kubernetes/*.yaml",
+                                    "*/kubernetes/*.yml",
+                                },
+                                ["https://json.schemastore.org/github-workflow.json"] = {
+                                    ".github/workflows/*.yml",
+                                    ".github/workflows/*.yaml",
+                                },
+                                ["https://json.schemastore.org/github-action.json"] = {
+                                    ".github/actions/**/action.yml",
+                                    ".github/actions/**/action.yaml",
+                                },
+                            },
                             validate = true,
                             completion = true,
                             hover = true,
@@ -174,12 +170,12 @@ local mason_none_ls = {
     config = function()
         require("mason-null-ls").setup({
             ensure_installed = {
-                "stylua", -- Lua
-                "gofumpt", -- Go
-                "yamlfmt", -- YAML
-                "yamllint", -- YAML
+                "stylua",        -- Lua
+                "gofumpt",       -- Go
+                "yamlfmt",       -- YAML
+                "yamllint",      -- YAML
                 "terraform_fmt", -- Terraform
-                "tflint", -- Terraform
+                "tflint",        -- Terraform
             },
             automatic_installation = true,
         })
