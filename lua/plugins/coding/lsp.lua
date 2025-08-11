@@ -49,6 +49,7 @@ return {
     },
     config = function()
       local cmp = require("cmp")
+      local luasnip = require("luasnip") -- <-- This is the missing line
       cmp.setup({
         snippet = {
           expand = function(args)
