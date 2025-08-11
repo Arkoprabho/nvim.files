@@ -27,12 +27,18 @@ local pairs = {
 }
 
 local comment = {
-	"echasnovski/mini.comment",
-	version = "*",
-	event = "VeryLazy",
-	config = function()
-		require("mini.comment").setup()
-	end,
+    "echasnovski/mini.comment",
+    version = "*",
+    event = "VeryLazy",
+    config = function()
+        require("mini.comment").setup({
+            mappings = {
+                comment = "gc",
+                comment_line = "<leader>cc",
+                textobject = "gc",
+            },
+        })
+    end,
 }
 
 local jump = {
