@@ -14,6 +14,57 @@ local fugitive = {
     end
 }
 
+local gitsigns = {
+    "lewis6991/gitsigns.nvim",
+    version = "v1.0.2",
+      event = { "BufReadPre", "BufNewFile" }, -- Lazy load on file open
+      opts = {
+        signs = {
+            add = {  text = "▎"},
+            change = {  text = "▎"},
+            delete = {  text = ""},
+            topdelete = {  text = ""},
+            changedelete = {  text = "▎"}
+        },
+        on_attach = function(bufnr)
+          local gs = package.loaded.gitsigns
+          local map = function(mode, lhs, rhs, desc)
+            vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
+          end
+
+          -- Navigation
+          map("n", "]c", function()
+            if vim.wo.diff then return "]c" end
+            vim.schedule(gs.next_hunk)
+          end, "Next Hunk")
+
+          map("n", "[c", function()
+            if vim.wo.diff then return "[c" end
+            vim.schedule(gs.prev_hunk)
+          end, "Prev Hunk")
+
+          -- Actions
+          map("n", "<leader>gs", gs.stage_hunk, "Stage Hunk")
+          map("n", "<leader>gr", gs.reset_hunk, "Reset Hunk")
+          map("n", "<leader>gd", gs.diffthis, "Diff This")
+          map("n", "<leader>gS", gs.stage_buffer)
+		map("n", "<leader>gu", gs.undo_stage_hunk)
+		map("n", "<leader>gR", gs.reset_buffer)
+		map("n", "<leader>gp", gs.preview_hunk)
+		map("n", "<leader>gb", function()
+			gs.blame_line({ full = true })
+		end)
+		map("n", "<leader>tb", gs.toggle_current_line_blame)
+		map("n", "<leader>gd", gs.diffthis)
+		map("n", "<leader>gD", function()
+			gs.diffthis("~")
+		end)
+		map("n", "<leader>td", gs.toggle_deleted)
+        end,
+      },
+}
+
 return {
-    fugitive
+    fugitive,
+    gitsigns
 }
