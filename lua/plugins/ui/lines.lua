@@ -1,7 +1,10 @@
 local lines = {
     'nvim-lualine/lualine.nvim',
     commit = "a94fc68960665e54408fe37dcf573193c4ce82c9",
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    dependencies = {
+        'nvim-tree/nvim-web-devicons',
+        "loctvl842/monokai-pro.nvim",
+    },
     event = "VeryLazy",
     config = function()
         local colors = require("globals.colors")
