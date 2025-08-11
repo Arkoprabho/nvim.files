@@ -35,7 +35,45 @@ local comment = {
 	end,
 }
 
+local jump = {
+	"echasnovski/mini.jump2d",
+	version = "*",
+	keys = {
+		{
+			",",
+			function()
+				require("mini.jump2d").start()
+			end,
+			desc = "Jump to visible text",
+		},
+	},
+	config = function()
+		require("mini.jump2d").setup({
+			spotter = nil,
+
+			-- Characters used for labels of jump spots (in supplied order)
+			labels = "abcdefghijklmnopqrstuvwxyz",
+			allowed_lines = {
+				blank = true, -- Blank line (not sent to spotter even if `true`)
+				cursor_before = true, -- Lines before cursor line
+				cursor_at = true, -- Cursor line
+				cursor_after = true, -- Lines after cursor line
+				fold = true, -- Start of fold (not sent to spotter even if `true`)
+			},
+			allowed_windows = {
+				current = true,
+				not_current = true,
+			},
+			hooks = {
+				before_start = nil, -- Before jump start
+				after_jump = nil, -- After jump was actually done
+			},
+		})
+	end,
+}
+
 return {
 	pairs,
 	comment,
+	jump,
 }
