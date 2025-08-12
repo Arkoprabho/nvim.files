@@ -57,7 +57,7 @@ local nvim_lspconfig = {
                     hover = true,
                     completion = true,
                     schemaStore = {
-                        enable = false, -- disable builtin, use SchemaStore.nvim
+                        enable = true, -- disable builtin, use SchemaStore.nvim
                         url = "",
                     },
                     schemas = vim.tbl_extend(
