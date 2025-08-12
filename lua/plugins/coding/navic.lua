@@ -1,9 +1,6 @@
 local navic = {
     "SmiteshP/nvim-navic",
     lazy = true,
-    dependencies = {
-        "neovim/nvim-lspconfig",
-    },
     opts = {
         highlight = true, -- highlights symbols
         separator = "  ", -- breadcrumb separator
@@ -14,6 +11,12 @@ local navic = {
     config = function(_, opts)
         local navic = require("nvim-navic")
         navic.setup(opts)
+	dependencies = {
+		{
+			"neovim/nvim-lspconfig",
+			version = "*",
+		},
+	},
 
         -- Attach navic to LSP when available
         local lspconfig = require("lspconfig")

@@ -5,12 +5,14 @@ local mason = {
 }
 
 local mason_lsp_config = {
-    "williamboman/mason-lspconfig.nvim",
-    dependencies = { "williamboman/mason.nvim", "neovim/nvim-lspconfig" },
-    config = function()
-        require("mason-lspconfig").setup({
-            ensure_installed = { "lua_ls", "gopls", "yamlls", "terraformls" },
-        })
+	"williamboman/mason-lspconfig.nvim",
+	dependencies = {
+		{ "williamboman/mason.nvim" },
+		{
+			"neovim/nvim-lspconfig",
+			version = "*",
+		},
+	},
 
         local lspconfig = require("lspconfig")
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
