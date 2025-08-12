@@ -1,4 +1,4 @@
-local mini_files = {
+local mf = {
     "echasnovski/mini.files",
     tag = "v0.16.0",
     lazy = true,
@@ -59,6 +59,42 @@ local mini_files = {
             open_files()
         end, { desc = "Open mini.files" })
 
+        -- Opening in splits
+        local function open_in_vertical_split()
+            local entry = mf.get_fs_entry()
+            if entry ~= nil then
+                mf.close()
+                vim.cmd("vsplit " .. vim.fn.fnameescape(entry.path))
+            end
+        end
+
+        local function open_in_horizontal_split_and_close()
+            local entry = mf.get_fs_entry()
+            if entry ~= nil then
+                mf.close()
+                vim.cmd("split " .. vim.fn.fnameescape(entry.path))
+            end
+        end
+
+        -- Map Ctrl+v in normal mode when buffer is mini.files explorer
+        vim.api.nvim_create_autocmd("User", {
+            pattern = "MiniFilesBufferCreate",
+            callback = function(args)
+                vim.keymap.set(
+                    "n",
+                    "<C-v>",
+                    open_in_vertical_split,
+                    { buffer = args.data.buf_id, noremap = true, silent = true }
+                )
+                vim.keymap.set(
+                    "n",
+                    "<C-h>",
+                    open_in_horizontal_split_and_close,
+                    { buffer = args.data.buf_id, noremap = true, silent = true }
+                )
+            end,
+        })
+
         -- Manage hidden files
         local show_hidden = false
         vim.keymap.set("n", "g.", function()
@@ -75,5 +111,5 @@ local mini_files = {
 }
 
 return {
-    mini_files,
+    mf,
 }
