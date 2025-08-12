@@ -44,46 +44,19 @@ local mason_lsp_config = {
 
 local nvim_lspconfig = {
     "neovim/nvim-lspconfig",
-    dependencies = { "b0o/SchemaStore.nvim" },
     config = function()
         local lspconfig = require("lspconfig")
-        local schemastore = require("schemastore")
 
         lspconfig.yamlls.setup({
             settings = {
                 yaml = {
-                    validate = true,
-                    format = { enable = true },
-                    hover = true,
-                    completion = true,
-                    schemaStore = {
-                        enable = true, -- disable builtin, use SchemaStore.nvim
-                        url = "",
+                    schemas = {
+                        ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/refs/heads/master/v1.33.1-standalone-strict/deployment.json"] =
+                        "**deployment.yaml",
+                        -- Optional: map specific patterns
+                        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+                        ["https://json.schemastore.org/github-action.json"] = "/.github/action.{yml,yaml}",
                     },
-                    schemas = vim.tbl_extend(
-                        "force",
-                        schemastore.yaml.schemas({
-                            select = {
-                                "GitHub Workflow",
-                                "GitHub Action",
-                            },
-                        }),
-                        {
-                            -- Optional: map specific patterns
-                            ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-                            ["https://json.schemastore.org/github-action.json"] = "/.github/action.{yml,yaml}",
-                            ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.33.1-standalone-strict/all.json"] = {
-                                "*.k8s.yaml",
-                                "*.k8s.yml",
-                                "k8s/*.yaml",
-                                "k8s/*.yml",
-                                "manifests/*.yaml",
-                                "manifests/*.yml",
-                                "deployments/*.yaml",
-                                "deployments/*.yml",
-                            },
-                        }
-                    ),
                 },
             },
         })
@@ -179,12 +152,12 @@ local mason_none_ls = {
     config = function()
         require("mason-null-ls").setup({
             ensure_installed = {
-                "stylua", -- Lua
-                "gofumpt", -- Go
-                "yamlfmt", -- YAML
-                "yamllint", -- YAML
+                "stylua",        -- Lua
+                "gofumpt",       -- Go
+                "yamlfmt",       -- YAML
+                "yamllint",      -- YAML
                 "terraform_fmt", -- Terraform
-                "tflint", -- Terraform
+                "tflint",        -- Terraform
             },
             automatic_installation = true,
         })
