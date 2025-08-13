@@ -20,6 +20,10 @@ local gitsigns = {
     keys = {
         { "<leader>g", desc = "Refresh gitsigns and attach to buffer" },
     },
+    cond = function()
+        -- Check if current directory is a git repo
+        return vim.fn.isdirectory(".git") == 1 or vim.fn.system("git rev-parse --git-dir"):find("^%.git") ~= nil
+    end,
     opts = {
         signs = {
             add = { text = "▎" },
