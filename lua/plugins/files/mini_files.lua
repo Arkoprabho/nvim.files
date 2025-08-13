@@ -96,7 +96,7 @@ local mf = {
                 )
                 vim.keymap.set(
                     "n",
-                    "<C-h>",
+                    "<C-x>",
                     open_in_horizontal_split_and_close,
                     { buffer = args.data.buf_id, noremap = true, silent = true, desc = "Open in horizontal split" }
                 )
