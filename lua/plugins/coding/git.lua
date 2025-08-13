@@ -54,6 +54,7 @@ local gitsigns = {
             end, "Prev Hunk")
 
             -- Actions
+            map("n", "<leader>g", gs.refresh, "Refresh gitsignts")
             map("n", "<leader>gs", gs.stage_hunk, "Stage Hunk")
             map("n", "<leader>gr", gs.reset_hunk, "Reset Hunk")
             map("n", "<leader>gd", gs.diffthis, "Diff This")
