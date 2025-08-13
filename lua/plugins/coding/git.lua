@@ -72,6 +72,14 @@ local gitsigns = {
                 gs.diffthis("~")
             end)
             map("n", "<leader>gtd", gs.toggle_deleted)
+
+            -- Visual mode staging/reset
+            map("v", "<leader>gs", function()
+                gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+            end, "Stage Selected Hunk")
+            map("v", "<leader>gr", function()
+                gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
+            end, "Reset Selected Hunk")
         end,
     },
 }
