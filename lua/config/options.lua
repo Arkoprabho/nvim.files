@@ -38,3 +38,18 @@ set.spell = true
 
 globals.editorconfig = true
 globals.use_nerd_icons = true
+
+-- Abbreviations
+vim.cmd([[
+inoreabbrev seperate separate
+inoreabbrev ture true
+inoreabbrev flase false
+cabbrev Wq wq
+cabbrev Wa wa
+cabbrev Qa qa
+cabbrev Q q
+cabbrev LWq wq
+cabbrev Lw w
+cabbrev Lq q
+cabbrev git Git
+]])
