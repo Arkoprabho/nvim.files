@@ -17,7 +17,9 @@ local fugitive = {
 local gitsigns = {
     "lewis6991/gitsigns.nvim",
     version = "v1.0.2",
-    event = { "BufReadPre", "BufNewFile" }, -- Lazy load on file open
+    keys = {
+        { "<leader>g", desc = "Refresh gitsigns and attach to buffer" },
+    },
     opts = {
         signs = {
             add = { text = "▎" },
