@@ -10,7 +10,7 @@ local session = {
             end
 
             -- Configure what to save in the session
-            vim.o.sessionoptions = "buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
+            vim.o.sessionoptions = "buffers,curdir,folds,help,tabpages,winsize,winpos"
 
             -- Save session
             local function save_session()
