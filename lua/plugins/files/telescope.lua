@@ -12,38 +12,37 @@ local telescope = {
     },
     dependencies = {
         "nvim-lua/plenary.nvim", -- Required dependency
-      },
-      opts = {
+    },
+    opts = {
         defaults = {
-          prompt_prefix = icons.ChevronRight,
-          selection_caret = " ",
-          layout_config = {
-            horizontal = {
-              preview_width = 0.6,
+            prompt_prefix = icons.ChevronRight,
+            selection_caret = " ",
+            layout_config = {
+                horizontal = {
+                    preview_width = 0.6,
+                },
             },
-          },
-          layout_strategy = "horizontal",
-          sorting_strategy = "ascending",
-          prompt_position = "top",
-          winblend = 5,
-          border = true,
-          preview = {
-            hide_on_startup = false, -- Always show preview
-          },
+            layout_strategy = "horizontal",
+            sorting_strategy = "ascending",
+            prompt_position = "top",
+            winblend = 5,
+            border = true,
+            preview = {
+                hide_on_startup = false, -- Always show preview
+            },
         },
         pickers = {
-          find_files = {
-            hidden = false, -- Show hidden files
-          },
+            find_files = {
+                hidden = false, -- Show hidden files
+            },
         },
-      },
-      config = function(_, opts)
+    },
+    config = function(_, opts)
         local telescope = require("telescope")
         telescope.setup(opts)
-      end,
+    end,
 }
 
-
 return {
-    telescope
+    telescope,
 }
