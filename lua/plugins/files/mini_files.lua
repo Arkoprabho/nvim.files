@@ -59,7 +59,7 @@ local mf = {
             open_files()
         end, { desc = "Open mini.files" })
 
-        -- Opening in splits
+        -- Opening in splits and tabs
         local function open_in_vertical_split()
             local entry = mf.get_fs_entry()
             if entry ~= nil then
@@ -76,7 +76,15 @@ local mf = {
             end
         end
 
-        -- Map Ctrl+v in normal mode when buffer is mini.files explorer
+        local function open_in_new_tab()
+            local entry = mf.get_fs_entry()
+            if entry ~= nil then
+                mf.close()
+                vim.cmd("tabnew " .. vim.fn.fnameescape(entry.path))
+            end
+        end
+
+        -- Map Ctrl+v, Ctrl+h, and Ctrl+t in normal mode when buffer is mini.files explorer
         vim.api.nvim_create_autocmd("User", {
             pattern = "MiniFilesBufferCreate",
             callback = function(args)
@@ -84,13 +92,19 @@ local mf = {
                     "n",
                     "<C-v>",
                     open_in_vertical_split,
-                    { buffer = args.data.buf_id, noremap = true, silent = true }
+                    { buffer = args.data.buf_id, noremap = true, silent = true, desc = "Open in vertical split" }
                 )
                 vim.keymap.set(
                     "n",
                     "<C-h>",
                     open_in_horizontal_split_and_close,
-                    { buffer = args.data.buf_id, noremap = true, silent = true }
+                    { buffer = args.data.buf_id, noremap = true, silent = true, desc = "Open in horizontal split" }
+                )
+                vim.keymap.set(
+                    "n",
+                    "<C-t>",
+                    open_in_new_tab,
+                    { buffer = args.data.buf_id, noremap = true, silent = true, desc = "Open in new tab" }
                 )
             end,
         })
