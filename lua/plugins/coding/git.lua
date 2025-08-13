@@ -26,6 +26,7 @@ local gitsigns = {
     end,
     opts = {
         signs = {
+            word_diff = true,
             add = { text = "▎" },
             change = { text = "▎" },
             delete = { text = "" },
