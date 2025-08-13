@@ -8,7 +8,7 @@ local telescope = {
         { "<leader>tf",  "<cmd>Telescope find_files<cr>",  desc = "Find files" },
         { "<leader>tss", "<cmd>Telescope live_grep<cr>",   desc = "Live grep" },
         { "<leader>tb",  "<cmd>Telescope buffers<cr>",     desc = "Find buffers" },
-        { "<leader>th",  "<cmd>Telescope help_tags<cr>",   desc = "Help tags" },
+        { "<leader>tH",  "<cmd>Telescope help_tags<cr>",   desc = "Help tags" },
         { "<leader>tgc", "<cmd>Telescope git_commits<cr>", desc = "Help tags" },
         { "<leader>tgs", "<cmd>Telescope git_status<cr>",  desc = "Help tags" },
     },
