@@ -32,6 +32,11 @@ local telescope = {
             preview = {
                 hide_on_startup = false, -- Always show preview
             },
+            mappings = {
+                i = {
+                    ["<esc>"] = require("telescope.actions").close,
+                },
+            },
         },
         pickers = {
             find_files = {
