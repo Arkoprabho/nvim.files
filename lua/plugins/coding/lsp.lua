@@ -66,7 +66,11 @@ local nvim_lspconfig = {
 local cmp = {
     "hrsh7th/nvim-cmp",
     dependencies = {
-        "hrsh7th/cmp-nvim-lsp",
+        {
+            "hrsh7th/cmp-nvim-lsp",
+            commit = "bd5a7d6db125d4654b50eeae9f5217f24bb22fd3",
+        },
+
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "L3MON4D3/LuaSnip",
@@ -152,12 +156,12 @@ local mason_none_ls = {
     config = function()
         require("mason-null-ls").setup({
             ensure_installed = {
-                "stylua",        -- Lua
-                "gofumpt",       -- Go
-                "yamlfmt",       -- YAML
-                "yamllint",      -- YAML
+                "stylua", -- Lua
+                "gofumpt", -- Go
+                "yamlfmt", -- YAML
+                "yamllint", -- YAML
                 "terraform_fmt", -- Terraform
-                "tflint",        -- Terraform
+                "tflint", -- Terraform
             },
             automatic_installation = true,
         })
