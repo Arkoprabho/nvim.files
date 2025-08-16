@@ -25,7 +25,6 @@ set.wrap = true
 set.scrolloff = 5
 set.fileencoding = "utf-8"
 set.termguicolors = true
-set.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
 set.relativenumber = true
 set.cursorline = false
