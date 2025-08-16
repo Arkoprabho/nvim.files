@@ -219,6 +219,9 @@ local lspsaga = {
             outline = {
                 win_width = 40,
             },
+            implement = {
+                enable = true,
+            },
         })
 
         -- Keymaps
