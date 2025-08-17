@@ -213,7 +213,7 @@ local lspsaga = {
                 enable = true, -- disable if you use navic or want clean winbar
             },
             lightbulb = {
-                enable = false,
+                enable = true,
                 enable_in_insert = false,
             },
             outline = {
