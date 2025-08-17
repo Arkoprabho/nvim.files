@@ -13,7 +13,7 @@ local monokai = {
 		require("monokai-pro").setup({
 			day_night = {
 				enable = true,
-				day_filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
+				day_filter = "machine", -- classic | octagon | pro | machine | ristretto | spectrum
 				night_filter = "spectrum",
 			},
 			background_clear = { "float_win", "toggleterm", "telescope" },
