@@ -27,7 +27,7 @@ set.fileencoding = "utf-8"
 set.termguicolors = true
 
 set.relativenumber = true
-set.cursorline = false
+set.cursorline = true
 
 set.hidden = true
 set.clipboard = "unnamedplus"
