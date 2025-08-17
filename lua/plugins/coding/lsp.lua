@@ -226,12 +226,16 @@ local lspsaga = {
 
         -- Keymaps
         local keymap = vim.keymap.set
-        keymap("n", "gh", "<cmd>Lspsaga finder<CR>", { desc = "LSP Finder" })
-        keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", { desc = "Peek Definition" })
-        keymap("n", "<leader>rn", "<cmd>Lspsaga rename ++project<CR>", { desc = "Rename" })
+        keymap("n", "<leader>lgh", "<cmd>Lspsaga finder<CR>", { desc = "LSP Finder" })
+        keymap("n", "<leader>lgd", "<cmd>Lspsaga peek_definition<CR>", { desc = "Peek Definition" })
+        keymap("n", "<leader>lrn", "<cmd>Lspsaga rename ++project<CR>", { desc = "Rename" })
         keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { desc = "Hover Doc" })
-        keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { desc = "Code Action" })
-        keymap("n", "<leader>a", "<cmd>Lspsaga outline<CR>", { desc = "Outline" })
+        keymap("n", "<leader>lca", "<cmd>Lspsaga code_action<CR>", { desc = "Code Action" })
+        keymap("n", "<leader>la", "<cmd>Lspsaga outline<CR>", { desc = "Outline" })
+        keymap("n", "<leader>tli", "<cmd>Telescope lsp_implementations<CR>", { desc = "Outline" })
+        -- Call hierarchy
+        keymap("n", "<leader>loc", "<cmd>Lspsaga outgoing_calls<CR>", { desc = "Peek Definition" })
+        keymap("n", "<leader>lic", "<cmd>Lspsaga incoming_calls<CR>", { desc = "Peek Definition" })
     end,
     dependencies = {
         "nvim-treesitter/nvim-treesitter", -- for syntax highlighting inside saga windows
