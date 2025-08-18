@@ -72,6 +72,10 @@ local cmp = {
 			"hrsh7th/cmp-nvim-lsp",
 			commit = "bd5a7d6db125d4654b50eeae9f5217f24bb22fd3",
 		},
+		{
+			"saadparwaiz1/cmp_luasnip",
+			commit = "98d9cb5c2c38532bd9bdb481067b20fea8f32e90",
+		},
 
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
@@ -114,6 +118,7 @@ local cmp = {
 			}),
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
+				{ name = "luasnip" }, -- 🔑 add luasnip source
 				{ name = "buffer" },
 				{ name = "path" },
 			}),
