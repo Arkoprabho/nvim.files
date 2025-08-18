@@ -6,7 +6,6 @@ set.autowrite = true
 set.autowriteall = true
 set.ignorecase = true
 set.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-set.foldmethod = "expr"
 set.expandtab = true
 set.number = true
 set.mouse = "a"
