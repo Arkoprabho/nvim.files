@@ -57,12 +57,40 @@ local bufferline = {
 	opts = {
 		options = {
 			mode = "tabs",
-			numbers = "ordinal",
 			buffer_close_icon = icons.ui.Close,
 			diagnostics = "nvim_lsp",
 			modified_icon = icons.ui.Circle .. " ",
-			separator_style = "thin",
+			separator_style = "slant",
 			-- separator_style = { icons.separator.filled_right, icons.separator.filled_right },
+		},
+		highlights = {
+			fill = {
+				bg = "NONE",
+			},
+			background = {
+				bg = "NONE",
+				fg = "#6c7086", -- dimmed text for inactive tabs
+			},
+			separator = {
+				fg = "#585b70", -- distinct separator color
+				bg = "NONE",
+			},
+			separator_selected = {
+				fg = "#89b4fa", -- bright blue (outline effect)
+				bg = "NONE",
+			},
+			separator_visible = {
+				fg = "#585b70",
+				bg = "NONE",
+			},
+			buffer_selected = {
+				fg = "#cdd6f4", -- brighter text
+				bold = true,
+			},
+			indicator_selected = {
+				fg = "#89b4fa", -- same as separator_selected
+				bg = "NONE",
+			},
 		},
 	},
 	config = function(_, opts)
