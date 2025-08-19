@@ -229,6 +229,10 @@ local lspsaga = {
 			},
 		})
 
+		-- Make winbar backgrounds transparent
+		vim.api.nvim_set_hl(0, "WinBar", { bg = "NONE", fg = "#cdd6f4" }) -- current buffer
+		vim.api.nvim_set_hl(0, "WinBarNC", { bg = "NONE", fg = "#6c7086" }) -- unfocused buffers
+
 		-- Keymaps
 		local keymap = vim.keymap.set
 		keymap("n", "<leader>lgh", "<cmd>Lspsaga finder<CR>", { desc = "LSP Finder" })
