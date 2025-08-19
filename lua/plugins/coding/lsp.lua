@@ -6,6 +6,7 @@ local mason = {
 
 local mason_lsp_config = {
 	"williamboman/mason-lspconfig.nvim",
+	version = "v2.1.0",
 	dependencies = {
 		{ "williamboman/mason.nvim" },
 		{
