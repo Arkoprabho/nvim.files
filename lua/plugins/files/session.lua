@@ -13,6 +13,10 @@ local session = {
 			local function save_session()
 				pcall(vim.cmd, "silent! mksession! " .. vim.fn.fnameescape(session_path()))
 			end
+			-- Check if session should be skipped
+			local function should_skip_sessions()
+				return vim.g.no_session_restore == 1
+			end
 
 			-- Load session and re-enable syntax/filetype detection
 			local function file_exists(name)
@@ -31,7 +35,11 @@ local session = {
 				-- This allows syntax highlighting on the open file from the last session
 
 				vim.api.nvim_create_autocmd("VimEnter", {
-					command = string.format("source %s", session_path()),
+					callback = function()
+						if not should_skip_sessions() then
+							vim.cmd(string.format("source %s", session_path()))
+						end
+					end,
 					group = group,
 					once = true,
 					desc = "Restores the session on starting vim if a .vim_session file exists in the current folder",
@@ -40,7 +48,13 @@ local session = {
 			end
 
 			-- Save before exit
-			vim.api.nvim_create_autocmd("VimLeavePre", { callback = save_session })
+			vim.api.nvim_create_autocmd("VimLeavePre", {
+				callback = function()
+					if not should_skip_sessions() then
+						save_session()
+					end
+				end,
+			})
 		end,
 	},
 }
