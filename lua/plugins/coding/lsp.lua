@@ -135,6 +135,7 @@ local cmp = {
 }
 local none_ls = {
 	"nvimtools/none-ls.nvim",
+	commit = "5fcb73913a9290f78097e34420fe0e6130c5c33c",
 	dependencies = { "jay-babu/mason-null-ls.nvim", "williamboman/mason.nvim" },
 	config = function()
 		local null_ls = require("null-ls")
