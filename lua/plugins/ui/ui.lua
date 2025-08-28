@@ -11,7 +11,7 @@ local monokai = {
 	priority = 1000,
 	config = function()
 		require("monokai-pro").setup({
-			day_night = {
+            transparent_background = true,
 				enable = true,
 				day_filter = "machine", -- classic | octagon | pro | machine | ristretto | spectrum
 				night_filter = "spectrum",
