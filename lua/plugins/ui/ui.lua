@@ -5,27 +5,28 @@ local nvim_devicons = {
 }
 
 local monokai = {
-	"loctvl842/monokai-pro.nvim",
-	version = "v1.26.1",
-	event = "VeryLazy",
-	priority = 1000,
-	config = function()
-		require("monokai-pro").setup({
+    "loctvl842/monokai-pro.nvim",
+    version = "v1.26.1",
+    event = "VeryLazy",
+    priority = 1000,
+    config = function()
+        require("monokai-pro").setup({
             transparent_background = true,
-				enable = true,
-				day_filter = "machine", -- classic | octagon | pro | machine | ristretto | spectrum
-				night_filter = "spectrum",
-			},
-			background_clear = { "float_win", "toggleterm", "telescope" },
-			devicons = true,
-			styles = {
-				comment = { italic = true },
-				keyword = { italic = true },
-				type = { italic = true },
-			},
-		})
-		vim.cmd.colorscheme("monokai-pro")
-	end,
+            day_night = {
+                enable = true,
+                day_filter = "classic", -- classic | octagon | pro | machine | ristretto | spectrum
+                night_filter = "spectrum",
+            },
+            background_clear = { "float_win", "toggleterm", "telescope" },
+            devicons = true,
+            styles = {
+                comment = { italic = true },
+                keyword = { italic = true },
+                type = { italic = true },
+            },
+        })
+        vim.cmd.colorscheme("monokai-pro")
+    end,
 }
 
 local bufferline = {
