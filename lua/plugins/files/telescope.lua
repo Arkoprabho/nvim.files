@@ -47,6 +47,10 @@ local telescope = {
 	config = function(_, opts)
 		local telescope = require("telescope")
 		telescope.setup(opts)
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "TelescopeResults",
+			command = "setlocal nofoldenable",
+		})
 	end,
 }
 
