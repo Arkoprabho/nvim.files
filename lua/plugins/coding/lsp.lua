@@ -253,6 +253,12 @@ local lspsaga = {
 		-- Call hierarchy
 		keymap("n", "<leader>loc", "<cmd>Lspsaga outgoing_calls<CR>", { desc = "Peek Definition" })
 		keymap("n", "<leader>lic", "<cmd>Lspsaga incoming_calls<CR>", { desc = "Peek Definition" })
+
+		-- Auto command to avoid folding
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "sagaoutline",
+			command = "setlocal nofoldenable",
+		})
 	end,
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter", -- for syntax highlighting inside saga windows
