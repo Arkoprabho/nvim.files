@@ -37,6 +37,7 @@ local mason_lsp_config = {
 
 local nvim_lspconfig = {
     "neovim/nvim-lspconfig",
+    commit = "3db16ceeea947517f0dc1404c24dcb5ab0c91d26",
     config = function()
         local lspconfig = require("lspconfig")
         lspconfig.lua_ls.setup({
