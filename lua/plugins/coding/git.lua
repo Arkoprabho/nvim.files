@@ -59,6 +59,7 @@ local gitsigns = {
 			map("n", "<leader>gs", gs.stage_hunk, "Stage Hunk")
 			map("n", "<leader>gr", gs.reset_hunk, "Reset Hunk")
 			map("n", "<leader>gd", gs.diffthis, "Diff This")
+			map("n", "<leader>gwd", gs.toggle_word_diff, "Toggle word diff")
 			map("n", "<leader>gS", gs.stage_buffer)
 			map("n", "<leader>gu", gs.undo_stage_hunk)
 			map("n", "<leader>gR", gs.reset_buffer)
