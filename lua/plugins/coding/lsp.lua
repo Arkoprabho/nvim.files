@@ -71,6 +71,7 @@ local nvim_lspconfig = {
 
 local cmp = {
     "hrsh7th/nvim-cmp",
+    commit = "b5311ab3ed9c846b585c0c15b7559be131ec4be9",
     dependencies = {
         {
             "hrsh7th/cmp-nvim-lsp",
