@@ -17,6 +17,16 @@ local telescope = {
 	},
 	opts = {
 		defaults = {
+			vimgrep_arguments = {
+				"rg",
+				"--color=never",
+				"--no-heading",
+				"--with-filename",
+				"--line-number",
+				"--column",
+				"--smart-case",
+				"--hidden",
+			},
 			prompt_prefix = icons.ChevronRight,
 			selection_caret = " ",
 			layout_config = {
