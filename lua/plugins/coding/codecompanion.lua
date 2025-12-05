@@ -32,30 +32,28 @@ local codecompanion = {
                     end,
                 },
             },
-
-            -- Set Gemini CLI as the default for specific strategies
             strategies = {
                 chat = {
                     adapter = "gemini_cli",
                     tools = {
                         ["cmd_runner"] = {
                             opts = {
-                                requires_approval = true, -- Force approval for terminal commands
+                                requires_approval = true,
                             },
                         },
                         ["create_file"] = {
                             opts = {
-                                requires_approval = true, -- Force approval for creating files
+                                requires_approval = true,
                             },
                         },
                         ["edit_file"] = {
                             opts = {
-                                requires_approval = true, -- Force approval for editing files
+                                requires_approval = true,
                             },
                         },
                         ["delete_file"] = {
                             opts = {
-                                requires_approval = true, -- Force approval for deleting files
+                                requires_approval = true,
                             },
                         },
                     },
