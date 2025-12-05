@@ -37,6 +37,28 @@ local codecompanion = {
             strategies = {
                 chat = {
                     adapter = "gemini_cli",
+                    tools = {
+                        ["cmd_runner"] = {
+                            opts = {
+                                requires_approval = true, -- Force approval for terminal commands
+                            },
+                        },
+                        ["create_file"] = {
+                            opts = {
+                                requires_approval = true, -- Force approval for creating files
+                            },
+                        },
+                        ["edit_file"] = {
+                            opts = {
+                                requires_approval = true, -- Force approval for editing files
+                            },
+                        },
+                        ["delete_file"] = {
+                            opts = {
+                                requires_approval = true, -- Force approval for deleting files
+                            },
+                        },
+                    },
                 },
                 inline = {
                     adapter = "gemini_cli",
