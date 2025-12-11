@@ -31,10 +31,35 @@ local codecompanion = {
                         })
                     end,
                 },
+                -- Claude Code CLI adapter
+                http = {
+                    claude_code = function()
+                        return require("codecompanion.adapters").extend("claude_code", {
+                            name = "claude_code",
+                            cmd = {
+                                "claude",
+                                "-p",
+                                "--output-format",
+                                "json",
+                                "--tools",
+                                "Bash,Edit,Read,Grep,Write,Glob,WebFetch",
+                            },
+                            defaults = {
+                                max_tokens = 8192,
+                            },
+                            schema = {
+                                model = {
+                                    default = "sonnet",
+                                    choices = { "sonnet", "opus", "haiku" },
+                                },
+                            },
+                        })
+                    end,
+                },
             },
             strategies = {
                 chat = {
-                    adapter = "gemini_cli",
+                    adapter = "claude_code",
                     tools = {
                         ["cmd_runner"] = {
                             opts = {
@@ -59,10 +84,10 @@ local codecompanion = {
                     },
                 },
                 inline = {
-                    adapter = "gemini_cli",
+                    adapter = "claude_code",
                 },
                 agent = {
-                    adapter = "gemini_cli",
+                    adapter = "claude_code",
                 },
             },
 
