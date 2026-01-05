@@ -49,8 +49,8 @@ local codecompanion = {
                             },
                             schema = {
                                 model = {
-                                    default = "sonnet",
-                                    choices = { "sonnet", "opus", "haiku" },
+                                    default = "haiku",
+                                    choices = { "haiku" },
                                 },
                             },
                         })
