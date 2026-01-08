@@ -37,6 +37,11 @@ local codecompanion = {
 					copilot = function()
 						return require("codecompanion.adapters").extend("copilot", {
 							name = "copilot",
+							schema = {
+								model = {
+									default = "gpt-4.1",
+								},
+							},
 						})
 					end,
 					claude_code = function()
