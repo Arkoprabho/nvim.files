@@ -1,17 +1,31 @@
 local fugitive = {
-    "tpope/vim-fugitive",
-    commit = "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4",
-    cmd = { "Git" },
-    config = function()
-        local map = vim.api.nvim_set_keymap
-        local opts = {
-            noremap = true,
-            silent = true,
-        }
-        map("n", "<leader>gc", "<CMD>Git commit<CR>", opts)
-        map("n", "<leader>gp", "<CMD>Git! push<CR>", opts)
-        map("n", "<leader>gcnv", "<CMD>Git commit --no-verify<CR>", opts)
-    end,
+	"tpope/vim-fugitive",
+	commit = "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4",
+	cmd = { "Git" },
+	keys = {
+		{
+			"<leader>gc",
+			function()
+				-- Open a split and start git commit in it
+				vim.cmd("split")
+				vim.cmd("resize 15")
+				vim.cmd("terminal git commit")
+			end,
+			desc = "Git Commit (split)",
+		},
+		{ "<leader>gp", "<CMD>Git! push<CR>", desc = "Git Push" },
+		{ "<leader>gcnv", "<CMD>Git commit --no-verify<CR>", desc = "Git Commit No Verify" },
+	},
+	config = function()
+		local map = vim.api.nvim_set_keymap
+		local opts = {
+			noremap = true,
+			silent = true,
+		}
+		map("n", "<leader>gc", "<CMD>Git commit<CR>", opts)
+		map("n", "<leader>gp", "<CMD>Git! push<CR>", opts)
+		map("n", "<leader>gcnv", "<CMD>Git commit --no-verify<CR>", opts)
+	end,
 }
 
 local gitsigns = {
