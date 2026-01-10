@@ -8,7 +8,7 @@ local codecompanion = {
 			version = "v0.2.3",
 		},
 	},
-	version = "v17.33.0",
+	version = "v18.3.2",
 	config = function()
 		require("codecompanion").setup({
 			adapters = {
@@ -68,28 +68,28 @@ local codecompanion = {
 					end,
 				},
 			},
-			strategies = {
+			interactions = {
 				chat = {
 					adapter = "copilot",
 					tools = {
 						["cmd_runner"] = {
-							opts = {
-								requires_approval = true,
+						opts = {
+							require_approval_before = true,
 							},
 						},
 						["create_file"] = {
-							opts = {
-								requires_approval = true,
+						opts = {
+							require_approval_before = true,
 							},
 						},
 						["edit_file"] = {
-							opts = {
-								requires_approval = true,
+						opts = {
+							require_approval_before = true,
 							},
 						},
 						["delete_file"] = {
-							opts = {
-								requires_approval = true,
+						opts = {
+							require_approval_before = true,
 							},
 						},
 					},
