@@ -1,5 +1,10 @@
 local codecompanion = {
 	"olimorris/codecompanion.nvim",
+	keys = {
+		{ "<leader>ai", "<cmd>CodeCompanionChat<cr>", desc = "Open CodeCompanion" },
+		{ "<leader>cai", "<cmd>CodeCompanion /commit<cr>", desc = "Generate commit message" },
+	},
+	cmd = { "CodeCompanion", "CodeCompanionActions" },
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"zbirenbaum/copilot.lua",
