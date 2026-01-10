@@ -73,23 +73,23 @@ local codecompanion = {
 					adapter = "copilot",
 					tools = {
 						["cmd_runner"] = {
-						opts = {
-							require_approval_before = true,
+							opts = {
+								require_approval_before = true,
 							},
 						},
 						["create_file"] = {
-						opts = {
-							require_approval_before = true,
+							opts = {
+								require_approval_before = true,
 							},
 						},
 						["edit_file"] = {
-						opts = {
-							require_approval_before = true,
+							opts = {
+								require_approval_before = true,
 							},
 						},
 						["delete_file"] = {
-						opts = {
-							require_approval_before = true,
+							opts = {
+								require_approval_before = true,
 							},
 						},
 					},
