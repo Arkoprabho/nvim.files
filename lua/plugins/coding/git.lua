@@ -21,7 +21,6 @@ local fugitive = {
             silent = true,
         }
         map("n", "<leader>gc", "<CMD>Git commit<CR>", opts)
-        map("n", "<leader>gp", "<CMD>Git! push<CR>", opts)
         map("n", "<leader>gcnv", "<CMD>Git commit --no-verify<CR>", opts)
     end,
 }
