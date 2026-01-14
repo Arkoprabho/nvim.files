@@ -4,7 +4,7 @@ local codecompanion = {
 		{ "<leader>ai", "<cmd>CodeCompanionChat<cr>", desc = "Open CodeCompanion" },
 		{ "<leader>cai", "<cmd>CodeCompanion /commit<cr>", desc = "Generate commit message" },
 	},
-	cmd = { "CodeCompanion", "CodeCompanionActions" },
+    cmd = { "CodeCompanion", "CodeCompanionActions", "CodeCompanionChat" },
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"zbirenbaum/copilot.lua",
