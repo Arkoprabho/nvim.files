@@ -7,7 +7,6 @@ local codecompanion = {
 	cmd = { "CodeCompanion", "CodeCompanionActions", "CodeCompanionChat" },
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		"zbirenbaum/copilot.lua",
 		{
 			"franco-ruggeri/codecompanion-spinner.nvim",
 			version = "v0.2.3",
@@ -25,43 +24,12 @@ local codecompanion = {
 				},
 			},
 			adapters = {
-				acp = {
-					-- Define the Gemini CLI adapter using ACP
-					gemini_cli = function()
-						return require("codecompanion.adapters").extend("gemini_cli", {
-							name = "gemini_cli",
-							cmd = { "gemini" },
-							defaults = {
-								auth_method = "gemini-api-key",
-							},
-							env = {
-								GEMINI_API_KEY = os.getenv("GEMINI_API_KEY"),
-							},
-							schema = {
-								model = {
-									default = "gemini-2.5-flash-lite",
-								},
-							},
-						})
-					end,
-				},
-				-- Claude Code CLI adapter
 				http = {
-					copilot = function()
-						return require("codecompanion.adapters").extend("copilot", {
-							name = "copilot",
-							schema = {
-								model = {
-									default = "gpt-4.1",
-								},
-							},
-						})
-					end,
-					claude_code = function()
-						return require("codecompanion.adapters").extend("claude_code", {
-							name = "claude_code",
+					opencode = function()
+						return require("codecompanion.adapters").extend("opencode", {
+							name = "opencode",
 							cmd = {
-								"claude",
+								"opencode",
 								"-p",
 								"--output-format",
 								"json",
@@ -73,8 +41,8 @@ local codecompanion = {
 							},
 							schema = {
 								model = {
-									default = "haiku",
-									choices = { "haiku" },
+									default = "gpt-4.1",
+									choices = { "gpt-4.1", "claude-haiku-4.5", "claude-sonnet-4.5" },
 								},
 							},
 						})
@@ -83,7 +51,7 @@ local codecompanion = {
 			},
 			interactions = {
 				chat = {
-					adapter = "copilot",
+					adapter = "opencode",
 					tools = {
 						["cmd_runner"] = {
 							opts = {
@@ -108,13 +76,12 @@ local codecompanion = {
 					},
 				},
 				inline = {
-					adapter = "copilot",
+					adapter = "opencode",
 				},
 				agent = {
-					adapter = "copilot",
+					adapter = "opencode",
 				},
 			},
-
 			extensions = {
 				spinner = {
 					active = true,
