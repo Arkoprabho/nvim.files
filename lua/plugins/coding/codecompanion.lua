@@ -24,56 +24,26 @@ local codecompanion = {
 				},
 			},
 			adapters = {
-				http = {
-					opencode = function()
-						return require("codecompanion.adapters").extend("opencode", {
-							name = "opencode",
-							cmd = {
-								"opencode",
-								"-p",
-								"--output-format",
-								"json",
-								"--tools",
-								"Bash,Edit,Read,Grep,Write,Glob,WebFetch",
+				opencode = function()
+					return require("codecompanion.adapters").extend("opencode", {
+						name = "opencode",
+						schema = {
+							model = {
+								default = "gpt-4.1",
+								choices = { "gpt-4.1", "claude-haiku-4.5", "claude-sonnet-4.5" },
 							},
-							defaults = {
-								max_tokens = 8192,
-							},
-							schema = {
-								model = {
-									default = "gpt-4.1",
-									choices = { "gpt-4.1", "claude-haiku-4.5", "claude-sonnet-4.5" },
-								},
-							},
-						})
-					end,
+						},
+					})
+				end,
+			},
+			strategies = {
+				chat = {
+					adapter = "opencode",
 				},
 			},
 			interactions = {
 				chat = {
 					adapter = "opencode",
-					tools = {
-						["cmd_runner"] = {
-							opts = {
-								require_approval_before = true,
-							},
-						},
-						["create_file"] = {
-							opts = {
-								require_approval_before = true,
-							},
-						},
-						["edit_file"] = {
-							opts = {
-								require_approval_before = true,
-							},
-						},
-						["delete_file"] = {
-							opts = {
-								require_approval_before = true,
-							},
-						},
-					},
 				},
 				inline = {
 					adapter = "opencode",
