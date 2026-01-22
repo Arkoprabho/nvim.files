@@ -32,7 +32,7 @@ local opencode = {
         vim.keymap.set({ "n", "x" }, "<leader>ocx", function()
             require("opencode").select()
         end, { desc = "Execute opencode action…" })
-        vim.keymap.set({ "n", "t" }, "<leader>.", function()
+        vim.keymap.set({ "n", "x" }, "<leader>.", function()
             require("opencode").toggle()
         end, { desc = "Toggle opencode" })
     end,
