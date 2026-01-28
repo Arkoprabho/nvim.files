@@ -203,6 +203,7 @@ local trouble = {
 local lsp_signature = {
     "ray-x/lsp_signature.nvim",
     event = "LspAttach",
+    commit = "0efb088dce050d38a3608ee69f80f2a62cf9849c",
     opts = {
         bind = true,
         handler_opts = {
