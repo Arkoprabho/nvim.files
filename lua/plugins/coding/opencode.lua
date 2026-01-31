@@ -1,6 +1,9 @@
 local opencode = {
 	"sudo-tee/opencode.nvim",
 	commit = "2dba73d61d2c0f00f67eba51ba4110d94dd97e75",
+	keys = {
+		{ "<leader>.", "<cmd>Opencode<cr>", desc = "OpenCode" },
+	},
 	config = function()
 		require("opencode").setup({
 			preferred_picker = "telescope",
