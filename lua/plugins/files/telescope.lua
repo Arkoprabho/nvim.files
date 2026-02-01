@@ -50,7 +50,15 @@ local telescope = {
 		},
 		pickers = {
 			find_files = {
-				hidden = false, -- Show hidden files
+				hidden = true, -- Show hidden files
+			},
+		},
+		extensions = {
+			["ui-slect"] = {
+				require("telescope.themes").get_dropdown({
+					winblend = 10,
+					previewer = false,
+				}),
 			},
 		},
 	},
@@ -61,9 +69,16 @@ local telescope = {
 			pattern = "TelescopeResults",
 			command = "setlocal nofoldenable",
 		})
+		telescope.load_extension("ui-select")
 	end,
 }
 
+local telescope_ui_picker = {
+	"nvim-telescope/telescope-ui-select.nvim",
+	commit = "6e51d7da30bd139a6950adf2a47fda6df9fa06d2",
+}
+
 return {
+	telescope_ui_picker,
 	telescope,
 }
