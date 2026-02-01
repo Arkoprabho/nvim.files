@@ -19,7 +19,7 @@ local opencode = {
                     ["<leader>oq"] = { "close" },            -- Close UI windows
                     ["<leader>os"] = { "select_session" },   -- Select and load a opencode session
                     ["<leader>oR"] = { "rename_session" },   -- Rename current session
-                    ["<leader>op"] = { "configure_provider" }, -- Quick provider and model switch from predefined list
+                    ["<leader>om"] = { "configure_provider" }, -- Quick provider and model switch from predefined list
                     ["<leader>oV"] = { "configure_variant" }, -- Switch model variant for the current model
                     ["<leader>oz"] = { "toggle_zoom" },      -- Zoom in/out on the Opencode windows
                     ["<leader>ov"] = { "paste_image" },      -- Paste image from clipboard into current session
@@ -36,7 +36,7 @@ local opencode = {
                     ["<leader>ox"] = { "swap_position" },    -- Swap Opencode pane left/right
                     ["<leader>ott"] = { "toggle_tool_output" }, -- Toggle tools output (diffs, cmd output, etc.)
                     ["<leader>otr"] = { "toggle_reasoning_output" }, -- Toggle reasoning output (thinking steps)
-                    ["<leader>o/"] = { "quick_chat", mode = { "n", "x" } }, -- Open quick chat input with selection context in visual mode or current line context in normal mode
+                    ["<leader>oa"] = { "quick_chat", mode = { "n", "x" } }, -- Open quick chat input with selection context in visual mode or current line context in normal mode
                 },
                 input_window = {
                     ["<S-cr>"] = { "submit_input_prompt", mode = { "n", "i" } }, -- Submit prompt (normal mode and insert mode)
