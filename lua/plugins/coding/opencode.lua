@@ -51,7 +51,9 @@ local opencode = {
                     ["<tab>"] = { "toggle_pane", mode = { "n", "i" } }, -- Toggle between input and output panes
                     ["<up>"] = { "prev_prompt_history", mode = { "n", "i" } }, -- Navigate to previous prompt in history
                     ["<down>"] = { "next_prompt_history", mode = { "n", "i" } }, -- Navigate to next prompt in history
-                    ["<M-m>"] = { "switch_mode" },                -- Switch between modes (build/plan)
+                    ["<M-m>"] = { "switch_mode" },                   -- Switch between modes (build/plan)
+                    ["<leader>oa"] = { "select_agent", mode = { "n", "i" } }, -- Select between agent. Keymap similar to opencode's default
+                    ["<leader>om"] = { "configure_provider", mode = { "n", "i" } }, -- Select model keymap similar to opencode's default
                     ["<M-r>"] = { "cycle_variant", mode = { "n", "i" } }, -- Cycle through available model variants
                 },
                 output_window = {
