@@ -6,7 +6,7 @@ local opencode = {
     },
     config = function()
         require("opencode").setup({
-            preferred_picker = "telescope",
+            preferred_picker = "snacks",
             preferred_completion = "nvim-cmp",
             keymap = {
                 editor = {
@@ -107,12 +107,7 @@ local opencode = {
         },
         -- Optional, for file mentions and commands completion, pick only one
         "hrsh7th/nvim-cmp",
-
-        -- Optional, for file mentions picker, pick only one
-        {
-            "folke/snacks.nvim",
-            commit = "a4e46becca45eb65c73a388634b1ce8aad629ae0",
-        },
+        "folke/snacks.nvim",
         "nvim-telescope/telescope.nvim",
     },
 }
