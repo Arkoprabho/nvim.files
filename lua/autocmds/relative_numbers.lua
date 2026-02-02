@@ -1,6 +1,6 @@
 local augroup = vim.api.nvim_create_augroup("RelativeNumbersOpenCodeOutput", { clear = true })
 
-vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnter" }, {
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
 	group = augroup,
 	pattern = "*",
 	callback = function(event)
@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnte
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "WinLeave" }, {
+vim.api.nvim_create_autocmd({ "BufLeave" }, {
 	group = augroup,
 	pattern = "*",
 	callback = function(event)
