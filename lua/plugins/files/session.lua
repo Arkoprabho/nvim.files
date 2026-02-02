@@ -11,6 +11,25 @@ local session = {
 
 			-- Save session
 			local function save_session()
+				-- Close buffers with opencode_output and opencode filetypes before saving session
+				local bufs = vim.api.nvim_list_bufs()
+				local bufs_to_close = {}
+
+				for _, buf in ipairs(bufs) do
+					if vim.api.nvim_buf_is_valid(buf) then
+						local ft = vim.api.nvim_buf_get_option(buf, "filetype")
+						if ft == "opencode_output" or ft == "opencode" then
+							table.insert(bufs_to_close, buf)
+						end
+					end
+				end
+
+				-- Close the buffers temporarily
+				for _, buf in ipairs(bufs_to_close) do
+					pcall(vim.api.nvim_buf_delete, buf, { force = true })
+				end
+
+				-- Save the session
 				pcall(vim.cmd, "silent! mksession! " .. vim.fn.fnameescape(session_path()))
 			end
 			-- Check if session should be skipped
