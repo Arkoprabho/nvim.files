@@ -142,6 +142,15 @@ local snacks = {
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
 	},
+	keys = {
+		{
+			"<leader>n",
+			function()
+				Snacks.picker.notifications()
+			end,
+			desc = "Notification History",
+		},
+	},
 }
 return {
 	snacks,
