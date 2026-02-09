@@ -1,7 +1,7 @@
 local set = vim.opt
 local globals = vim.g
 
-set.cmdheight = 0
+set.cmdheight = 1
 set.autowrite = true
 set.autowriteall = true
 set.ignorecase = true
