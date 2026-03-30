@@ -1,142 +1,143 @@
 local mf = {
-	"echasnovski/mini.files",
-	tag = "v0.16.0",
-	lazy = true,
-	keys = {
-		{
-			"-",
-			function()
-				require("mini.files").open()
-			end,
-			desc = "Open mini.files",
-		},
-	},
-	opts = {
-		windows = {
-			preview = true,
-			width_focus = 100,
-			width_nofocus = 30,
-			width_preview = 100,
-			height_focus = 20,
-			height_nofocus = 15,
-			border = "rounded",
-		},
-		mappings = {
-			close = "q",
-			go_in = "<CR>",
-			go_in_plus = "<CR>",
-			go_out = "-",
-			go_out_plus = "H",
-			mark_goto = "'",
-			mark_set = "m",
-			reset = "<BS>",
-			reveal_cwd = "@",
-			show_help = "g?",
-			synchronize = ":w",
-			trim_left = "<",
-			trim_right = ">",
-		},
-		content = {
-			filter = function(entry)
-				return not entry.name:match("^%.") -- hide dotfiles
-			end,
-		},
-		options = {
-			use_as_default_explorer = true,
-		},
-	},
-	config = function(_, opts)
-		local mf = require("mini.files")
-		mf.setup(opts)
+    "echasnovski/mini.files",
+    tag = "v0.16.0",
+    lazy = true,
+    keys = {
+        {
+            "-",
+            function()
+                require("mini.files").open()
+            end,
+            desc = "Open mini.files",
+        },
+    },
+    opts = {
+        windows = {
+            preview = true,
+            width_focus = 100,
+            width_nofocus = 30,
+            width_preview = 100,
+            height_focus = 20,
+            height_nofocus = 15,
+            border = "rounded",
+        },
+        mappings = {
+            close = "q",
+            go_in = "<CR>",
+            go_in_plus = "<CR>",
+            go_out = "-",
+            go_out_plus = "H",
+            mark_goto = "'",
+            mark_set = "m",
+            reset = "<BS>",
+            reveal_cwd = "@",
+            show_help = "g?",
+            synchronize = ":w",
+            trim_left = "<",
+            trim_right = ">",
+        },
+        content = {
+            filter = function(entry)
+                return not entry.name:match("^%.") -- hide dotfiles
+            end,
+        },
+        options = {
+            use_as_default_explorer = true,
+            permenant_delete = false,
+        },
+    },
+    config = function(_, opts)
+        local mf = require("mini.files")
+        mf.setup(opts)
 
-		-- Set it to open using `-`
-		local function open_files(path)
-			mf.open(path or vim.api.nvim_buf_get_name(0))
-			mf.reveal_cwd()
-		end
+        -- Set it to open using `-`
+        local function open_files(path)
+            mf.open(path or vim.api.nvim_buf_get_name(0))
+            mf.reveal_cwd()
+        end
 
-		vim.keymap.set("n", "-", function()
-			open_files()
-		end, { desc = "Open mini.files" })
+        vim.keymap.set("n", "-", function()
+            open_files()
+        end, { desc = "Open mini.files" })
 
-		-- Opening in splits and tabs
-		local function open_in_vertical_split()
-			local entry = mf.get_fs_entry()
-			if entry ~= nil then
-				mf.close()
-				vim.cmd("vsplit " .. vim.fn.fnameescape(entry.path))
-			end
-		end
+        -- Opening in splits and tabs
+        local function open_in_vertical_split()
+            local entry = mf.get_fs_entry()
+            if entry ~= nil then
+                mf.close()
+                vim.cmd("vsplit " .. vim.fn.fnameescape(entry.path))
+            end
+        end
 
-		local function open_in_horizontal_split_and_close()
-			local entry = mf.get_fs_entry()
-			if entry ~= nil then
-				mf.close()
-				vim.cmd("split " .. vim.fn.fnameescape(entry.path))
-			end
-		end
+        local function open_in_horizontal_split_and_close()
+            local entry = mf.get_fs_entry()
+            if entry ~= nil then
+                mf.close()
+                vim.cmd("split " .. vim.fn.fnameescape(entry.path))
+            end
+        end
 
-		local function open_in_new_tab()
-			local entry = mf.get_fs_entry()
-			if entry ~= nil then
-				mf.close()
-				vim.cmd("tabnew " .. vim.fn.fnameescape(entry.path))
-			end
-		end
+        local function open_in_new_tab()
+            local entry = mf.get_fs_entry()
+            if entry ~= nil then
+                mf.close()
+                vim.cmd("tabnew " .. vim.fn.fnameescape(entry.path))
+            end
+        end
 
-		-- Map Ctrl+v, Ctrl+h, and Ctrl+t in normal mode when buffer is mini.files explorer
-		vim.api.nvim_create_autocmd("User", {
-			pattern = "MiniFilesBufferCreate",
-			callback = function(args)
-				vim.keymap.set(
-					"n",
-					"<C-v>",
-					open_in_vertical_split,
-					{ buffer = args.data.buf_id, noremap = true, silent = true, desc = "Open in vertical split" }
-				)
-				vim.keymap.set(
-					"n",
-					"<C-x>",
-					open_in_horizontal_split_and_close,
-					{ buffer = args.data.buf_id, noremap = true, silent = true, desc = "Open in horizontal split" }
-				)
-				vim.keymap.set(
-					"n",
-					"<C-t>",
-					open_in_new_tab,
-					{ buffer = args.data.buf_id, noremap = true, silent = true, desc = "Open in new tab" }
-				)
-			end,
-		})
+        -- Map Ctrl+v, Ctrl+h, and Ctrl+t in normal mode when buffer is mini.files explorer
+        vim.api.nvim_create_autocmd("User", {
+            pattern = "MiniFilesBufferCreate",
+            callback = function(args)
+                vim.keymap.set(
+                    "n",
+                    "<C-v>",
+                    open_in_vertical_split,
+                    { buffer = args.data.buf_id, noremap = true, silent = true, desc = "Open in vertical split" }
+                )
+                vim.keymap.set(
+                    "n",
+                    "<C-x>",
+                    open_in_horizontal_split_and_close,
+                    { buffer = args.data.buf_id, noremap = true, silent = true, desc = "Open in horizontal split" }
+                )
+                vim.keymap.set(
+                    "n",
+                    "<C-t>",
+                    open_in_new_tab,
+                    { buffer = args.data.buf_id, noremap = true, silent = true, desc = "Open in new tab" }
+                )
+            end,
+        })
 
-		-- Manage hidden files
-		local show_dotfiles = true
+        -- Manage hidden files
+        local show_dotfiles = true
 
-		local filter_show = function(fs_entry)
-			return true
-		end
+        local filter_show = function(fs_entry)
+            return true
+        end
 
-		local filter_hide = function(fs_entry)
-			return not vim.startswith(fs_entry.name, ".")
-		end
+        local filter_hide = function(fs_entry)
+            return not vim.startswith(fs_entry.name, ".")
+        end
 
-		local toggle_dotfiles = function()
-			show_dotfiles = not show_dotfiles
-			local new_filter = show_dotfiles and filter_show or filter_hide
-			mf.refresh({ content = { filter = new_filter } })
-		end
+        local toggle_dotfiles = function()
+            show_dotfiles = not show_dotfiles
+            local new_filter = show_dotfiles and filter_show or filter_hide
+            mf.refresh({ content = { filter = new_filter } })
+        end
 
-		vim.api.nvim_create_autocmd("User", {
-			pattern = "MiniFilesBufferCreate",
-			callback = function(args)
-				local buf_id = args.data.buf_id
-				-- Tweak left-hand side of mapping to your liking
-				vim.keymap.set("n", "g.", toggle_dotfiles, { buffer = buf_id })
-			end,
-		})
-	end,
+        vim.api.nvim_create_autocmd("User", {
+            pattern = "MiniFilesBufferCreate",
+            callback = function(args)
+                local buf_id = args.data.buf_id
+                -- Tweak left-hand side of mapping to your liking
+                vim.keymap.set("n", "g.", toggle_dotfiles, { buffer = buf_id })
+            end,
+        })
+    end,
 }
 
 return {
-	mf,
+    mf,
 }
