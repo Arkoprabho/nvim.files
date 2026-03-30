@@ -3,7 +3,7 @@ local lines = {
     commit = "a94fc68960665e54408fe37dcf573193c4ce82c9",
     dependencies = {
         "nvim-tree/nvim-web-devicons",
-        "loctvl842/monokai-pro.nvim",
+        "rebelot/kanagawa.nvim",
     },
     event = "VeryLazy",
     config = function()
@@ -199,7 +199,7 @@ local lines = {
 
         require("lualine").setup({
             options = {
-                theme = "monokai-pro",
+                theme = "kanagawa",
                 globalstatus = true,
                 component_separators = { left = icons.separator.hollow_right, right = icons.separator.hollow_left },
                 section_separators = {
