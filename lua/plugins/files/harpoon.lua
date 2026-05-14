@@ -34,13 +34,13 @@ local harpoon = {
 			harpoon:list():select(4)
 		end)
 
-		-- Toggle previous/next buffers stored by harpoon
+		-- Cycle through previous/next buffers stored by harpoon
 		vim.keymap.set("n", "<leader>hp", function()
 			harpoon:list():prev()
-		end)
+		end, { desc = "Harpoon previous" })
 		vim.keymap.set("n", "<leader>hn", function()
 			harpoon:list():next()
-		end)
+		end, { desc = "Harpoon next" })
 
 		-- Telescope <3 Harpoon
 		local conf = require("telescope.config").values
