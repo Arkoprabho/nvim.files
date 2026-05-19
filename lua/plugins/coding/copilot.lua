@@ -1,6 +1,6 @@
 local copilot = {
 	"zbirenbaum/copilot.lua",
-	commit = "3fd7b50810ae4cccf8b38e4c509b1608f141a9e9",
+	version = "v2.0.4",
 	cmd = "Copilot",
 	event = "InsertEnter",
 	config = function()
